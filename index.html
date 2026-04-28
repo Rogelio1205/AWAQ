@@ -445,7 +445,7 @@
                             </div>
 
                             <div class="mt-12 flex flex-col items-center gap-4">
-                                <button type="submit" id="btn-enviar" class="btn-enviar">
+                                <button type="submit" onclick="" id="btn-enviar" class="btn-enviar">
                                     Enviar
                                 </button>
                                 <p id="validation-msg" class="text-[11px] text-gray-400">Completa todos los campos para habilitar el envío</p>
@@ -548,7 +548,6 @@
     </footer>
 
     <!-- Success Modal -->
-     <!--
     <div id="success-modal">
         <div class="bg-white p-10 rounded-[30px] text-center max-w-sm mx-6 card-shadow">
             <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -559,8 +558,7 @@
             <button onclick="location.reload()" class="btn-pink text-white px-8 py-3 rounded-full text-sm font-bold uppercase w-full">Cerrar</button>
         </div>
     </div>
-    -->
-
+    
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -638,7 +636,9 @@
             congressForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 if (btnEnviar.classList.contains('ready')) {
-                    document.getElementById('success-modal').style.display = 'flex';
+                    setTimeout(() => {
+                        window.location.href = 'formularioCompletado/index.html';
+                    }, 2000);
                 }
             });
         });
