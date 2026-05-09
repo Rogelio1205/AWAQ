@@ -135,7 +135,7 @@ congressForm.addEventListener('submit', (e) => {
 
     ul.querySelectorAll('li').forEach(li => {
         li.addEventListener('click', () => {
-            document.getElementById('phone-flag').textContent = getFlagEmoji(li.dataset.iso);
+            document.getElementById('phone-flag').src = `https://flagcdn.com/w20/${li.dataset.iso.toLowerCase()}.png`;
             document.getElementById('phone-code').textContent = li.dataset.dial;
             document.getElementById('phone-dropdown').classList.add('hidden');
             checkStep2Validity();
@@ -164,8 +164,9 @@ congressForm.addEventListener('submit', (e) => {
 
     // -- Seleccionar país → cargar estados
     async function selectCountry(name, iso) {
-        document.getElementById('country-label').textContent = `${getFlagEmoji(iso)} ${name}`;
-        document.getElementById('country-label').classList.remove('text-gray-400');
+        const countryLabel = document.getElementById('country-label');
+        countryLabel.innerHTML = `<img src="https://flagcdn.com/w20/${iso.toLowerCase()}.png" class="w-5 h-4 object-cover rounded-sm inline-block mr-2">${name}`;
+        countryLabel.classList.remove('text-gray-400');
         document.getElementById('country-value').value = name;
         document.getElementById('extra-fields').classList.remove('hidden');
         document.getElementById('country-dropdown').classList.add('hidden');
