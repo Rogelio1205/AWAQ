@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participa - Awaq</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2D3748;
+        }
+        .btn-pink {
+            background-color: #B83280;
+            transition: all 0.3s ease;
+        }
+        .btn-pink:hover {
+            background-color: #97266D;
+            transform: translateY(-2px);
+        }
+        .btn-teal {
+            background-color: #008094;
+            transition: all 0.3s ease;
+        }
+        .btn-teal:hover {
+            background-color: #006677;
+            transform: translateY(-2px);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .input-focus:focus {
+            outline: none;
+            border-color: #008094;
+            box-shadow: 0 0 0 3px rgba(0, 128, 148, 0.1);
+        }
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23008094' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header / Navbar -->
+    <nav class="bg-white py-4 px-6 md:px-12 flex items-center justify-between top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-2 translate-x-20">
+            <img src="../assets/imgs/shared/logoSF.png" alt="Awaq Logo" class="h-10">
+        </div>
+        
+        <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="hover:text-cyan-700">Agenda</a>
+            <a href="#" class="hover:text-cyan-700">Líneas temáticas</a>
+            <a href="#" class="hover:text-cyan-700">Patrocinadores</a>
+            <a href="#" class="hover:text-cyan-700 flex items-center gap-1">
+                <span class="text-yellow-500">★</span> Manifiesto 21CEO
+            </a>
+            <a href="#" class="hover:text-cyan-700">Marketplace</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-sm cursor-pointer hover:bg-gray-50">
+                <span>ES</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </div>
+            <button class="btn-pink text-white px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide">
+                Quiero asistir
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Participa -->
+    <section class="relative bg-[#1A365D] text-white py-20 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+            <div class="md:w-1/2">
+                <span class="inline-block px-4 py-1 bg-teal-500/20 text-teal-300 rounded-full text-xs font-bold uppercase tracking-widest mb-4">Súmate al cambio</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Tu acción crea <span class="text-teal-400">impacto</span></h1>
+                <p class="text-blue-100 text-lg leading-relaxed mb-8 max-w-lg">
+                    Existen muchas formas de ser parte del 2º ICEO. Ya sea como voluntario, ponente o donante, tu presencia fortalece la red de protección ambiental más grande de la región.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#voluntariado" class="btn-teal text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider">Ser Voluntario</a>
+                    <a href="#donar" class="border-2 border-white/30 hover:border-white text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider transition-all">Donar</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <!-- Decoración circular -->
+                    <div class="absolute -inset-10 border border-white/10 rounded-full animate-spin-slow"></div>
+                    <img src="https://images.unsplash.com/photo-1617153817979-283ffdcd52f5?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gente participando" class="relative z-10 w-80 h-80 object-cover rounded-[3rem] shadow-2xl border-4 border-white/10 rotate-3">
+                </div>
+            </div>
+        </div>
+        <!-- Ondas decorativas de fondo -->
+        <div class="absolute bottom-0 left-0 w-full opacity-10">
+            <svg viewBox="0 0 1440 320" class="w-full"><path fill="#ffffff" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,149.3C672,149,768,203,864,213.3C960,224,1056,192,1152,165.3C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+    </section>
+
+    <!-- Opciones de Participación -->
+    <section id="voluntariado" class="py-20 px-6 bg-pattern">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#1A365D] mb-4">¿Cómo quieres participar?</h2>
+                <div class="w-20 h-1 bg-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Voluntariado -->
+                <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group">
+                    <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-500 transition-colors">
+                        <i data-lucide="users" class="text-teal-600 group-hover:text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#1A365D]">Voluntariado</h3>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        Apóyanos en logística, comunicación o atención a asistentes durante los días del congreso.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> Certificado de participación</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> Acceso a todas las charlas</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> Kit oficial del voluntario</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full border-2 border-teal-600 text-teal-600 font-bold hover:bg-teal-600 hover:text-white transition-all">Postularme</button>
+                </div>
+
+                <!-- Convocatorias -->
+                <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group">
+                    <div class="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors">
+                        <i data-lucide="lightbulb" class="text-pink-600 group-hover:text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#1A365D]">Presenta tu Proyecto</h3>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        ¿Tienes una iniciativa ambiental? Presenta tu proyecto en nuestro Marketplace o como ponente.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> Visibilidad internacional</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> Networking con inversores</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> Espacio en el Marketplace</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full border-2 border-pink-600 text-pink-600 font-bold hover:bg-pink-600 hover:text-white transition-all">Ver Bases</button>
+                </div>
+
+                <!-- Prensa -->
+                <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="mic" class="text-blue-600 group-hover:text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold text-2xl mb-4 text-[#1A365D]">Prensa y Medios</h3>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        Solicita tu acreditación de prensa para cubrir el evento y entrevistar a los líderes ambientales.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-sm text-gray-600">
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Sala de prensa exclusiva</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Gestión de entrevistas</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Acceso a material HD</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-full border-2 border-blue-600 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition-all">Acreditarme</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="py-20 px-6 bg-gray-50/50">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-[#1A365D] mb-4">¿Tienes alguna duda?</h2>
+                <p class="text-gray-500">Déjanos tu mensaje y nuestro equipo de participación te contactará en menos de 24 horas.</p>
+            </div>
+            
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Nombre completo</label>
+                        <input type="text" placeholder="Tu nombre..." class="w-full px-5 py-3 rounded-2xl border border-gray-200 input-focus bg-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">Correo electrónico</label>
+                        <input type="email" placeholder="email@ejemplo.com" class="w-full px-5 py-3 rounded-2xl border border-gray-200 input-focus bg-white">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Interés principal</label>
+                    <select class="w-full px-5 py-3 rounded-2xl border border-gray-200 input-focus bg-white appearance-none">
+                        <option>Selecciona una opción</option>
+                        <option>Voluntariado</option>
+                        <option>Convocatoria de Proyectos</option>
+                        <option>Prensa</option>
+                        <option>Donaciones Especiales</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Mensaje</label>
+                    <textarea rows="4" placeholder="¿En qué podemos ayudarte?" class="w-full px-5 py-3 rounded-2xl border border-gray-200 input-focus bg-white"></textarea>
+                </div>
+                <button type="submit" class="w-full btn-teal text-white py-4 rounded-full font-bold uppercase tracking-widest shadow-lg shadow-teal-700/20">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Waves Decoration -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" class="-mt-80 block" >
+        <path fill="#A7D8F0" fill-opacity="1" d="M 0 500 L 0 368.38683022177975 C 42.35294117647059 368.38683022177975 42.35294117647059 391.0122426421185 84.70588235294117 391.0122426421185 C 127.05882352941177 391.0122426421185 127.05882352941177 373.63906704709734 169.41176470588235 373.63906704709734 C 211.76470588235293 373.63906704709734 211.76470588235293 356.856277265324 254.11764705882354 356.856277265324 C 296.47058823529414 356.856277265324 296.47058823529414 430.0962213834589 338.8235294117647 430.0962213834589 C 381.17647058823525 430.0962213834589 381.17647058823525 358.44978054230523 423.52941176470586 358.44978054230523 C 465.88235294117646 358.44978054230523 465.88235294117646 387.77497836663315 508.2352941176471 387.77497836663315 C 550.5882352941176 387.77497836663315 550.5882352941176 385.68093964808213 592.9411764705882 385.68093964808213 C 635.2941176470588 385.68093964808213 635.2941176470588 409.2788834956991 677.6470588235294 409.2788834956991 C 720 409.2788834956991 720 352.20592746904003 762.3529411764706 352.20592746904003 C 804.7058823529412 352.20592746904003 804.7058823529412 416.669746269325 847.0588235294117 416.669746269325 C 889.4117647058823 416.669746269325 889.4117647058823 445.4575643981934 931.7647058823529 445.4575643981934 C 974.1176470588235 445.4575643981934 974.1176470588235 387.2670653698333 1016.4705882352941 387.2670653698333 C 1058.8235294117649 387.2670653698333 1058.8235294117649 374.9026260030041 1101.1764705882354 374.9026260030041 C 1143.5294117647059 374.9026260030041 1143.5294117647059 432.4825615644477 1185.8823529411764 432.4825615644477 C 1228.2352941176468 432.4825615644477 1228.2352941176468 425.4675525645871 1270.5882352941176 425.4675525645871 C 1312.9411764705883 425.4675525645871 1312.9411764705883 372.77695203890744 1355.2941176470588 372.77695203890744 C 1397.6470588235293 372.77695203890744 1397.6470588235293 396.3531364413302 1440 396.3531364413302 L 1440 500 Z"></path>
+        <path fill="#4076b5" fill-opacity="1" d="M 0 500 L 0 405.06010314524246 C 60 405.06010314524246 60 382.8700307820691 120 382.8700307820691 C 180 382.8700307820691 180 429.9718148959437 240 429.9718148959437 C 300 429.9718148959437 300 427.60237817486995 360 427.60237817486995 C 420 427.60237817486995 420 380.78224251600204 480 380.78224251600204 C 540 380.78224251600204 540 421.27531861737225 600 421.27531861737225 C 660 421.27531861737225 660 369.84832524571175 720 369.84832524571175 C 780 369.84832524571175 780 407.3549444411037 840 407.3549444411037 C 900 407.3549444411037 900 413.33418116977555 960 413.33418116977555 C 1020 413.33418116977555 1020 425.26447789072336 1080 425.26447789072336 C 1140 425.26447789072336 1140 419.54943591952315 1200 419.54943591952315 C 1260 419.54943591952315 1260 436.8618440411774 1320 436.8618440411774 C 1380 436.8618440411774 1380 394.14096436416 1440 394.14096436416 L 1440 500 Z"></path>
+        <path fill="#0a3d4d" fill-opacity="1" d="M 0 500 L 0 440.4785493351301 C 42.35294117647059 440.4785493351301 42.35294117647059 437.9195103308848 84.70588235294117 437.9195103308848 C 127.05882352941177 437.9195103308848 127.05882352941177 402.00673628503864 169.41176470588235 402.00673628503864 C 211.76470588235293 402.00673628503864 211.76470588235293 413.6142476538953 254.11764705882354 413.6142476538953 C 296.47058823529414 413.6142476538953 296.47058823529414 447.78900751705805 338.8235294117647 447.78900751705805 C 381.17647058823525 447.78900751705805 381.17647058823525 387.87328057740524 423.52941176470586 387.87328057740524 C 465.88235294117646 387.87328057740524 465.88235294117646 428.642523023409 508.2352941176471 428.642523023409 C 550.5882352941176 428.642523023409 550.5882352941176 470.49322779419526 592.9411764705882 470.49322779419526 C 635.2941176470588 470.49322779419526 635.2941176470588 419.32586912842453 677.6470588235294 419.32586912842453 C 720 419.32586912842453 720 474.76604352948925 762.3529411764706 474.76604352948925 C 804.7058823529412 474.76604352948925 804.7058823529412 450.5494943724261 847.0588235294117 450.5494943724261 C 889.4117647058823 450.5494943724261 889.4117647058823 448.9961674530423 931.7647058823529 448.9961674530423 C 974.1176470588235 448.9961674530423 974.1176470588235 399.5019724410031 1016.4705882352941 399.5019724410031 C 1058.8235294117649 399.5019724410031 1058.8235294117649 443.20265085505525 1101.1764705882354 443.20265085505525 C 1143.5294117647059 443.20265085505525 1143.5294117647059 468.03143000068303 1185.8823529411764 468.03143000068303 C 1228.2352941176468 468.03143000068303 1228.2352941176468 449.7320733977904 1270.5882352941176 449.7320733977904 C 1312.9411764705883 449.7320733977904 1312.9411764705883 446.9516475883938 1355.2941176470588 446.9516475883938 C 1397.6470588235293 446.9516475883938 1397.6470588235293 476.3998288487346 1440 476.3998288487346 L 1440 500 Z"></path>
+    </svg>
+    
+    <!-- Footer -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Logo -->
+            <div>
+                <img src="../assets/imgs/shared/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+            </div>
+
+            <!-- Contact Form -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs mb-1">Tu e-mail *</label>
+                        <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                        <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1">Mensaje*</label>
+                        <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    </div>
+                    <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Links & Social -->
+            <div class="space-y-8 ml-20">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                    <a href="#" class="flex items-center gap-2 group">
+                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                        <span class="text-sm font-bold">Youtube</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" width="200px" height="200px" viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve">
+                                <g>
+                                    <path d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z"/>
+                                    <path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8   c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z"/>
+                                    <path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8   c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 24 24">
+                                <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="200px" width="200px" version="1.1" id="Layer_1" viewBox="-143 145 512 512" xml:space="preserve">
+                                <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z   M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7  c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4  c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6  c35.5,0,63.3,23,63.3,72.4V508.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+            <p>© 2026 Awaq ONG</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="hover:text-white">Políticas de privacidad</a>
+                <a href="#" class="hover:text-white">Políticas de Cookies</a>
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+            </div>
+        </div>
+    </footer> 
+
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
