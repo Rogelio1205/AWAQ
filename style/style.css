@@ -109,3 +109,16 @@ body {
     justify-content: center;
     backdrop-filter: blur(4px);
 }
+.custom-radio:checked + label {
+    border-color: #0e7490;
+    background-color: #f0fdff;
+}
+.custom-radio:checked + label .check-mark {
+    opacity: 1;
+}
+.custom-radio:checked + label .radio-circle {
+    border-color: #0e7490;
+}
+.text-gray-600-mb-1 {
+    padding-bottom: 20px;
+}
