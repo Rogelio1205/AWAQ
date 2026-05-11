@@ -73,7 +73,7 @@ congressForm.addEventListener('submit', (e) => {
     e.preventDefault();
     if (btnEnviar.classList.contains('ready')) {
         setTimeout(() => {
-            window.location.href = 'formularioCompletado/index.html';
+            window.location.href = 'pages/formularioCompletado.html';
         }, 2000);
     }
 });
