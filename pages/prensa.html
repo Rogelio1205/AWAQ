@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias - Awaq</title>
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2D3748;
+        }
+        .btn-pink { background-color: #B83280; }
+        .btn-teal { background-color: #008094; }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+        .filter-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234A5568'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header / Navbar -->
+    <nav class="bg-white py-4 px-6 md:px-12 flex items-center justify-between top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-2 translate-x-20">
+            <img src="../assets/imgs/shared/logoSF.png" alt="Awaq Logo" class="h-10">
+        </div>
+        
+        <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="hover:text-cyan-700">Agenda</a>
+            <a href="#" class="hover:text-cyan-700">Líneas temáticas</a>
+            <a href="#" class="hover:text-cyan-700">Patrocinadores</a>
+            <a href="#" class="hover:text-cyan-700 flex items-center gap-1">
+                <span class="text-yellow-500">★</span> Manifiesto 21CEO
+            </a>
+            <a href="#" class="hover:text-cyan-700">Marketplace</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-sm cursor-pointer hover:bg-gray-50">
+                <span>ES</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </div>
+            <button class="btn-pink text-white px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide">
+                Quiero asistir
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Noticias -->
+    <section class="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-[#1A365D] mb-6">Noticias</h1>
+            <p class="text-gray-500 text-lg leading-relaxed max-w-lg">
+                Descubre lo que dicen de nosotros en nuestro Centro de ICEO de Comunicaciones y Repositorio Multimedia.
+            </p>
+        </div>
+        <div class="md:w-1/2 flex justify-end">
+            <div class="relative">
+                <div class="absolute -inset-4 bg-blue-100 rounded-[2rem] rotate-3 -z-10"></div>
+                <img src="https://images.unsplash.com/photo-1532509854226-a2d9d8e66f8e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Noticias Awaq" class="w-80 h-48 object-cover rounded-[2rem] shadow-xl rotate-1">
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class=" py-10 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-center text-xl font-bold text-gray-700 mb-8">Entérate de las últimas noticias</h2>
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <span class="text-sm font-medium text-gray-500">Filtrar por:</span>
+                <select class="filter-select min-w-[180px] px-4 py-2 rounded-full border border-gray-200 bg-white text-sm focus:outline-none focus:border-teal-500">
+                    <option>Canales</option>
+                    <option>Radio</option>
+                    <option>Streaming</option>
+                    <option>Prensa</option>
+                </select>
+                <select class="filter-select min-w-[180px] px-4 py-2 rounded-full border border-gray-200 bg-white text-sm focus:outline-none focus:border-teal-500">
+                    <option>Mes</option>
+                    <option>Enero</option>
+                    <option>Febrero</option>
+                    <option>Marzo</option>
+                    <option>Abril</option>
+                    <option>Mayo</option>
+                    <option>Junio</option>
+                    <option>Julio</option>
+                    <option>Agosto</option>
+                    <option>Septiembre</option>
+                    <option>Octubre</option>
+                    <option>Noviembre</option>
+                    <option>Diciembre</option>
+                </select>
+                <button class="p-2 text-teal-600 hover:bg-teal-50 rounded-full transition-colors" title="Limpiar filtros">
+                    <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Listado de Noticias -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <!-- Noticia 1 -->
+            <div class="group cursor-pointer bg-white p-5 rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-[2.5rem] mb-6">
+                    <img src="https://images.unsplash.com/photo-1543269664-7eef42226a21?auto=format&fit=crop&q=80&w=500" alt="Noticia" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-4 left-6 bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Radio</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A365D] mb-3 leading-snug">Comienza el camino hacia el 2º ICEO - Latam.</h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-3">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos de diseño...</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-400 font-medium">2024/07/20</span>
+                    <a href="#" class="text-teal-600 font-bold text-xs flex items-center gap-1 hover:gap-2 transition-all">Ver noticia <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Noticia 2 -->
+            <div class="group cursor-pointer bg-white p-5 rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-[2.5rem] mb-6">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500" alt="Noticia" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-4 left-6 bg-teal-100 text-teal-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Streaming</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A365D] mb-3 leading-snug">Comienza el camino hacia el 2º ICEO - Latam.</h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-3">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos de diseño...</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-400 font-medium">2024/07/20</span>
+                    <a href="#" class="text-teal-600 font-bold text-xs flex items-center gap-1 hover:gap-2 transition-all">Ver noticia <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Noticia 3 -->
+            <div class="group cursor-pointer bg-white p-5 rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-[2.5rem] mb-6">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=500" alt="Noticia" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-4 left-6 bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Redes Sociales</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A365D] mb-3 leading-snug">Comienza el camino hacia el 2º ICEO - Latam.</h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-3">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos de diseño...</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-400 font-medium">2024/07/20</span>
+                    <a href="#" class="text-teal-600 font-bold text-xs flex items-center gap-1 hover:gap-2 transition-all">Ver noticia <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Noticia 4 -->
+            <div class="group cursor-pointer bg-white p-5 rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-[2.5rem] mb-6">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500" alt="Noticia" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-4 left-6 bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Redes Sociales</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A365D] mb-3 leading-snug">Comienza el camino hacia el 2º ICEO - Latam.</h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-3">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos de diseño...</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-400 font-medium">2024/07/20</span>
+                    <a href="#" class="text-teal-600 font-bold text-xs flex items-center gap-1 hover:gap-2 transition-all">Ver noticia <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+            
+            <!-- Noticia 5 -->
+            <div class="group cursor-pointer bg-white p-5 rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-[2.5rem] mb-6">
+                    <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80&w=500" alt="Noticia" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-4 left-6 bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Redes Sociales</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A365D] mb-3 leading-snug">Comienza el camino hacia el 2º ICEO - Latam.</h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-3">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos de diseño...</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-400 font-medium">2024/07/20</span>
+                    <a href="#" class="text-teal-600 font-bold text-xs flex items-center gap-1 hover:gap-2 transition-all">Ver noticia <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Noticia 6 -->
+            <div class="group cursor-pointer bg-white p-5 rounded-lg shadow-lg">
+                <div class="relative overflow-hidden rounded-[2.5rem] mb-6">
+                    <img src="https://images.unsplash.com/photo-1543269664-7eef42226a21?auto=format&fit=crop&q=80&w=500" alt="Noticia" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <span class="absolute bottom-4 left-6 bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase">Redes Sociales</span>
+                </div>
+                <h3 class="text-xl font-bold text-[#1A365D] mb-3 leading-snug">Comienza el camino hacia el 2º ICEO - Latam.</h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-3">Lorem ipsum es el texto que se usa habitualmente en diseño gráfico en demostraciones de tipografías o de bocetos de diseño...</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-400 font-medium">2024/07/20</span>
+                    <a href="#" class="text-teal-600 font-bold text-xs flex items-center gap-1 hover:gap-2 transition-all">Ver noticia <i data-lucide="arrow-right" class="w-3 h-3"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Estado Sin Resultados (Basado en la segunda imagen) -->
+    <section class="max-w-7xl mx-auto px-6 py-12 hidden">
+        <div class="bg-white rounded-[3rem] p-16 text-center border-2 border-dashed border-gray-100">
+            <div class="mb-6 inline-block">
+                <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i data-lucide="search-x" class="w-12 h-12 text-blue-200"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-[#1A365D] mb-2">Sin resultados</h3>
+                <p class="text-gray-500 max-w-sm mx-auto">Parece que no tenemos ninguna noticia con los filtros de búsqueda introducidos.</p>
+            </div>
+            <div>
+                <button class="px-8 py-3 rounded-full border-2 border-teal-600 text-teal-600 font-bold text-xs uppercase tracking-widest hover:bg-teal-600 hover:text-white transition-all">
+                    Borrar filtros
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Social Media -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="p-8 md:p-12 flex flex-col lg:flex-row items-center gap-12 relative overflow-hidden">
+            <div class="flex justify-between gap-10 :w-1/2 relative z-10">
+                <div>
+                    <img src="../assets/imgs/shared/followus.png" alt="">
+                </div>
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-[#1A365D] mb-4">¡Pásate por nuestras Redes Sociales y síguenos!</h3>
+                    <p class="text-gray-600 mb-8 max-w-md">Publicamos contenido acerca de la labor que hacemos, podrás conocer nuestros proyectos y a nosotros más a fondo.</p>
+                    
+                    <div class="flex flex-wrap gap-6 font-bold text-teal-600">
+                        <a href="#" class="flex items-center gap-2 hover:text-pink-600 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i> Instagram</a>
+                        <a href="#" class="flex items-center gap-2 hover:text-blue-600 transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i> Facebook</a>
+                        <a href="#" class="flex items-center gap-2 hover:text-blue-800 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waves Decoration -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" class="-mt-80 block" >
+        <path fill="#A7D8F0" fill-opacity="1" d="M 0 500 L 0 368.38683022177975 C 42.35294117647059 368.38683022177975 42.35294117647059 391.0122426421185 84.70588235294117 391.0122426421185 C 127.05882352941177 391.0122426421185 127.05882352941177 373.63906704709734 169.41176470588235 373.63906704709734 C 211.76470588235293 373.63906704709734 211.76470588235293 356.856277265324 254.11764705882354 356.856277265324 C 296.47058823529414 356.856277265324 296.47058823529414 430.0962213834589 338.8235294117647 430.0962213834589 C 381.17647058823525 430.0962213834589 381.17647058823525 358.44978054230523 423.52941176470586 358.44978054230523 C 465.88235294117646 358.44978054230523 465.88235294117646 387.77497836663315 508.2352941176471 387.77497836663315 C 550.5882352941176 387.77497836663315 550.5882352941176 385.68093964808213 592.9411764705882 385.68093964808213 C 635.2941176470588 385.68093964808213 635.2941176470588 409.2788834956991 677.6470588235294 409.2788834956991 C 720 409.2788834956991 720 352.20592746904003 762.3529411764706 352.20592746904003 C 804.7058823529412 352.20592746904003 804.7058823529412 416.669746269325 847.0588235294117 416.669746269325 C 889.4117647058823 416.669746269325 889.4117647058823 445.4575643981934 931.7647058823529 445.4575643981934 C 974.1176470588235 445.4575643981934 974.1176470588235 387.2670653698333 1016.4705882352941 387.2670653698333 C 1058.8235294117649 387.2670653698333 1058.8235294117649 374.9026260030041 1101.1764705882354 374.9026260030041 C 1143.5294117647059 374.9026260030041 1143.5294117647059 432.4825615644477 1185.8823529411764 432.4825615644477 C 1228.2352941176468 432.4825615644477 1228.2352941176468 425.4675525645871 1270.5882352941176 425.4675525645871 C 1312.9411764705883 425.4675525645871 1312.9411764705883 372.77695203890744 1355.2941176470588 372.77695203890744 C 1397.6470588235293 372.77695203890744 1397.6470588235293 396.3531364413302 1440 396.3531364413302 L 1440 500 Z"></path>
+        <path fill="#4076b5" fill-opacity="1" d="M 0 500 L 0 405.06010314524246 C 60 405.06010314524246 60 382.8700307820691 120 382.8700307820691 C 180 382.8700307820691 180 429.9718148959437 240 429.9718148959437 C 300 429.9718148959437 300 427.60237817486995 360 427.60237817486995 C 420 427.60237817486995 420 380.78224251600204 480 380.78224251600204 C 540 380.78224251600204 540 421.27531861737225 600 421.27531861737225 C 660 421.27531861737225 660 369.84832524571175 720 369.84832524571175 C 780 369.84832524571175 780 407.3549444411037 840 407.3549444411037 C 900 407.3549444411037 900 413.33418116977555 960 413.33418116977555 C 1020 413.33418116977555 1020 425.26447789072336 1080 425.26447789072336 C 1140 425.26447789072336 1140 419.54943591952315 1200 419.54943591952315 C 1260 419.54943591952315 1260 436.8618440411774 1320 436.8618440411774 C 1380 436.8618440411774 1380 394.14096436416 1440 394.14096436416 L 1440 500 Z"></path>
+        <path fill="#0a3d4d" fill-opacity="1" d="M 0 500 L 0 440.4785493351301 C 42.35294117647059 440.4785493351301 42.35294117647059 437.9195103308848 84.70588235294117 437.9195103308848 C 127.05882352941177 437.9195103308848 127.05882352941177 402.00673628503864 169.41176470588235 402.00673628503864 C 211.76470588235293 402.00673628503864 211.76470588235293 413.6142476538953 254.11764705882354 413.6142476538953 C 296.47058823529414 413.6142476538953 296.47058823529414 447.78900751705805 338.8235294117647 447.78900751705805 C 381.17647058823525 447.78900751705805 381.17647058823525 387.87328057740524 423.52941176470586 387.87328057740524 C 465.88235294117646 387.87328057740524 465.88235294117646 428.642523023409 508.2352941176471 428.642523023409 C 550.5882352941176 428.642523023409 550.5882352941176 470.49322779419526 592.9411764705882 470.49322779419526 C 635.2941176470588 470.49322779419526 635.2941176470588 419.32586912842453 677.6470588235294 419.32586912842453 C 720 419.32586912842453 720 474.76604352948925 762.3529411764706 474.76604352948925 C 804.7058823529412 474.76604352948925 804.7058823529412 450.5494943724261 847.0588235294117 450.5494943724261 C 889.4117647058823 450.5494943724261 889.4117647058823 448.9961674530423 931.7647058823529 448.9961674530423 C 974.1176470588235 448.9961674530423 974.1176470588235 399.5019724410031 1016.4705882352941 399.5019724410031 C 1058.8235294117649 399.5019724410031 1058.8235294117649 443.20265085505525 1101.1764705882354 443.20265085505525 C 1143.5294117647059 443.20265085505525 1143.5294117647059 468.03143000068303 1185.8823529411764 468.03143000068303 C 1228.2352941176468 468.03143000068303 1228.2352941176468 449.7320733977904 1270.5882352941176 449.7320733977904 C 1312.9411764705883 449.7320733977904 1312.9411764705883 446.9516475883938 1355.2941176470588 446.9516475883938 C 1397.6470588235293 446.9516475883938 1397.6470588235293 476.3998288487346 1440 476.3998288487346 L 1440 500 Z"></path>
+    </svg>
+    
+    <!-- Footer -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Logo -->
+            <div>
+                <img src="../assets/imgs/shared/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+            </div>
+
+            <!-- Contact Form -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs mb-1">Tu e-mail *</label>
+                        <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                        <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1">Mensaje*</label>
+                        <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    </div>
+                    <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Links & Social -->
+            <div class="space-y-8 ml-20">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                    <a href="#" class="flex items-center gap-2 group">
+                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                        <span class="text-sm font-bold">Youtube</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" width="200px" height="200px" viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve">
+                                <g>
+                                    <path d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z"/>
+                                    <path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8   c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z"/>
+                                    <path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8   c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 24 24">
+                                <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="200px" width="200px" version="1.1" id="Layer_1" viewBox="-143 145 512 512" xml:space="preserve">
+                                <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z   M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7  c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4  c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6  c35.5,0,63.3,23,63.3,72.4V508.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+            <p>© 2026 Awaq ONG</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="hover:text-white">Políticas de privacidad</a>
+                <a href="#" class="hover:text-white">Políticas de Cookies</a>
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+            </div>
+        </div>
+    </footer> 
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
