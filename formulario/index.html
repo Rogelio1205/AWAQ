@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de asistencia al Congreso - Awaq</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <nav class="bg-white py-4 px-6 md:px-12 flex items-center justify-between top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-2 translate-x-20">
+            <img src="/assets/shared/logoSF.png" alt="Awaq Logo" class="h-10">
+        </div>
+        
+        <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+            <a href="#" class="hover:text-cyan-700">Agenda</a>
+            <a href="#" class="hover:text-cyan-700">Líneas temáticas</a>
+            <a href="#" class="hover:text-cyan-700">Patrocinadores</a>
+            <a href="#" class="hover:text-cyan-700 flex items-center gap-1">
+                <span class="text-yellow-500">★</span> Manifiesto 21CEO
+            </a>
+            <a href="#" class="hover:text-cyan-700">Marketplace</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-sm cursor-pointer hover:bg-gray-50">
+                <span>ES</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </div>
+            <button class="btn-pink text-white px-5 py-2 rounded-full text-xs md:text-sm font-bold uppercase tracking-wide">
+                Quiero asistir
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-12 pb-20 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h1 class="serif-font text-4xl md:text-5xl text-custom-teal mb-6">Solicitud de asistencia al Congreso</h1>
+            <p class="text-gray-600 mb-2">Rellena los siguientes datos para solicitar tu plaza en el congreso.</p>
+            <p class="text-xs text-cyan-700 font-medium px-4 mb-12 italic">
+                * El aforo a este congreso es limitado, la solicitud de asistencia no garantiza la plaza. Recibirás confirmación en un plazo de 24h vía e-mail.
+            </p>
+
+            <!-- Form Card -->
+            <div class="bg-white rounded-[40px] p-8 md:p-12 max-w-2xl mx-auto card-shadow text-left">
+                
+                <form id="congress-form">
+                    <!-- STEP 1 -->
+                    <div id="first-step">
+                        <h2 class="text-2xl font-bold text-center mb-8">¿Qué necesitas?</h2>
+                        
+                        <div class="space-y-4">
+                            <p class="text-sm text-cyan-700 mb-2 font-semibold">Selecciona una de estas opciones *</p>
+                            
+                            <div class="option-item">
+                                <input type="radio" id="op1" name="request_type" value="asistencia" class="hidden custom-radio main-option" required>
+                                <label for="op1" class="flex items-center gap-4 p-4 border rounded-xl cursor-pointer hover:bg-gray-50 transition-all border-gray-200">
+                                    <div class="w-5 h-5 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                        <div class="w-2.5 h-2.5 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-700">Quiero solicitar mi asistencia al congreso</span>
+                                </label>
+                            </div>
+
+                            <div class="option-item">
+                                <input type="radio" id="op2" name="request_type" value="ponente" class="hidden custom-radio main-option">
+                                <label for="op2" class="flex items-center gap-4 p-4 border rounded-xl cursor-pointer hover:bg-gray-50 transition-all border-gray-200">
+                                    <div class="w-5 h-5 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                        <div class="w-2.5 h-2.5 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-700">Quiero inscribirme como ponente</span>
+                                </label>
+                            </div>
+
+                            <div class="option-item">
+                                <input type="radio" id="op3" name="request_type" value="colaborador" class="hidden custom-radio main-option">
+                                <label for="op3" class="flex items-center gap-4 p-4 border rounded-xl cursor-pointer hover:bg-gray-50 transition-all border-gray-200">
+                                    <div class="w-5 h-5 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                        <div class="w-2.5 h-2.5 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                    </div>
+                                    <span class="text-sm text-gray-700">Quiero proponer una colaboración | ser aliado</span>
+                                </label>
+                            </div>
+
+                            <p class="text-[10px] italic text-gray-400 mt-2">Requerido</p>
+                        </div>
+
+                        <!-- Botón continuar -->
+                        <div id="continuar-container" class="mt-10 flex justify-center">
+                            <button type="button" id="btn-continuar" class="btn-continuar border-2 px-8 py-3 rounded-full flex items-center gap-2 font-bold text-sm tracking-widest uppercase">
+                                Continuar
+                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2 -->
+                    <div id="second-step" class="mt-8 pt-8 border-t border-gray-100">
+                        <div id="data-fields" class="space-y-6">
+                            <h3 class="text-xl font-bold text-center text-custom-teal mb-8">Déjanos tus datos para ponernos en contacto contigo</h3>
+                            
+                            <div>
+                                <label class="block text-sm font-semibold text-cyan-800 mb-2">E-mail *</label>
+                                <input type="email" name="email" placeholder="ejemplo@correo.com" class="form-input step2-input" required>
+                                <p class="text-[10px] text-cyan-600 mt-1 italic">Requerido</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-cyan-800 mb-2">Nombre y apellidos *</label>
+                                <input type="text" name="fullname" placeholder="Nombre completo" class="form-input step2-input" required>
+                                <p class="text-[10px] text-cyan-600 mt-1 italic">Requerido</p>
+                            </div>
+
+                            <div>
+                                <p class="text-sm font-semibold text-cyan-800 mb-4">Tipo de organización *</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <!-- Tipos de Organización -->
+                                    <div class="relative">
+                                        <input type="radio" id="t1" name="org_type" value="universidad" class="hidden custom-radio step2-radio" required>
+                                        <label for="t1" class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer text-xs text-gray-600 hover:bg-gray-50 border-gray-200">
+                                            <div class="w-4 h-4 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                                <div class="w-2 h-2 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                            </div>
+                                            Universidad
+                                        </label>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="radio" id="t2" name="org_type" value="empresa" class="hidden custom-radio step2-radio">
+                                        <label for="t2" class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer text-xs text-gray-600 hover:bg-gray-50 border-gray-200">
+                                            <div class="w-4 h-4 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                                <div class="w-2 h-2 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                            </div>
+                                            Empresa privada
+                                        </label>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="radio" id="t3" name="org_type" value="administracion" class="hidden custom-radio step2-radio">
+                                        <label for="t3" class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer text-xs text-gray-600 hover:bg-gray-50 border-gray-200">
+                                            <div class="w-4 h-4 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                                <div class="w-2 h-2 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                            </div>
+                                            Administración pública
+                                        </label>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="radio" id="t4" name="org_type" value="independiente" class="hidden custom-radio step2-radio">
+                                        <label for="t4" class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer text-xs text-gray-600 hover:bg-gray-50 border-gray-200">
+                                            <div class="w-4 h-4 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center transition-colors">
+                                                <div class="w-2 h-2 bg-cyan-700 rounded-full opacity-0 check-mark transition-opacity"></div>
+                                            </div>
+                                            Persona independiente
+                                        </label>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="radio" id="t5" name="org_type" class="hidden custom-radio">
+                                        <label for="t5" class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer text-xs text-gray-600">
+                                            <div class="w-4 h-4 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center">
+                                                <div class="w-2 h-2 bg-custom-teal rounded-full opacity-0 check-mark"></div>
+                                            </div>
+                                            Asociación / ONG
+                                        </label>
+                                    </div>
+                                    <div class="relative">
+                                        <input type="radio" id="t6" name="org_type" class="hidden custom-radio">
+                                        <label for="t6" class="flex items-center gap-3 p-3 border rounded-xl cursor-pointer text-xs text-gray-600">
+                                            <div class="w-4 h-4 border-2 rounded-full radio-circle border-gray-300 flex items-center justify-center">
+                                                <div class="w-2 h-2 bg-custom-teal rounded-full opacity-0 check-mark"></div>
+                                            </div>
+                                            Otra organización
+                                        </label>
+                                    </div>
+                                </div>
+                                <p class="text-[10px] text-cyan-600 mt-2 italic">Requerido</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-cyan-800 mb-2">Nombre de tu organización *</label>
+                                <input type="text" name="org_name" placeholder="Nombre de la institución" class="form-input step2-input" required>
+                                <p class="text-[10px] text-cyan-600 mt-1 italic">Requerido</p>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-cyan-800 mb-2">Tu puesto dentro de la organización *</label>
+                                <input type="text" name="job_title" placeholder="Cargo o rol" class="form-input step2-input" required>
+                                <p class="text-[10px] text-cyan-600 mt-1 italic">Requerido</p>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div>
+                                <label class="block text-sm font-semibold text-cyan-800 mb-2">Nº Teléfono *</label>
+                                <div class="flex gap-2">
+                                    <!-- Selector de país con código -->
+                                    <div class="relative">
+                                        <button type="button" id="phone-country-btn" class="flex items-center gap-2 border rounded-xl px-3 py-2 text-xs cursor-pointer bg-white hover:bg-gray-50 transition-colors border-gray-200 h-full min-w-[90px]">
+                                            <img id="phone-flag" src="https://flagcdn.com/w20/un.png" class="w-5 h-4 object-cover rounded-sm">
+                                            <span id="phone-code">+--</span>
+                                            <i data-lucide="chevron-down" class="w-3 h-3 ml-auto text-gray-400"></i>
+                                        </button>
+                                        <!-- Dropdown -->
+                                        <div id="phone-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-72 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                            <div class="p-2 border-b">
+                                                <input type="text" id="phone-search" placeholder="Buscar país..." class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                            </div>
+                                            <ul id="phone-country-list" class="max-h-52 overflow-y-auto text-xs">
+                                                <li class="px-4 py-2 text-gray-400 italic">Cargando países...</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <input type="tel" name="phone" id="phone-input" placeholder="000 000 0000" class="form-input flex-grow step2-input" required>
+                                </div>
+                                <p class="text-[10px] text-cyan-600 mt-1 italic">Requerido</p>
+                            </div>
+
+                            <!-- Ubicación: País → Estado → Ciudad -->
+                            <div>
+                                <label class="block text-sm font-semibold text-cyan-800 mb-2">Ubicación</label>
+
+                                <!-- Selector País -->
+                                <div class="relative mb-3">
+                                    <button type="button" id="country-btn" class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
+                                        <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                        <span id="country-label" class="text-gray-400 flex-grow">Selecciona un país</span>
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                    </button>
+                                    <div id="country-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                        <div class="p-2 border-b">
+                                            <input type="text" id="country-search" placeholder="Buscar país..." class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                        </div>
+                                        <ul id="country-list" class="max-h-52 overflow-y-auto text-xs">
+                                            <li class="px-4 py-2 text-gray-400 italic">Cargando...</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div id="location-row" class="hidden grid grid-cols-2 gap-3">
+                                    <!-- Selector Estado (oculto hasta elegir país) -->
+                                    <div id="state-container">
+                                        <div class="relative">
+                                            <button type="button" id="state-btn" class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
+                                                <i data-lucide="map" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                                <span id="state-label" class="text-gray-400 flex-grow">Selecciona region/estado</span>
+                                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                            </button>
+                                            <div id="state-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                                <div class="p-2 border-b">
+                                                    <input type="text" id="state-search" placeholder="Buscar región..." class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                                </div>
+                                                <ul id="state-list" class="max-h-52 overflow-y-auto text-xs">
+                                                    <li class="px-4 py-2 text-gray-400 italic">Cargando...</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Selector Ciudad (oculto hasta elegir estado) -->
+                                    <div id="city-container">
+                                        <div class="relative">
+                                            <button type="button" id="city-btn" class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
+                                                <i data-lucide="building" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                                <span id="city-label" class="text-gray-400 flex-grow">Selecciona localidad</span>
+                                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                            </button>
+                                            <div id="city-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                                <div class="p-2 border-b">
+                                                    <input type="text" id="city-search" placeholder="Buscar ciudad..." class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                                </div>
+                                                <ul id="city-list" class="max-h-52 overflow-y-auto text-xs">
+                                                    <li class="px-4 py-2 text-gray-400 italic">Cargando...</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Inputs hidden para guardar los valores -->
+                                <input type="hidden" name="country" id="country-value">
+                                <input type="hidden" name="state" id="state-value">
+                                <input type="hidden" name="city" id="city-value">
+
+                                <!-- oculto -->
+                                <div id="extra-fields" class="hidden">
+
+                                    <!-- Mensaje -->
+                                    <div>
+                                        <label class="block text-sm font-semibold text-cyan-800 mb-2 mt-5">Mensaje</label>
+                                        <textarea name="message" placeholder="Escribe tu mensaje..." rows="4" class="form-input step2-input"></textarea>
+                                        <p class="text-[10px] text-cyan-600 mt-1 italic">Opcional</p>
+                                    </div>
+
+                                    <!-- Checkboxes -->
+                                    <div class="space-y-3 mt-4">
+
+                                        <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-700">
+                                            <input type="checkbox" id="terms" class="mt-1 w-4 h-4 border-gray-300 rounded step2-check">
+                                            <span>
+                                                <span class="text-cyan-800 font-medium">*</span>
+                                                He leído y acepto las políticas de privacidad.
+                                                <span class="text-cyan-700">Requerido.</span>
+                                            </span>
+                                        </label>
+
+                                        <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-700">
+                                            <input type="checkbox" id="newsletter" class="mt-1 w-4 h-4 border-gray-300 rounded">
+                                            <span>
+                                                Acepto recibir comunicaciones por correo electrónico de Awaq ONGD.
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <p class="text-[10px] text-cyan-600 mt-1 italic">Requerido</p>
+                            </div>
+
+                            <div class="mt-12 flex flex-col items-center gap-4">
+                                <button type="submit" onclick="" id="btn-enviar" class="btn-enviar">
+                                    Enviar
+                                </button>
+                                <p id="validation-msg" class="text-[11px] text-gray-400">Completa todos los campos para habilitar el envío</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Ondas -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" class="-mt-80">
+        <path fill="#A7D8F0" fill-opacity="1" d="M 0 500 L 0 368.38683022177975 C 42.35294117647059 368.38683022177975 42.35294117647059 391.0122426421185 84.70588235294117 391.0122426421185 C 127.05882352941177 391.0122426421185 127.05882352941177 373.63906704709734 169.41176470588235 373.63906704709734 C 211.76470588235293 373.63906704709734 211.76470588235293 356.856277265324 254.11764705882354 356.856277265324 C 296.47058823529414 356.856277265324 296.47058823529414 430.0962213834589 338.8235294117647 430.0962213834589 C 381.17647058823525 430.0962213834589 381.17647058823525 358.44978054230523 423.52941176470586 358.44978054230523 C 465.88235294117646 358.44978054230523 465.88235294117646 387.77497836663315 508.2352941176471 387.77497836663315 C 550.5882352941176 387.77497836663315 550.5882352941176 385.68093964808213 592.9411764705882 385.68093964808213 C 635.2941176470588 385.68093964808213 635.2941176470588 409.2788834956991 677.6470588235294 409.2788834956991 C 720 409.2788834956991 720 352.20592746904003 762.3529411764706 352.20592746904003 C 804.7058823529412 352.20592746904003 804.7058823529412 416.669746269325 847.0588235294117 416.669746269325 C 889.4117647058823 416.669746269325 889.4117647058823 445.4575643981934 931.7647058823529 445.4575643981934 C 974.1176470588235 445.4575643981934 974.1176470588235 387.2670653698333 1016.4705882352941 387.2670653698333 C 1058.8235294117649 387.2670653698333 1058.8235294117649 374.9026260030041 1101.1764705882354 374.9026260030041 C 1143.5294117647059 374.9026260030041 1143.5294117647059 432.4825615644477 1185.8823529411764 432.4825615644477 C 1228.2352941176468 432.4825615644477 1228.2352941176468 425.4675525645871 1270.5882352941176 425.4675525645871 C 1312.9411764705883 425.4675525645871 1312.9411764705883 372.77695203890744 1355.2941176470588 372.77695203890744 C 1397.6470588235293 372.77695203890744 1397.6470588235293 396.3531364413302 1440 396.3531364413302 L 1440 500 Z"></path>
+        <path fill="#4076b5" fill-opacity="1" d="M 0 500 L 0 405.06010314524246 C 60 405.06010314524246 60 382.8700307820691 120 382.8700307820691 C 180 382.8700307820691 180 429.9718148959437 240 429.9718148959437 C 300 429.9718148959437 300 427.60237817486995 360 427.60237817486995 C 420 427.60237817486995 420 380.78224251600204 480 380.78224251600204 C 540 380.78224251600204 540 421.27531861737225 600 421.27531861737225 C 660 421.27531861737225 660 369.84832524571175 720 369.84832524571175 C 780 369.84832524571175 780 407.3549444411037 840 407.3549444411037 C 900 407.3549444411037 900 413.33418116977555 960 413.33418116977555 C 1020 413.33418116977555 1020 425.26447789072336 1080 425.26447789072336 C 1140 425.26447789072336 1140 419.54943591952315 1200 419.54943591952315 C 1260 419.54943591952315 1260 436.8618440411774 1320 436.8618440411774 C 1380 436.8618440411774 1380 394.14096436416 1440 394.14096436416 L 1440 500 Z"></path>
+        <path fill="#0a3d4d" fill-opacity="1" d="M 0 500 L 0 440.4785493351301 C 42.35294117647059 440.4785493351301 42.35294117647059 437.9195103308848 84.70588235294117 437.9195103308848 C 127.05882352941177 437.9195103308848 127.05882352941177 402.00673628503864 169.41176470588235 402.00673628503864 C 211.76470588235293 402.00673628503864 211.76470588235293 413.6142476538953 254.11764705882354 413.6142476538953 C 296.47058823529414 413.6142476538953 296.47058823529414 447.78900751705805 338.8235294117647 447.78900751705805 C 381.17647058823525 447.78900751705805 381.17647058823525 387.87328057740524 423.52941176470586 387.87328057740524 C 465.88235294117646 387.87328057740524 465.88235294117646 428.642523023409 508.2352941176471 428.642523023409 C 550.5882352941176 428.642523023409 550.5882352941176 470.49322779419526 592.9411764705882 470.49322779419526 C 635.2941176470588 470.49322779419526 635.2941176470588 419.32586912842453 677.6470588235294 419.32586912842453 C 720 419.32586912842453 720 474.76604352948925 762.3529411764706 474.76604352948925 C 804.7058823529412 474.76604352948925 804.7058823529412 450.5494943724261 847.0588235294117 450.5494943724261 C 889.4117647058823 450.5494943724261 889.4117647058823 448.9961674530423 931.7647058823529 448.9961674530423 C 974.1176470588235 448.9961674530423 974.1176470588235 399.5019724410031 1016.4705882352941 399.5019724410031 C 1058.8235294117649 399.5019724410031 1058.8235294117649 443.20265085505525 1101.1764705882354 443.20265085505525 C 1143.5294117647059 443.20265085505525 1143.5294117647059 468.03143000068303 1185.8823529411764 468.03143000068303 C 1228.2352941176468 468.03143000068303 1228.2352941176468 449.7320733977904 1270.5882352941176 449.7320733977904 C 1312.9411764705883 449.7320733977904 1312.9411764705883 446.9516475883938 1355.2941176470588 446.9516475883938 C 1397.6470588235293 446.9516475883938 1397.6470588235293 476.3998288487346 1440 476.3998288487346 L 1440 500 Z"></path>
+    </svg>
+
+    <!-- Footer -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <!-- Logo -->
+            <div>
+                <img src="/assets/shared/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+            </div>
+
+            <!-- Contact Form -->
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs mb-1">Tu e-mail *</label>
+                        <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                        <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1">Mensaje*</label>
+                        <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    </div>
+                    <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Links & Social -->
+            <div class="space-y-8 md:pl-12">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                    <a href="#" class="flex items-center gap-2 group">
+                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                        <span class="text-sm font-bold">Youtube</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" width="800px" height="auto" viewBox="0 0 32 32" id="Camada_1" version="1.1" xml:space="preserve">
+                                <g>
+                                    <path d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z"/>
+                                    <path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8   c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z"/>
+                                    <path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8   c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="800px" height="auto" viewBox="0 0 24 24">
+                                <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" height="auto" width="800px" version="1.1" id="Layer_1" viewBox="-143 145 512 512" xml:space="preserve">
+                                <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z   M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7  c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4  c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6  c35.5,0,63.3,23,63.3,72.4V508.1z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+            <p>© 2026 Awaq ONG</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="hover:text-white">Políticas de privacidad</a>
+                <a href="#" class="hover:text-white">Políticas de Cookies</a>
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal">
+        <div class="bg-white p-10 rounded-[30px] text-center max-w-sm mx-6 card-shadow">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-10 h-10"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-custom-teal mb-2">¡Solicitud recibida!</h2>
+            <p class="text-gray-600 text-sm mb-8">Hemos registrado tus datos correctamente. En breve nos pondremos en contacto contigo.</p>
+            <button onclick="location.reload()" class="btn-pink text-white px-8 py-3 rounded-full text-sm font-bold uppercase w-full">Cerrar</button>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="/js/formulario.js" defer></script>
+</body>
+</html>
