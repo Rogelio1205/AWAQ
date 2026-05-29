@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style/style.css">
+</head>
+<body class="bg-white">
+    <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
+    <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
+        </div>
+
+        <!-- Links desktop -->
+        <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
+            <a href="../index.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Inicio</a>
+            <a href="./congreso.html" class="hover:text-cyan-700 whitespace-nowrap text-cyan-700 text-sm">El congreso</a>
+            <a href="./programa.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Programa</a>
+            <a href="./aliados.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+            <a href="./prensa.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+            <a href="./Colabora.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
+            
+        </div>
+
+        <!-- Derecha -->
+        <div class="flex items-center gap-3">
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
+                <span>ES</span>
+                <i data-lucide="chevron-down" class="w-3 h-3"></i>
+            </div>
+            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario.html'">
+                Quiero asistir
+            </button>
+
+            <!-- Hamburguesa -->
+            <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menú mobile -->
+    <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
+        <a href="../index.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Inicio</a>
+        <a href="./congreso.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+        <a href="./programa.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Programa</a>
+        <a href="./aliados.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+        <a href="./prensa.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+        <a href="./Colabora.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
+
+        <div class="pt-3 border-t mt-2">
+            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario.html'">
+                Quiero asistir
+            </button>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+    }
+</script>
+<!-- HERO -->
+<section class="bg-[#7eb7b6]">
+<section class="max-w-7xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <h1 class="font-gloock text-[#09354E] text-5xl md:text-6xl leading-tight mb-5 font-semibold fade-up">
+                El Congreso
+            </h1>
+            <h2 class="text-gray-600 text-xl leading-relaxed mb-8 max-w-lg fade-up">
+                Una plataforma internacional para transformar conocimiento en acción por las fuentes hídricas
+            </h2>
+            <div class="flex items-center gap-4 text-sm md:text-base text-slate-600 font-medium flex-wra fade-up">
+                    <span>17, 18 y 19 de febrero 2027</span>
+                    <span class="w-2 h-2 rounded-full bg-pink-600"></span>
+                    <span class="text-[#000000]">Cali, Colombia</span>
+        </div>
+        </div>
+
+<div class="relative w-[488px] h-[234px] fade-up">
+    <div class="absolute inset-12 bg-[#4A86B8] rounded-2xl rotate-[-30deg] translate-x-20 translate-y-10 opacity-100"></div>
+    <div class="absolute inset-2 bg-blue-200 rounded-2xl rotate-[-15deg] translate-x-8 translate-y-1 opacity-100"></div>
+
+    <!-- Imagen principal (encima) -->
+    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/sedes-bogota.webp" class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-md rotate-[3deg] translate-x-8"/>
+
+</div>
+
+    </section>
+</section>
+    <!-- OBJETIVOS -->
+    <section class="relative overflow-hidden bg-custom-teal px-6 lg:px-12 py-20 text-white ">
+        <div style="line-height:0; position:absolute; top:0; left:0; width:100%;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block; transform:rotate(180deg);">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#7eb7b6"></path>
+        </svg>
+    </div>
+        <div class="max-w-7xl mx-auto fade-up">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 ">Objetivos</h2>
+                <p class="text-cyan-100 max-w-2xl mx-auto leading-relaxed">
+                    Impulsar la cooperación ambiental mediante innovación, liderazgo, tecnología y participación social.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <!-- Card -->
+                <article class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm hover:-translate-y-2 transition-all duration-300">
+                    <img
+                        src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Landing%20Page/objetivos/Frame%2031.png"
+                        class="w-full h-56 object-cover"
+                        alt="Objetivo"
+                    >
+
+                    <div class="p-7 space-y-4">
+                        <h3 class="text-xl font-bold leading-snug">
+                            Analizar y actualizar el estado real de los compromisos climáticos
+                        </h3>
+
+                        <p class="text-sm text-cyan-100 leading-relaxed">
+                            Revisar avances regionales y fortalecer estrategias de acción sostenible.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm hover:-translate-y-2 transition-all duration-300">
+                    <img
+                        src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Landing%20Page/objetivos/Group%2066.png"
+                        class="w-full h-56 object-cover"
+                        alt="Objetivo"
+                    >
+
+                    <div class="p-7 space-y-4">
+                        <h3 class="text-xl font-bold leading-snug">
+                            Visibilizar y fortalecer liderazgos para la justicia climática
+                        </h3>
+
+                        <p class="text-sm text-cyan-100 leading-relaxed">
+                            Espacios para conectar organizaciones, activistas y tomadores de decisión.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm hover:-translate-y-2 transition-all duration-300 md:col-span-2 xl:col-span-1">
+                    <img
+                        src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Landing%20Page/objetivos/Rectangle%20113.png"
+                        class="w-full h-56 object-cover"
+                        alt="Objetivo"
+                    >
+
+                    <div class="p-7 space-y-4">
+                        <h3 class="text-xl font-bold leading-snug">
+                            Conectar comunidad, tecnología y biodiversidad
+                        </h3>
+
+                        <p class="text-sm text-cyan-100 leading-relaxed">
+                            Integración entre innovación social y sostenibilidad para generar impacto ambiental.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div style="line-height:0; position:absolute; bottom:0; left:0; width:100%;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#ffffff"></path>
+        </svg>
+    </div>
+    </section>
+
+    <!-- AGENDA -->
+    <section class="bg-white px-6 lg:px-12 py-20 fade-up">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-custom-teal mb-4">
+                    Agenda y líneas temáticas
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-[320px_1fr] gap-8 items-start">
+                <!-- Timeline -->
+                <div class="space-y-4">
+                    <div class="bg-[#f7faf8] rounded-2xl p-5 border border-slate-200 flex gap-4 hover:shadow-lg transition-all">
+                        <div class="bg-[#1d4d4f] text-white rounded-xl px-4 py-3 text-center min-w-[70px]">
+                            <p class="text-xs uppercase">Feb</p>
+                            <p class="text-2xl font-bold">16</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-slate-500 mb-1">Conversatorio</p>
+                            <h3 class="font-bold text-custom-teal leading-snug">
+                                Análisis de los resultados de la COP16
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f7faf8] rounded-2xl p-5 border border-slate-200 flex gap-4 hover:shadow-lg transition-all">
+                        <div class="bg-[#7f8c8d] text-white rounded-xl px-4 py-3 text-center min-w-[70px]">
+                            <p class="text-xs uppercase">Feb</p>
+                            <p class="text-2xl font-bold">17</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-slate-500 mb-1">Workshop</p>
+                            <h3 class="font-bold text-custom-teal leading-snug">
+                                Mujeres líderes en organizaciones ambientales
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#f7faf8] rounded-2xl p-5 border border-slate-200 flex gap-4 hover:shadow-lg transition-all">
+                        <div class="bg-[#22331f] text-white rounded-xl px-4 py-3 text-center min-w-[70px]">
+                            <p class="text-xs uppercase">Feb</p>
+                            <p class="text-2xl font-bold">18</p>
+                        </div>
+
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-slate-500 mb-1">Intervención</p>
+                            <h3 class="font-bold text-custom-teal leading-snug">
+                                Tecnología y conservación ambiental
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video -->
+                <div class="rounded-[2rem] overflow-hidden shadow-2xl bg-slate-200 min-h-[420px] flex items-center justify-center">
+                    <div class="text-center space-y-4 px-8">
+                        <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto shadow-lg">
+                            <span class="text-4xl ml-1">▶</span>
+                        </div>
+
+                        <h3 class="text-4xl font-bold text-slate-700">VIDEO</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mt-12">
+                <button class="border border-[#0e7490] text-[#0e7490] px-6 py-3 rounded-full text-sm font-bold uppercase hover:bg-[#0e7490] hover:text-white transition-all" onclick="window.location.href='./lineastematicas.html'">
+                    Ver líneas temáticas
+                </button>
+
+                <button class="btn-pink text-white px-6 py-3 rounded-full text-sm font-bold uppercase" onclick="window.location.href='./programa.html'">
+                    Ver agenda
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- UBICACION -->
+    <section class="bg-[#f8fafc] px-6 lg:px-12 py-20 fade-up">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <img
+                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/imagen-universidad.webp"
+                    alt="Ubicación"
+                    class="rounded-[2rem] shadow-xl w-full h-full object-cover"
+                >
+            </div>
+
+            <div class="space-y-6">
+                <div>
+                    <h2 class="text-4xl font-bold text-custom-teal mb-2">Ubicación</h2>
+
+                    <div class="space-y-3 text-slate-600">
+                        <p class="font-semibold text-lg text-slate-800">
+                            Universidad de San Buenaventura
+                        </p>
+
+                        <p>Cali, Colombia</p>
+                        <p>16 al 18 febrero 2027</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-12">
+                    <button class="btn-pink text-white px-8 py-3 rounded-full text-sm font-bold uppercase" onclick="window.location.href='./sedeCongreso.html'">
+                        Ver Congreso
+                    </button>
+    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ICEO -->
+    <section class="bg-white px-6 lg:px-12 py-20 bg-[#76E2CC21] fade-up">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 order-2 lg:order-1">
+                <div>
+                    <h2 class="text-4xl font-bold text-custom-teal mb-5">El 2do ICEO</h2>
+
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        El Segundo Congreso Internacional de Organizaciones Ambientales reunió líderes, organizaciones y expertos de toda Latinoamérica.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Durante tres días se desarrollaron paneles, networking, intervenciones y espacios de colaboración enfocados en biodiversidad y sostenibilidad.
+                    </p>
+                </div>
+
+                <button class="btn-pink text-white px-7 py-3 rounded-full text-sm font-bold uppercase" onclick="window.location.href='./memoria2iceo.html'">
+                    Ver memoria
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 order-1 lg:order-2">
+                <img
+                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Quieres%20Ayudar.svg"
+                    class="rounded-3xl h-72 object-cover w-full"
+                    alt="Evento"
+                >
+
+                <img
+                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Mermoria%202ICEO/Foto%20Grupal%20post%20firma%20convenio.jpeg"
+                    class="rounded-3xl h-72 object-cover w-full mt-8"
+                    alt="Evento"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- DONACION -->
+    <section class=" px-6 lg:px-12 py-12 lg:py-20 relative overflow-hidden fade-up">
+        <div class="absolute bottom-0 left-0 w-full opacity-10">
+        </div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
+            <div class="flex justify-center lg:justify-start">
+                <img
+                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Mermoria%202ICEO/3ICEO/Aliados.png"
+                    class="rounded-[2rem] w-full max-w-sm lg:max-w-md shadow-2xl"
+                    alt="Ayuda"
+                >
+            </div>
+
+            <div class="space-y-5 text-center lg:text-left">
+                <h2 class="text-3xl lg:text-4xl font-bold text-custom-teal">
+                    ¿Quieres ayudar?
+                </h2>
+
+                <p class="text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Al donar, ayudas a fortalecer proyectos ambientales, educación sostenible y comunidades resilientes.
+                </p>
+
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <button class="border border-[#b33971] text-[#b33971] px-7 py-3 rounded-full text-sm font-bold uppercase hover:bg-[#b33971] hover:text-white transition-all" onclick="window.location.href='./formulario.html'">
+                        Quiero asistir
+                    </button>
+                    <button class="btn-pink text-white px-7 py-3 rounded-full text-sm font-bold uppercase" onclick="window.location.href='./donaciones.html'">
+                        Donar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="line-height:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"
+            preserveAspectRatio="none"
+            style="display:block; width:100%; height:120px;">
+            <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
+            <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
+            <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+        </svg>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
+            <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs mb-1">Tu e-mail *</label>
+                    <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                </div>
+                <div>
+                    <label class="block text-xs mb-1">Mensaje*</label>
+                    <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                </div>
+                <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
+            </form>
+        </div>
+        <div class="space-y-8 ml-20">
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
+                    <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                    <span class="text-sm font-bold">Youtube</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/awaqongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 32 32">
+                            <g><path d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z"/><path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z"/><path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z"/></g>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/somosawaq/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 24 24">
+                            <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/awaq-ongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                        <svg fill="#ffffff" height="200px" width="200px" viewBox="-143 145 512 512">
+                            <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+        <p>© 2026 Awaq ONG</p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="#" class="hover:text-white">Políticas de privacidad</a>
+            <a href="#" class="hover:text-white">Políticas de Cookies</a>
+            <a href="#" class="hover:text-white">Aviso Legal</a>
+            <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+        </div>
+    </div>
+</footer>
+    <script src="../assets/js/fades.js" defer></script>
+</body>
+</html>

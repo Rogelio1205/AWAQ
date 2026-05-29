@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - 3º ICEO LATAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body class="bg-white text-[#0a3d4d] ">
+ 
+    <!-- -- NAVBAR -- -->
+    <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky ">
+    <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
+        </div>
+
+        <!-- Links desktop -->
+        <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
+            <a href="./index.html" class="hover:text-cyan-700 whitespace-nowrap text-cyan-700 text-sm">Inicio</a>
+            <a href="./pages/congreso.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
+            <a href="./pages/programa.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Programa</a>
+            <a href="./pages/aliados.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+            <a href="./pages/prensa.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+            <a href="./pages/Colabora.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
+        </div>
+
+        <!-- Derecha -->
+        <div class="flex items-center gap-3">
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
+                <span>ES</span>
+                <i data-lucide="chevron-down" class="w-3 h-3"></i>
+            </div>
+            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./pages/formulario.html'">
+                Quiero asistir
+            </button>
+
+            <!-- Hamburguesa -->
+            <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+                <span class="block w-6 h-0.5 bg-gray-700"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menú mobile -->
+    <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
+        <a href="/index.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 text-cyan-700 hover:bg-gray-50 rounded-lg">Inicio</a>
+        <a href="./pages/congreso.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+        <a href="./pages/programa.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Programa</a>
+        <a href="./pages/aliados.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+        <a href="./pages/prensa.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+        <a href="./pages/Colabora.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
+        <div class="pt-3 border-t mt-2">
+            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./pages/formulario.html'">
+                Quiero asistir
+            </button>
+        </div>
+    </div>
+</nav>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        menu.classList.toggle('flex');
+    }
+</script>
+ 
+    <!-- -- 1.1 HERO + BIENVENIDA -- -->
+    <section class="bg-[#7eb7b6]">
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <h1 class="font-gloock text-[#09354E] text-5xl md:text-6xl leading-tight mb-5 font-semibold fade-up">
+                3º ICEO LATAM
+            </h1>
+            <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg fade-up">
+                Congreso Internacional de Organizaciones Ambientales. <br><br> 17, 18 y 19 de Febrero 2027 </p>
+            <div class="inline-flex bg-[#DAE8F2] text-[#09354E] px-8 py-2 rounded-full font-bold text-sm tracking-wider fade-up">
+                <div class="pr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="30"><path fill="#ffcd00" d="M0 0h45v30H0z"/><path fill="#003087" d="M0 15h45v15H0z"/><path fill="#c8102e" d="M0 22h60v7H0z"/></svg>
+                </div>
+                <div class="pt-1">Cali, Colombia</div>
+            </div>
+        </div>
+<div class="relative w-[488px] h-[234px] fade-up">
+
+    <div class="absolute inset-12 bg-[#4A86B8] rounded-2xl rotate-[-30deg] translate-x-20 translate-y-10 opacity-100"></div>
+    <div class="absolute inset-2 bg-blue-200 rounded-2xl rotate-[-15deg] translate-x-8 translate-y-1 opacity-100"></div>
+
+    <!-- Imagen principal (encima) -->
+    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/258ceffd61311b93877478aaaf026c22363b0b71.jpg" class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-md rotate-[3deg] translate-x-8"/>
+
+</div>
+    </section>
+    </section>
+ 
+    <!-- -- SPONSORS SCROLL -- -->
+
+<div class="relative bg-[#f0f9f9] py-8 overflow-hidden">
+    <div style="line-height:0; position:absolute; top:0; left:0; width:100%;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block; transform:rotate(180deg);">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#7eb7b6"></path>
+        </svg>
+    </div>
+    <div class="flex animate-scroll pt-8">
+        <!-- Grupo 1 -->
+        <div class="flex gap-32 shrink-0 pr-32">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+        </div>
+        <div class="flex gap-32 shrink-0 pr-32" aria-hidden="true">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" class="h-16 object-contain opacity-60 hover:opacity-100 transition" alt="Sponsor">
+        </div>
+    </div>
+</div>
+ 
+    <!-- -- 1.2 MENSAJE UNIVERSIDAD -- -->
+    <section class="bg-[#f0f9f9] py-20 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+ 
+            <!-- Imagen universidad -->
+            <div class="relative rounded-[2rem] overflow-hidden shadow-2xl fade-up">
+                <img
+                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/imagen-universidad.webp"
+                    alt="Universidad de San Buenaventura"
+                    class="w-full h-80 lg:h-[480px] object-cover"
+                    onerror="this.style.background='linear-gradient(135deg,#1a6b5a,#0a3d4d)'; this.style.display='block'; this.style.height='480px';"
+                >
+                <!-- Overlay badge -->
+                <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur rounded-2xl px-5 py-3 shadow-lg">
+                    <p class="text-[#0a3d4d] font-bold text-sm">Universidad de San Buenaventura</p>
+                    <p class="text-[#097589] text-xs">Cali, Colombia · Sede del 3º ICEO</p>
+                </div>
+            </div>
+ 
+            <!-- Texto -->
+            <div class="space-y-6 fade-up">
+                <h2 class="text-4xl font-bold text-[#0a3d4d] leading-tight">
+                    Un campus comprometido con el planeta
+                </h2>
+                <div class="space-y-4 text-[#0a3d4d]/80 leading-relaxed text-base">
+                    <p>
+                        La Universidad de San Buenaventura Cali se enorgullece de ser nuevamente la sede del Congreso Internacional de Organizaciones Ambientales. Nuestra institución comparte los valores de sostenibilidad, cooperación y responsabilidad ambiental que guían el ICEO.
+                    </p>
+                    <p>
+                        Ponemos a disposición de los asistentes nuestras instalaciones de primer nivel: auditorios equipados, espacios verdes, cafetería, parking gratuito y conectividad Wi-Fi en todo el campus.
+                    </p>
+                </div>
+                <!-- Quote decorativa -->
+                <blockquote class="border-l-4 border-[#76E2CC] pl-5 py-1">
+                    <p class="text-[#0a3d4d] italic text-base leading-relaxed">
+                        "La educación y la acción ambiental son los pilares del cambio que nuestro planeta necesita."
+                    </p>
+                    <footer class="text-[#097589] text-sm font-medium mt-2">— Universidad de San Buenaventura, Cali</footer>
+                </blockquote>
+                <button class="border-2 border-[#097589] text-[#097589] hover:bg-[#097589] hover:text-white transition-all px-7 py-3 rounded-full text-sm font-bold uppercase" onclick="window.location.href='./pages/sedeCongreso.html'">
+                    Conocer la sede →
+                </button>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- -- 1.3 INFO GENERAL Y FECHAS CLAVE -- -->
+    <section class="bg-[#f0f4f7] py-20 px-6 lg:px-12 fade-up" id="info-general">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-bold text-[#0a3d4d]">Todo lo que necesitas saber</h2>
+            </div>
+ 
+            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+                <!-- Card info -->
+                <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow fade-up">
+                    <div class="w-12 h-12 bg-[#e6f3ee] rounded-2xl flex items-center justify-center mb-5 text-2xl">📅</div>
+                    <h3 class="font-bold text-[#0a3d4d] text-lg mb-2">Fechas del evento</h3>
+                    <p class="text-[#0a3d4d]/70 text-sm leading-relaxed">16, 17 y 18 de febrero de 2027. Tres jornadas completas de 07:00 a 17:00h.</p>
+                </div>
+ 
+                <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow fade-up">
+                    <div class="w-12 h-12 bg-[#e6f3ee] rounded-2xl flex items-center justify-center mb-5 text-2xl">📍</div>
+                    <h3 class="font-bold text-[#0a3d4d] text-lg mb-2">Lugar</h3>
+                    <p class="text-[#0a3d4d]/70 text-sm leading-relaxed">Universidad de San Buenaventura, Av. Cañasgordas, Cali, Colombia. Acceso desde Carrera 122 y Calle 15.</p>
+                </div>
+ 
+                <div class="bg-white rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow fade-up">
+                    <div class="w-12 h-12 bg-[#e6f3ee] rounded-2xl flex items-center justify-center mb-5 text-2xl">🎟️</div>
+                    <h3 class="font-bold text-[#0a3d4d] text-lg mb-2">Inscripción</h3>
+                    <p class="text-[#0a3d4d]/70 text-sm leading-relaxed">Solicita tu plaza a través del formulario.</p>
+                </div>
+ 
+
+            </div>
+ 
+            <!-- Timeline de fechas clave -->
+            <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm fade-up">
+                <h3 class="font-bold text-[#0a3d4d] text-xl mb-8 text-center">📌 Fechas clave</h3>
+                <div class="relative">
+                    <!-- Línea central (desktop) -->
+                    <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-[#76E2CC]/40 -translate-x-1/2"></div>
+ 
+                    <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-16 md:gap-y-10">
+ 
+                        <div class="md:text-right flex md:block gap-4 items-start">
+                            <div class="w-10 h-10 rounded-full bg-[#c8a84b] flex items-center justify-center text-white font-bold text-sm flex-shrink-0 md:ml-auto md:mr-0">1</div>
+                            <div class="md:mt-3">
+                                <p class="font-bold text-[#0a3d4d]">Apertura de inscripciones</p>
+                                <p class="text-[#097589] text-sm font-medium">1 de noviembre 2026</p>
+                                <p class="text-[#0a3d4d]/60 text-xs mt-1">Formulario de solicitud disponible</p>
+                            </div>
+                        </div>
+ 
+                        <div class="flex md:block gap-4 items-start md:mt-[52px]">
+                            <div class="w-10 h-10 rounded-full bg-[#097589] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">2</div>
+                            <div class="md:mt-3">
+                                <p class="font-bold text-[#0a3d4d]">Cierre de inscripciones</p>
+                                <p class="text-[#097589] text-sm font-medium">31 de enero 2027</p>
+                                <p class="text-[#0a3d4d]/60 text-xs mt-1">Plazas limitadas — ¡No esperes!</p>
+                            </div>
+                        </div>
+ 
+                        <div class="md:text-right flex md:block gap-4 items-start">
+                            <div class="w-10 h-10 rounded-full bg-[#b53077] flex items-center justify-center text-white font-bold text-sm flex-shrink-0 md:ml-auto md:mr-0">3</div>
+                            <div class="md:mt-3">
+                                <p class="font-bold text-[#0a3d4d]">Confirmación de asistencia</p>
+                                <p class="text-[#097589] text-sm font-medium">10 de febrero 2027</p>
+                                <p class="text-[#0a3d4d]/60 text-xs mt-1">Envío de credenciales por e-mail</p>
+                            </div>
+                        </div>
+ 
+                        <div class="flex md:block gap-4 items-start md:mt-[52px]">
+                            <div class="w-10 h-10 rounded-full bg-[#004a3b] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">4</div>
+                            <div class="md:mt-3">
+                                <p class="font-bold text-[#0a3d4d]">Inicio del congreso</p>
+                                <p class="text-[#097589] text-sm font-medium">16 de febrero 2027 · 07:00h</p>
+                                <p class="text-[#0a3d4d]/60 text-xs mt-1">Registro y apertura oficial</p>
+                            </div>
+                        </div>
+ 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- -- 1.4 VIDEO DE PRESENTACIÓN -- -->
+    <section class="relative bg-[#0a3d4d] py-20 px-6 lg:px-12">
+        <div style="line-height:0; position:absolute; top:0; left:0; width:100%;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block; transform:rotate(180deg);">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#f0f4f7"></path>
+        </svg>
+    </div>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl font-bold text-white fade-up">Conoce el 3º ICEO LATAM</h2>
+                <p class="text-white/70 text-base mt-3 max-w-xl mx-auto fade-up">Un resumen de lo que vivirás durante los tres días del congreso más importante de organizaciones ambientales de Latinoamérica.</p>
+            </div>
+ 
+            <!-- Video placeholder -->
+            <div class="max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl bg-[#1a6b5a]/30 border border-white/10 aspect-video flex items-center justify-center group cursor-pointer hover:bg-[#1a6b5a]/50 transition-all fade-up">
+                <div class="text-center space-y-4">
+                    <div class="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p class="text-white/60 text-sm">Video de presentación 3º ICEO LATAM</p>
+                    <p class="text-[#76E2CC] text-xs uppercase tracking-widest">Próximamente</p>
+                </div>
+            </div>
+ 
+            <p class="text-center text-white/50 text-xs mt-4 italic">Descripción del video — Resumen del 3º Congreso Internacional de Organizaciones Ambientales</p>
+        </div>
+        <div style="line-height:0; position:absolute; bottom:0; left:0; width:100%;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#ffffff"></path>
+        </svg>
+    </div>
+    </section>
+ 
+    <!-- -- 1.5 GALERÍA EDICIONES ANTERIORES -- -->
+    <section class="bg-white py-20 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-bold text-[#0a3d4d] mb-4 fade-up">El legado del ICEO: 2025–2026</h2>
+                <p class="text-[#0a3d4d]/70 text-base max-w-2xl mx-auto">Más de 144 asistentes, 4 días de congreso, 60 organizaciones ambientales y una comunidad que sigue creciendo.</p>
+            </div>
+
+            <!-- CTA Manifiesto -->
+            <div class="bg-[#004a3b] rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 fade-up">
+                <div>
+                    <p class="text-[#76E2CC] text-xs font-semibold uppercase tracking-widest mb-2">2º ICEO · Manifiesto</p>
+                    <h3 class="text-white text-2xl font-bold mb-2">Lee el Manifiesto del 2º ICEO</h3>
+                    <p class="text-white/70 text-sm max-w-md">El documento que sintetiza el espíritu de colaboración y los compromisos adquiridos por las organizaciones ambientales en la edición anterior.</p>
+                </div>
+                <button class="bg-white text-[#004a3b] font-bold px-8 py-3 rounded-full text-sm uppercase whitespace-nowrap hover:bg-[#76E2CC] transition-colors" onclick="window.location.href='./pages/memoria2iceo.html'">
+                    ★ Ver Manifiesto
+                </button>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- -- 1.6 CTA PRINCIPAL -- -->
+    <section class=" py-10 px-6 lg:px-12 relative overflow-hidden">
+        <!-- Patrón decorativo -->
+
+        <div class="relative max-w-4xl mx-auto text-center space-y-7">
+            <h2 class="text-5xl md:text-6xl font-bold text-black leading-tight fade-up">
+                ¿Quieres asistir al<br>3º ICEO LATAM?
+            </h2>
+            <p class="text-black/80 text-lg max-w-2xl mx-auto leading-relaxed fade-up">
+                El aforo es limitado. Solicita tu plaza ahora y forma parte del congreso internacional de organizaciones ambientales más importante de Latinoamérica. Recibirás confirmación en menos de 24 horas.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 pt-2 fade-up">
+                <button class="bg-white text-[#b53077] font-bold px-10 py-4 rounded-full text-base uppercase tracking-wide hover:bg-pink-50 transition shadow-xl" onclick="window.location.href='./pages/formulario.html'">
+                    Quiero asistir
+                </button>
+                <button class="border-2 border-black text-black hover:bg-white hover:text-[#b53077] transition-all px-10 py-4 rounded-full text-base font-bold uppercase tracking-wide" onclick="window.location.href='./pages/programa.html'">
+                    Ver programa
+                </button>
+            </div>
+            <p class="text-white/50 text-sm">* La solicitud no garantiza la plaza. Recibirás confirmación por e-mail.</p>
+        </div>
+    </section>
+ 
+    <!-- -- ONDAS + FOOTER -- -->
+    <div style="line-height:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"
+            preserveAspectRatio="none"
+            style="display:block; width:100%; height:120px;">
+            <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
+            <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
+            <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+        </svg>
+    </div>
+ 
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div>
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+        </div>
+        <div>
+            <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
+            <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-xs mb-1">Tu e-mail *</label>
+                    <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                </div>
+                <div>
+                    <label class="block text-xs mb-1">Mensaje*</label>
+                    <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                </div>
+                <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
+            </form>
+        </div>
+        <div class="space-y-8 ml-20">
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
+                    <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                    <span class="text-sm font-bold">Youtube</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/awaqongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 32 32">
+                            <g><path d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z"/><path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z"/><path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z"/></g>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/somosawaq/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 24 24">
+                            <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/awaq-ongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                        <svg fill="#ffffff" height="200px" width="200px" viewBox="-143 145 512 512">
+                            <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+        <p>© 2026 Awaq ONG</p>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a href="#" class="hover:text-white">Políticas de privacidad</a>
+            <a href="#" class="hover:text-white">Políticas de Cookies</a>
+            <a href="#" class="hover:text-white">Aviso Legal</a>
+            <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+        </div>
+    </div>
+</footer>
+ 
+    <!-- Lucide + Countdown -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./assets/js/fades.js" defer></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
