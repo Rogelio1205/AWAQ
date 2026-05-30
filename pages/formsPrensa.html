@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de acreditación · Prensa y Medios - Awaq</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal:       #0a3d4d;
+            --teal-mid:   #4076b5;
+            --teal-light: #A7D8F0;
+            --pink:       #e91e8c;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; }
+
+        .serif-font       { font-family: 'Playfair Display', serif; }
+        .text-custom-teal { color: var(--teal); }
+        .bg-custom-teal   { background-color: var(--teal); }
+
+        .btn-pink { background: var(--pink); transition: opacity .2s; }
+        .btn-pink:hover { opacity: .85; }
+
+        .card-shadow { box-shadow: 0 8px 40px rgba(10,61,77,.10); }
+
+        .form-input {
+            width: 100%;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px 14px;
+            font-size: .85rem;
+            color: #374151;
+            outline: none;
+            transition: border-color .2s;
+        }
+        .form-input:focus { border-color: #0a3d4d; }
+        textarea.form-input { resize: vertical; }
+
+        .form-select {
+            width: 100%;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px 36px 10px 14px;
+            font-size: .85rem;
+            color: #374151;
+            outline: none;
+            appearance: none;
+            background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center;
+            transition: border-color .2s;
+            cursor: pointer;
+        }
+        .form-select:focus { border-color: #0a3d4d; }
+
+        .btn-enviar {
+            background: var(--teal);
+            color: #fff;
+            padding: 12px 48px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: .8rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            border: 2px solid var(--teal);
+            cursor: pointer;
+            transition: background .2s, color .2s;
+        }
+        .btn-enviar:hover { background: transparent; color: var(--teal); }
+        .btn-enviar:disabled {
+            background: #cbd5e1;
+            border-color: #cbd5e1;
+            color: #fff;
+            cursor: not-allowed;
+        }
+
+        .btn-volver {
+            background: transparent;
+            color: var(--teal);
+            padding: 12px 36px;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: .8rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            border: 2px solid var(--teal);
+            cursor: pointer;
+            transition: background .2s, color .2s;
+        }
+        .btn-volver:hover { background: var(--teal); color: #fff; }
+
+        .badge {
+            display: inline-block;
+            background: #e0f2f1;
+            color: var(--teal);
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 9999px;
+        }
+
+        .custom-check {
+            accent-color: var(--teal);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .field-label {
+            display: block;
+            font-size: .8rem;
+            font-weight: 600;
+            color: #0e7490;
+            margin-bottom: 6px;
+        }
+
+        .info-box {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 14px;
+            padding: 14px 18px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            font-size: .78rem;
+            color: #0369a1;
+        }
+
+        #success-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.5);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+        #success-modal.show { display: flex; }
+
+        @media (min-width: 640px) {
+            .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- NAV — reemplaza por tu include -->
+    <nav class="bg-white py-4 px-6 md:px-10 flex items-center justify-between top-0 z-50 shadow-sm sticky">
+        <div class="flex items-center gap-2">
+            <img src="../assets/imgs/shared/logoSF.png" alt="Awaq Logo" class="h-10"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <span style="display:none; font-family:'Playfair Display',serif; font-weight:700; color:#0a3d4d; font-size:1.3rem;">Awaq</span>
+        </div>
+        <div class="hidden lg:flex items-center gap-16 text-xs font-bold">
+            <a href="/index.html"          class="hover:text-cyan-700 text-sm">Inicio</a>
+            <a href="/pages/congreso.html" class="hover:text-cyan-700 text-sm">El congreso</a>
+            <a href="/pages/programa.html" class="hover:text-cyan-700 text-sm">Programa</a>
+            <a href="/pages/aliados.html"  class="hover:text-cyan-700 text-sm">Aliados</a>
+            <a href="/pages/prensa.html"   class="hover:text-cyan-700 text-sm">Prensa</a>
+            <a href="/pages/contacto.html" class="hover:text-cyan-700 text-sm">Contacto</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
+                <span>ES</span>
+                <i data-lucide="chevron-down" class="w-3 h-3"></i>
+            </div>
+            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap"
+                    onclick="window.location.href='/pages/formulario.html'">
+                Quiero asistir
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="flex-grow pt-12 pb-20 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+
+            <h1 class="serif-font text-4xl md:text-5xl text-custom-teal mb-4">Prensa y Medios</h1>
+            <p class="text-gray-600 mb-2">Rellena los siguientes datos para solicitar tu acreditación de prensa.</p>
+            <p class="text-xs text-cyan-700 font-medium px-4 mb-12 italic">
+                * Las acreditaciones son limitadas. Recibirás confirmación en un plazo de 48 h vía e-mail.
+            </p>
+
+            <!-- Card -->
+            <div class="bg-white rounded-[40px] p-8 md:p-12 max-w-5xl mx-auto card-shadow text-left">
+
+                <h2 class="text-2xl font-bold text-custom-teal mb-2">Solicitud de acreditación · Prensa y Medios</h2>
+                <p class="text-sm text-gray-500 mb-10">
+                    Completa tus datos para solicitar acreditación o proponer una colaboración
+                    de difusión para el 3ICEO LATAM 2027.
+                </p>
+
+                <form id="prensa-form" novalidate>
+
+                    <!-- 1. Nombre / 2. Apellidos -->
+                    <div class="grid-2 mb-5">
+                        <div>
+                            <label class="field-label">1. Nombre *</label>
+                            <input type="text" name="nombre" placeholder="Ingresa tu nombre" class="form-input" required>
+                        </div>
+                        <div class="mt-5 sm:mt-0">
+                            <label class="field-label">2. Apellidos *</label>
+                            <input type="text" name="apellidos" placeholder="Ingresa tus apellidos" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <!-- 3. Email -->
+                    <div class="mb-5">
+                        <label class="field-label">3. Correo electrónico *</label>
+                        <input type="email" name="email" placeholder="ejemplo@correo.com" class="form-input" required>
+                    </div>
+
+                    <!-- 4 & 5. Código país / Teléfono -->
+                    <div class="mb-5">
+                        <label class="field-label">4 & 5. Código país / Teléfono *</label>
+                        <div class="flex gap-2">
+                            <div class="relative">
+                                <button type="button" id="phone-country-btn"
+                                        class="flex items-center gap-2 border border-gray-200 rounded-xl px-3 py-2 text-xs cursor-pointer bg-white hover:bg-gray-50 transition-colors h-full min-w-[90px]">
+                                    <img id="phone-flag" src="https://flagcdn.com/w20/un.png" class="w-5 h-4 object-cover rounded-sm" alt="">
+                                    <span id="phone-code">+--</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3 ml-auto text-gray-400"></i>
+                                </button>
+                                <div id="phone-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-72 bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                    <div class="p-2 border-b">
+                                        <input type="text" id="phone-search" placeholder="Buscar país..."
+                                               class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                    </div>
+                                    <ul id="phone-country-list" class="max-h-52 overflow-y-auto text-xs">
+                                        <li class="px-4 py-2 text-gray-400 italic">Cargando países...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="hidden" name="phone_country_code" id="phone-country-code-value" value="">
+                            <input type="tel" name="telefono" id="phone-input" placeholder="000 000 0000"
+                                   class="form-input flex-grow" required>
+                        </div>
+                    </div>
+
+                    <!-- 6. País -->
+                    <div class="mb-3">
+                        <label class="field-label">6. País *</label>
+                        <div class="relative">
+                            <button type="button" id="country-btn"
+                                    class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                <span id="country-label" class="text-gray-400 flex-grow">Selecciona un país</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                            </button>
+                            <div id="country-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                <div class="p-2 border-b">
+                                    <input type="text" id="country-search" placeholder="Buscar país..."
+                                           class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                </div>
+                                <ul id="country-list" class="max-h-52 overflow-y-auto text-xs">
+                                    <li class="px-4 py-2 text-gray-400 italic">Cargando...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estado / Ciudad -->
+                    <div id="location-row" class="hidden grid-2 mb-5">
+                        <div>
+                            <div class="relative">
+                                <button type="button" id="state-btn"
+                                        class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
+                                    <i data-lucide="map" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                    <span id="state-label" class="text-gray-400 flex-grow">Selecciona región/estado</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                </button>
+                                <div id="state-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                    <div class="p-2 border-b">
+                                        <input type="text" id="state-search" placeholder="Buscar región..."
+                                               class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                    </div>
+                                    <ul id="state-list" class="max-h-52 overflow-y-auto text-xs">
+                                        <li class="px-4 py-2 text-gray-400 italic">Cargando...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="relative">
+                                <button type="button" id="city-btn"
+                                        class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
+                                    <i data-lucide="building" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                    <span id="city-label" class="text-gray-400 flex-grow">Selecciona localidad</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-gray-400 shrink-0"></i>
+                                </button>
+                                <div id="city-dropdown" class="hidden absolute z-50 top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-xl shadow-xl overflow-hidden">
+                                    <div class="p-2 border-b">
+                                        <input type="text" id="city-search" placeholder="Buscar ciudad..."
+                                               class="w-full text-xs px-3 py-2 border border-gray-200 rounded-lg outline-none focus:border-cyan-500">
+                                    </div>
+                                    <ul id="city-list" class="max-h-52 overflow-y-auto text-xs">
+                                        <li class="px-4 py-2 text-gray-400 italic">Cargando...</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campos hidden ubicación -->
+                    <input type="hidden" name="country" id="country-value">
+                    <input type="hidden" name="state"   id="state-value">
+                    <input type="hidden" name="city"    id="city-value">
+
+                    <!-- 8. Nombre del medio / 9. Cargo o rol -->
+                    <div class="grid-2 mb-5">
+                        <div>
+                            <label class="field-label">8. Nombre del medio / organización *</label>
+                            <input type="text" name="medio" placeholder="Nombre del medio u organización" class="form-input" required>
+                        </div>
+                        <div class="mt-5 sm:mt-0">
+                            <label class="field-label">9. Cargo o rol *</label>
+                            <input type="text" name="cargo" placeholder="Tu cargo o rol actual" class="form-input" required>
+                        </div>
+                    </div>
+
+                    <!-- 10. Sitio web / 11. Tipo de colaboración -->
+                    <div class="grid-2 mb-5">
+                        <div>
+                            <label class="field-label">10. Sitio web o perfil profesional <span class="font-normal text-gray-400">(opcional)</span></label>
+                            <input type="url" name="sitio_web" placeholder="https://sitio-web.com o @usuario" class="form-input">
+                        </div>
+                        <div class="mt-5 sm:mt-0">
+                            <label class="field-label">11. Tipo de colaboración *</label>
+                            <select name="tipo_colaboracion" class="form-select" required>
+                                <option value="" disabled selected>Selecciona un tipo</option>
+                                <option value="Cobertura periodística">Cobertura periodística</option>
+                                <option value="Entrevistas">Entrevistas</option>
+                                <option value="Difusión previa del congreso">Difusión previa del congreso</option>
+                                <option value="Alianza de medios">Alianza de medios</option>
+                                <option value="Creación de contenido">Creación de contenido</option>
+                                <option value="Otros">Otros</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 12. Tipo de medio / 13. Días de cobertura -->
+                    <div class="grid-2 mb-5">
+                        <div>
+                            <label class="field-label">12. Tipo de medio *</label>
+                            <select name="tipo_medio" class="form-select" required>
+                                <option value="" disabled selected>Selecciona el tipo de medio</option>
+                                <option value="Periódico / Revista">Periódico / Revista</option>
+                                <option value="Radio">Radio</option>
+                                <option value="Televisión">Televisión</option>
+                                <option value="Medio digital / Blog">Medio digital / Blog</option>
+                                <option value="Podcast">Podcast</option>
+                                <option value="Agencia de noticias">Agencia de noticias</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mt-5 sm:mt-0">
+                            <label class="field-label">13. Días de cobertura *</label>
+                            <select name="dias_cobertura" class="form-select" required>
+                                <option value="" disabled selected>Selecciona los días de cobertura</option>
+                                <option value="Día 1">Día 1</option>
+                                <option value="Día 2">Día 2</option>
+                                <option value="Día 3">Día 3</option>
+                                <option value="Día 1 y 2">Día 1 y 2</option>
+                                <option value="Día 2 y 3">Día 2 y 3</option>
+                                <option value="Todos los días">Todos los días</option>
+                                <option value="Solo previo al evento">Solo previo al evento (difusión)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 14. Temas de interés / 15. Comentarios adicionales -->
+                    <div class="grid-2 mb-8">
+                        <div>
+                            <label class="field-label">14. Temas de interés <span class="font-normal text-gray-400">(opcional)</span></label>
+                            <textarea name="temas" rows="4"
+                                      placeholder="Selecciona o describe los temas que te interesan cubrir durante el 3ICEO LATAM 2027."
+                                      class="form-input"></textarea>
+                        </div>
+                        <div class="mt-5 sm:mt-0">
+                            <label class="field-label">15. Comentarios adicionales <span class="font-normal text-gray-400">(opcional)</span></label>
+                            <textarea name="comentarios" rows="4"
+                                      placeholder="Cualquier información adicional que consideres relevante para tu solicitud."
+                                      class="form-input"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Checkboxes -->
+                    <div class="space-y-3 mb-8">
+                        <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-700">
+                            <input type="checkbox" id="terms" class="custom-check mt-0.5" required>
+                            <span>
+                                Acepto la <a href="#" class="text-cyan-700 underline font-medium">política de privacidad</a>.
+                                <span class="text-cyan-700 text-xs">Requerido.</span>
+                            </span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-700">
+                            <input type="checkbox" id="newsletter" class="custom-check mt-0.5">
+                            <span>Acepto recibir comunicaciones sobre mi solicitud.</span>
+                        </label>
+                    </div>
+
+                    <!-- Botones -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <button type="submit" id="btn-enviar" class="btn-enviar" disabled>Solicitar acreditación</button>
+                        <button type="button" class="btn-volver" onclick="history.back()">Volver</button>
+                    </div>
+                    <p id="validation-msg" class="text-center text-[11px] text-gray-400 mt-4">
+                        Completa todos los campos requeridos para habilitar el envío
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- ONDAS -->
+    <div style="line-height:0;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"
+             preserveAspectRatio="none" style="display:block;width:100%;height:120px;">
+            <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
+            <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
+            <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+        </svg>
+    </div>
+
+
+    <!-- FOOTER — reemplaza por tu include -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <img src="../assets/imgs/shared/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block"
+                     onerror="this.style.display='none'">
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-xs mb-1">Tu e-mail *</label>
+                        <input type="email" placeholder="correo@electrónico.com"
+                               class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1">Mensaje *</label>
+                        <textarea rows="4" placeholder="Click para empezar a escribir"
+                                  class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                    </div>
+                    <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                        Enviar
+                    </button>
+                </form>
+            </div>
+            <div class="space-y-8 md:pl-12">
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                    <a href="#" class="flex items-center gap-2 group">
+                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                        <span class="text-sm font-bold">Youtube</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="0 0 32 32"><path d="M22.3,8.4c-.8,0-1.4.6-1.4,1.4s.6,1.4,1.4,1.4,1.4-.6,1.4-1.4-.6-1.4-1.4-1.4Z"/><path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9,5.9-2.7,5.9-5.9-2.7-5.9-5.9-5.9Zm0,9.7c-2.1,0-3.8-1.7-3.8-3.8s1.7-3.8,3.8-3.8,3.8,1.7,3.8,3.8-1.7,3.8-3.8,3.8Z"/><path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5c0-4-3.2-7.2-7.2-7.2Zm4.9,16.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5v9.5Z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7h-2.54v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="-143 145 512 512"><path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145zM41.4,508.1H-8.5V348.4h49.9V508.1zM15.1,328.4h-.4c-18.1,0-29.8-12.2-29.8-27.7,0-15.8,12.1-27.7,30.5-27.7,18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4zM241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4-14.9,0-23.2,10-27,19.6-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6,35.5,0,63.3,23,63.3,72.4V508.1z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+            <p>© 2026 Awaq ONG</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="hover:text-white">Políticas de privacidad</a>
+                <a href="#" class="hover:text-white">Políticas de Cookies</a>
+                <a href="#" class="hover:text-white">Aviso Legal</a>
+                <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- MODAL ÉXITO -->
+    <div id="success-modal">
+        <div class="bg-white p-10 rounded-[30px] text-center max-w-sm mx-6 card-shadow">
+            <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="check" class="w-10 h-10"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-custom-teal mb-2">¡Solicitud recibida!</h2>
+            <p class="text-gray-600 text-sm mb-8">Hemos registrado tus datos correctamente. En breve nos pondremos en contacto contigo.</p>
+            <button onclick="location.reload()" class="btn-pink text-white px-8 py-3 rounded-full text-sm font-bold uppercase w-full">Cerrar</button>
+        </div>
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="../assets/js/formsPrensa.js" defer></script>
+</body>
+</html>
