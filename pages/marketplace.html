@@ -149,15 +149,28 @@
         </div>
       </div>
 
-      <div class="fade-up">
-        <div class="bg-[#f0f4f7] rounded-3xl aspect-video flex items-center justify-center shadow-sm border border-gray-100">
-          <div class="text-center space-y-3">
-            <p class="text-[#09354e]/50 text-sm font-medium">Videojuego</p>
-            <p class="text-[#097589] text-xs uppercase tracking-widest">Próximamente</p>
-          </div>
-        </div>
-      </div>
+    <div class="fade-up">
+    <div class="relative rounded-3xl shadow-sm border border-gray-100 aspect-video bg-[#0a3d4d]">
+        <iframe
+            id="game-iframe"
+            src="../assets/games/RetoGame1/index.html"
+            class="w-full h-full rounded-3xl"
+            style="border: none;"
+            allowfullscreen
+            allow="autoplay; fullscreen"
+            title="Videojuego Marketplace">
+        </iframe>
+        <!-- Botón fullscreen externo -->
+        <button
+            onclick="entrarFullscreen()"
+            class="absolute bottom-3 right-3 bg-white/20 hover:bg-white/40 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2 transition-all backdrop-blur-sm z-10">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+            </svg>
+            Pantalla completa
+        </button>
     </div>
+</div>
   </section>
 
   <!-- BENEFICIOS DE EXPONER -->
@@ -326,5 +339,17 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
   </script>
+  <script>
+function entrarFullscreen() {
+    const iframe = document.getElementById('game-iframe');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+    }
+}
+</script>
 </body>
 </html>
