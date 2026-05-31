@@ -140,8 +140,8 @@ body {
 }
 
 .tab-dia {
-    border: 2px solid #c8a84b;
-    color: #c8a84b;
+    border: 2px solid #b33971;
+    color: #b33971;
     background: transparent;
     border-radius: 12px;
     padding: 10px 20px;
@@ -153,7 +153,7 @@ body {
     min-width: 110px;
 }
 .tab-dia:hover,
-.tab-dia.active { background: #c8a84b; color: white; }
+.tab-dia.active { background: #b33971; color: white; }
 
 .timeline-item {
     position: relative;
@@ -318,3 +318,14 @@ video:-webkit-full-screen {
 .bg-pink { background-color: #B83280; }
 .text-teal { color: #008094; }
 .bg-teal { background-color: #008094; }
+.card-beneficio {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-beneficio:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
