@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programa - 2º ICEO</title>
+  <title>Programa 3 ICEO - Awaq</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style/style.css">
@@ -13,14 +13,16 @@
   <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
     <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
-            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
+            <a href="../index.html">
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
+            </a>
         </div>
         <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
-            <a href="../index.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Inicio</a>
             <a href="./congreso.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
-            <a href="./programa.html" class="hover:text-cyan-700 whitespace-nowrap text-cyan-700 text-sm">Programa</a>
+            <a href="./memoria2iceo.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
             <a href="./aliados.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
             <a href="./prensa.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+            <a href="./marketplace.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
             <a href="./Colabora.html" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
             
         </div>
@@ -40,11 +42,11 @@
         </div>
     </div>
     <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
-        <a href="../index.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Inicio</a>
         <a href="./congreso.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
-        <a href="./programa.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 text-cyan-700 hover:bg-gray-50 rounded-lg">Programa</a>
+        <a href="./memoria2iceo.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
         <a href="./aliados.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
         <a href="./prensa.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+        <a href="./Marketplace.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
         <a href="./Colabora.html" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
 
         <div class="pt-3 border-t mt-2">
@@ -86,79 +88,62 @@
         </svg>
     </div>
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-10 fade-up">
-        <h2 class="text-[#09354e] text-4xl font-semibold mt-3 mb-3">Talleres y horarios</h2>
-        <p class="text-[#09354e] text-base max-w-xl mx-auto">Selecciona un día para ver el programa detallado de conferencias y talleres.</p>
+      <div class="text-center mb-4 fade-up">
+        <h2 class="text-[#09354e] text-4xl font-semibold mt-3 mb-3">Agenda</h2>
+        <p class="text-[#09354e] text-base max-w-xl mx-auto">Tres días para escuchar los territorios, construir soluciones y aterrizar conclusiones.</p>
       </div>
 
       <div class="flex justify-center gap-4 mb-10 flex-wrap fade-up">
         <button class="tab-dia active" onclick="mostrarDia('dia1', this)">
-          <div class="text-xs font-normal opacity-80">Lunes</div>
-          <div class="text-lg font-bold">17 Feb</div>
+          <div class="text-xs font-normal opacity-80">Día 1</div>
+          <div class="text-lg font-bold">16 Feb</div>
         </button>
         <button class="tab-dia" onclick="mostrarDia('dia2', this)">
-          <div class="text-xs font-normal opacity-80">Martes</div>
-          <div class="text-lg font-bold">18 Feb</div>
+          <div class="text-xs font-normal opacity-80">Día 2</div>
+          <div class="text-lg font-bold">17 Feb</div>
         </button>
         <button class="tab-dia" onclick="mostrarDia('dia3', this)">
-          <div class="text-xs font-normal opacity-80">Miércoles</div>
-          <div class="text-lg font-bold">19 Feb</div>
+          <div class="text-xs font-normal opacity-80">Día 3</div>
+          <div class="text-lg font-bold">18 Feb</div>
         </button>
       </div>
 
       <!-- DÍA 1 -->
       <div id="dia1" class="dia-content fade-up">
         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="bg-[#c8a84b] text-white font-bold text-sm px-4 py-2 rounded-full">DÍA 1 · LUNES 17 FEB</span>
-            <h3 class="text-[#09354e] text-xl font-semibold">Análisis de los resultados de la COP 16</h3>
+          <div class="flex items-center gap-4 mb-2">
+            <span class="bg-[#b33971] text-white font-bold text-xs px-3 py-1 rounded-full">DÍA 1</span>
           </div>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <p class="text-[#c8a84b] font-semibold text-xs uppercase tracking-widest mb-5">🌅 Mañana</p>
-              <div class="space-y-5">
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">07:00 – 08:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Registro de asistentes</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">08:00 – 09:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Apertura y bienvenida</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">09:00 – 10:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Legados de la COP16 — <em class="text-[#097589]">Santiago Granados</em></p>
-                </div>
-                <div class="flex items-center gap-2 py-1">
-                  <span class="w-3 h-3 rounded-full border-2 border-[#c8a84b] flex-shrink-0"></span>
-                  <span class="pausa">☕ 10:00–10:30 Pausa café</span>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">10:30 – 12:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Política pública Ley de Inírida · Equidad de género · Mujeres en biodiversidad</p>
-                </div>
-              </div>
+          <h3 class="text-[#09354e] text-2xl font-bold mb-3">Agua, territorios vivos y comunidades</h3>
+          <p class="text-[#09354e]/70 text-sm mb-8 leading-relaxed">Un primer día para comprender la situación actual de las fuentes hídricas, compartir una visión de futuro y explorar qué iniciativas hacen falta para activar soluciones desde los territorios.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Apertura institucional y bienvenida</p>
             </div>
-            <div>
-              <p class="text-[#c8a84b] font-semibold text-xs uppercase tracking-widest mb-5">🌆 Tarde</p>
-              <div class="space-y-5">
-                <div class="flex items-center gap-2 py-1">
-                  <span class="w-3 h-3 rounded-full border-2 border-[#c8a84b] flex-shrink-0"></span>
-                  <span class="pausa">🍽️ 12:30–14:00 Pausa almuerzo</span>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">14:00 – 16:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Taller: Proyecto Ley de Inírida 315/2024 · Mujeres cuidadoras de la biodiversidad</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">14:30 – 15:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Talleres específicos</p>
-                </div>
-                <div class="timeline-item">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">15:30 – 17:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Marketplace y Networking 🤝</p>
-                </div>
-              </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Conferencia magistral: estado actual de las fuentes hídricas</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Panel: comunidades, biodiversidad y cultura territorial</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Espacio de networking y articulación</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Mesas o sesiones temáticas por retos del territorio</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Taller colaborativo: visión compartida y prioridades de acción</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Síntesis del Día 1</p>
             </div>
           </div>
         </div>
@@ -167,56 +152,39 @@
       <!-- DÍA 2 -->
       <div id="dia2" class="dia-content hidden fade-up">
         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="bg-[#097589] text-white font-bold text-sm px-4 py-2 rounded-full">DÍA 2 · MARTES 18 FEB</span>
-            <h3 class="text-[#09354e] text-xl font-semibold">Mujeres líderes en Organizaciones Ambientales</h3>
+          <div class="flex items-center gap-4 mb-2">
+            <span class="bg-[#b33971] text-white font-bold text-xs px-3 py-1 rounded-full">DÍA 2</span>
           </div>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <p class="text-[#097589] font-semibold text-xs uppercase tracking-widest mb-5">🌅 Mañana</p>
-              <div class="space-y-5">
-                <div class="timeline-item pb-5" style="--tw-before-bg: #097589;">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">07:00 – 08:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Registro de asistentes</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">08:00 – 08:45</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Apertura — <em class="text-[#097589]">Fabio Cardozo Montealegre, Gestor de Paz</em></p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">08:45 – 09:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">UTOPÍA: educación para el cuidado y la ecología integral — <em class="text-[#097589]">Hno. Camilo Aguilar, U. La Salle</em></p>
-                </div>
-                <div class="flex items-center gap-2 py-1">
-                  <span class="w-3 h-3 rounded-full border-2 border-[#097589] flex-shrink-0"></span>
-                  <span class="pausa">☕ 09:30–10:30 Pausa café</span>
-                </div>
-                <div class="timeline-item">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">10:30 – 12:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">El papel de las mujeres en el cambio climático — <em class="text-[#097589]">Dra. Nasly Vidales, Subsecretaria Ambiente Valle</em></p>
-                </div>
-              </div>
+          <h3 class="text-[#09354e] text-2xl font-bold mb-3">Cooperación internacional al desarrollo, innovación y mundo rural</h3>
+          <p class="text-[#09354e]/70 text-sm mb-8 leading-relaxed">Un segundo día orientado a conectar cooperación, transferencia de conocimiento e innovación aplicada para impulsar soluciones territoriales, bioeconomía y desarrollo rural sostenible.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Apertura del Día 2 y recapitulación</p>
             </div>
-            <div>
-              <p class="text-[#097589] font-semibold text-xs uppercase tracking-widest mb-5">🌆 Tarde</p>
-              <div class="space-y-5">
-                <div class="flex items-center gap-2 py-1">
-                  <span class="w-3 h-3 rounded-full border-2 border-[#097589] flex-shrink-0"></span>
-                  <span class="pausa">🍽️ 12:30–14:00 Pausa almuerzo</span>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">14:00 – 14:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Rap del Agua y la Montaña 🎵</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">14:00 – 15:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Taller: Comunidades resilientes al cambio climático</p>
-                </div>
-                <div class="timeline-item">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">15:30 – 17:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Marketplace y Networking 🤝</p>
-                </div>
-              </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Conferencia magistral: innovación para territorios vivos</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Panel: cooperación al desarrollo y alianzas Europa–LATAM</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Espacio de presentaciones, proyectos o pitches</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Mesas temáticas: universidad, territorio y tecnología aplicada</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Rueda de articulación y colaboración institucional</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Síntesis del Día 2</p>
             </div>
           </div>
         </div>
@@ -225,64 +193,31 @@
       <!-- DÍA 3 -->
       <div id="dia3" class="dia-content hidden fade-up">
         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm">
-          <div class="flex items-center gap-4 mb-8">
-            <span class="bg-[#004a3b] text-white font-bold text-sm px-4 py-2 rounded-full">DÍA 3 · MIÉRCOLES 19 FEB</span>
-            <h3 class="text-[#09354e] text-xl font-semibold">Tecnología y conservación ambiental</h3>
+          <div class="flex items-center gap-4 mb-2">
+            <span class="bg-[#b33971] text-white font-bold text-xs px-3 py-1 rounded-full">DÍA 3</span>
           </div>
-          <div class="grid md:grid-cols-2 gap-8">
-            <div>
-              <p class="text-[#004a3b] font-semibold text-xs uppercase tracking-widest mb-5">🌅 Mañana</p>
-              <div class="space-y-5">
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">07:00 – 08:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Registro de asistentes</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">08:00 – 08:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Presentación — <em class="text-[#097589]">José Serna · Awaq ONGD</em></p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">08:30 – 09:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Presentación — <em class="text-[#097589]">Angélica · Awaq ONGD LATAM</em></p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">09:00 – 09:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Presentación — <em class="text-[#097589]">Directoras Estaciones Biológicas</em></p>
-                </div>
-                <div class="flex items-center gap-2 py-1">
-                  <span class="w-3 h-3 rounded-full border-2 border-[#004a3b] flex-shrink-0"></span>
-                  <span class="pausa">☕ 09:30–10:15 Pausa café</span>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">10:15 – 10:45</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Presentación — <em class="text-[#097589]">Begoña · Awaq ONGD LATAM</em></p>
-                </div>
-                <div class="timeline-item">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">10:15 – 12:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Presentación de Universidades colaboradoras</p>
-                </div>
-              </div>
+          <h3 class="text-[#09354e] text-2xl font-bold mb-3">Conclusiones</h3>
+          <p class="text-[#09354e]/70 text-sm mb-8 leading-relaxed">Una jornada más breve para convertir aprendizajes y acuerdos en memoria útil, conclusiones compartidas y una hoja de ruta para futuras alianzas.</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Apertura breve y recapitulación general</p>
             </div>
-            <div>
-              <p class="text-[#004a3b] font-semibold text-xs uppercase tracking-widest mb-5">🌆 Tarde</p>
-              <div class="space-y-5">
-                <div class="flex items-center gap-2 py-1">
-                  <span class="w-3 h-3 rounded-full border-2 border-[#004a3b] flex-shrink-0"></span>
-                  <span class="pausa">🍽️ 12:00–13:00 Pausa almuerzo</span>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">13:00 – 14:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">DEMO de proyectos ABT y P&R 💻</p>
-                </div>
-                <div class="timeline-item pb-5">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">14:30 – 15:30</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Manifiesto 2ICEO 📜</p>
-                </div>
-                <div class="timeline-item">
-                  <span class="text-[#6f7074] text-xs font-medium bg-[#f0f4f7] px-2 py-1 rounded-md">15:30 – 17:00</span>
-                  <p class="text-[#09354e] text-sm font-medium mt-1">Ceremonia de Clausura · Marketplace · Salsódromo 🎉</p>
-                </div>
-              </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Relatoría y aprendizajes clave del congreso</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Mesa de conclusiones y acuerdos</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Construcción de hoja de ruta compartida</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#097589] flex-shrink-0 mt-1.5"></span>
+              <p class="text-[#09354e] text-sm">Cierre institucional y próximos pasos</p>
             </div>
           </div>
         </div>
@@ -296,7 +231,7 @@
   </section>
 
   <!-- PONENTES -->
-  <section class="bg-white py-16 px-6 md:px-12" id="actividades">
+ <section class="bg-white py-16 px-6 md:px-12" id="actividades">
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16 fade-up">
         <h2 class="text-[#09354e] text-5xl font-semibold mt-5 mb-5">Conoce a nuestros ponentes</h2>
@@ -305,103 +240,308 @@
 
     <!-- Carrusel ponentes -->
     <div class="relative fade-up">
-        <button id="ponentes-prev" class="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-lg text-gray-400 hover:text-teal-600">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-        </button>
-        <button id="ponentes-next" class="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-lg text-gray-400 hover:text-teal-600">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-        </button>
-        <div class="overflow-hidden">
-            <div id="ponentes-track" class="flex transition-transform duration-500 ease-in-out">
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3">
-                    <div class="card-ponente">
-                        <div class="relative h-80 overflow-hidden">
-                            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Foto%20Jose%20Serna.jpg" alt="" class="w-full h-full object-cover object-[center_20%]">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 p-6">
-                                <span class="bg-[#B53077] text-white text-xs font-bold px-3 py-1 rounded-full">Apertura</span>
-                                <h3 class="text-white text-3xl font-semibold mt-3">José Serrano Serna</h3>
-                                <p class="text-white/80 text-sm">Promotor y Sponsor del 3ICEO-LATAM - España</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Apertura en nombre de la organización promotora y presentacion del Programa Awaq-BioTech.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 1</span>
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 2</span>
-                            </div>
+    <button id="ponentes-prev" class="absolute -left-4 md:-left-8 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-lg text-gray-400 hover:text-teal-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button id="ponentes-next" class="absolute -right-4 md:-right-8 top-1/2 -translate-y-1/2 z-10 p-2 bg-white rounded-full shadow-lg text-gray-400 hover:text-teal-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="overflow-hidden px-2 py-4 -mx-2">
+        <div id="ponentes-track" class="flex transition-transform duration-500 ease-in-out">
+
+            <!-- Card 1 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Foto%20Jose%20Serna.jpg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#B53077] text-white text-xs font-bold px-3 py-1 rounded-full">Apertura</span>
+                            <h3 class="text-white text-3xl font-semibold mt-3">José Serrano Serna</h3>
+                            <p class="text-white/80 text-sm">CEO-Presidente Awaq ONGD - España</p>
                         </div>
                     </div>
-                </div>
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3">
-                    <div class="card-ponente">
-                        <div class="relative h-80 overflow-hidden">
-                            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/FOTO_BEGO_PRO.JPG" alt="" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 p-6">
-                                <span class="bg-[#097589] text-white text-xs font-bold px-3 py-1 rounded-full">TEMA</span>
-                                <h3 class="text-white text-3xl font-semibold mt-3">Begoña de la Hera</h3>
-                                <p class="text-white/80 text-sm">Directora Proyecto ABT 2025-2028 - España</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Ponencia:  Presentación resultados parciales del proyecto ABT 2025- Hoja de Ruta 2026- 2027</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 1</span>
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3">
-                    <div class="card-ponente">
-                        <div class="relative h-80 overflow-hidden">
-                            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/LuisAguirre.jpg" alt="" class="w-full h-full object-cover object-[center_20%]">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 p-6">
-                                <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">TEMA</span>
-                                <h3 class="text-white text-3xl font-semibold mt-3">Luis Alfonso Aguirre</h3>
-                                <p class="text-white/80 text-sm">Program Manager PMI® Colombia - Colombia</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Taller: Proyectos que dejan huella – "Formulación de Proyectos Sociales Sostenibles"</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 1</span>
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 2</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3">
-                    <div class="card-ponente">
-                        <div class="relative h-80 overflow-hidden">
-                            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Foto%20Rolando.jpg" alt="" class="w-full h-full object-cover object-[center_40%]">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 p-6">
-                                <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">TEMA</span>
-                                <h3 class="text-white text-3xl font-semibold mt-3">Rolando Evelio Pérez</h3>
-                                <p class="text-white/80 text-sm">Profesor Planta Tecnológico de Monterrey - Tema</p>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Descripcion</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 1</span>
-                                <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tag 2</span>
-                            </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Apertura en nombre de la organización promotora y presentación del Programa Awaq-BioTech.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Awaq ONGD</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">BioTech</span>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Card 2 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/FOTO_BEGO_PRO.JPG" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#097589] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-3xl font-semibold mt-3">Begoña de la Hera</h3>
+                            <p class="text-white/80 text-sm">Directora Proyecto ABT 2025-2028 - España</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Presentación resultados parciales del proyecto ABT 2025 - Hoja de Ruta 2026-2027.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Proyecto ABT</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Awaq ONGD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/LuisAguirre.jpg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">Taller</span>
+                            <h3 class="text-white text-3xl font-semibold mt-3">Luis Alfonso Aguirre</h3>
+                            <p class="text-white/80 text-sm">Program Manager PMI® Colombia - Colombia</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Proyectos que dejan huella – "Formulación de Proyectos Sociales Sostenibles".</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">PMI®</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Colombia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Foto%20Rolando.jpg" alt="" class="w-full h-full object-cover object-[center_40%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-3xl font-semibold mt-3">Rolando Evelio Pérez</h3>
+                            <p class="text-white/80 text-sm">Profesor Planta Tecnológico de Monterrey - México</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Presentación componentes tecnológicos IA, Programa ABT.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Tec de Monterrey</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">IA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Hno.%20Camilo%20Andr%C3%A9s%20Aguilar%20G%C3%B3mez%20-%20Coordinador%20de%20Utop%C3%ADa.jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#097589] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Hno. Camilo Andrés Aguilar</h3>
+                            <p class="text-white/80 text-sm">Coordinador Utopía - U. La Salle - Colombia</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">UTOPÍA: Un horizonte educativo para el cuidado, la sostenibilidad y la ecología integral.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">U. La Salle</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Educación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Gustavo%20Herrera%20Caballero-SELA%20(1).jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#c8a84b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Gustavo Herrera Caballero</h3>
+                            <p class="text-white/80 text-sm">Coordinador SELA - Venezuela</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">La experiencia del SELA en la implementación de la Agenda 2030.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">SELA</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Agenda 2030</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Liza%20Rodri%CC%81guez%20Galvis.jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#B53077] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Liza Rodríguez Galvis</h3>
+                            <p class="text-white/80 text-sm">Gobernación del Valle del Cauca - Colombia</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Mujeres en biodiversidad y fortalecimiento institucional: un camino para transformar realidades.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Biodiversidad</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Género</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Foto%20Nasly%20Vidales%20(1).jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#097589] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Nasly Fernanda Gonzales</h3>
+                            <p class="text-white/80 text-sm">Subsecretaria Ambiente Valle del Cauca - Colombia</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">El papel de las mujeres en el cambio climático.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Clima</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Género</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Jhonatan%20Alexander%20Becerra%20Duitama_%20Uni%20JDC.jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Jhonatan Becerra Duitama</h3>
+                            <p class="text-white/80 text-sm">Líder Desarrollo Tecnológico - U. Juan de Castellanos</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Alianza Universidad Juan de Castellanos | Proyecto ABT.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">U. JDC</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Proyecto ABT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/William%20Fernando%20Bernal%20Su%C3%A1rez_Uni%20JDC.jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">William Fernando Bernal</h3>
+                            <p class="text-white/80 text-sm">Líder Desarrollo Tecnológico - U. Juan de Castellanos</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Alianza Universidad Juan de Castellanos | Proyecto ABT.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">U. JDC</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Proyecto ABT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Magda%20Lorena%20Pineda%20Rodr%C3%ADguez_%20Uni%20JDC.jpeg" alt="" class="w-full h-full object-cover object-[center_20%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Magda Lorena Pineda</h3>
+                            <p class="text-white/80 text-sm">Líder Desarrollo Tecnológico - U. Juan de Castellanos</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Alianza Universidad Juan de Castellanos | Proyecto ABT.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">U. JDC</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Proyecto ABT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Cristhian%20Utop%C3%ADa.jpeg" alt="" class="w-full h-full object-cover object-[center_50%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#004a3b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">John Cristhian Fernández</h3>
+                            <p class="text-white/80 text-sm">Líder Desarrollo Tecnológico - U. Juan de Castellanos</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Alianza Universidad Juan de Castellanos | Proyecto ABT.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">U. JDC</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">Proyecto ABT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3" style="isolation: isolate;">
+                <div class="card-ponente hover:z-10 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="relative h-80 overflow-hidden rounded-t-2xl">
+                        <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/agenda/Fotos%20Ponentes/Santiago%20Granados%20Guti%C3%A9rrez%20-%20CEPAL.jpg" alt="" class="w-full h-full object-cover object-[center_60%]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <span class="bg-[#c8a84b] text-white text-xs font-bold px-3 py-1 rounded-full">Ponencia</span>
+                            <h3 class="text-white text-2xl font-semibold mt-3">Santiago Granados Guitierrez</h3>
+                            <p class="text-white/80 text-sm">Consultor CEPAL-ONU - Colombia</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-[#09354e]/80 text-sm leading-relaxed mb-5">Legados y desafíos de la COP16.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">CEPAL-ONU</span>
+                            <span class="bg-[#f0f4f7] text-[#097589] text-xs font-medium px-3 py-2 rounded-full">COP16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div id="ponentes-dots" class="flex justify-center gap-2 mt-8"></div>
     </div>
-    </div>
-  </section>
+    <div id="ponentes-dots" class="flex justify-center gap-2 mt-8"></div>
+</div>
 
   <!-- CTA -->
-  <section class="py-32 px-6 md:px-12">
+  <section class="py-8 px-6 md:px-12">
     <div class="max-w-4xl mx-auto text-center fade-up">
       <h2 class="text-black text-4xl mb-4 font-gloock leading-tight">¿Quieres asistir al 2º ICEO?</h2>
       <p class="text-black/80 text-lg mb-8 max-w-2xl mx-auto">
@@ -412,6 +552,43 @@
       </div>
     </div>
   </section>
+  <section class="relative max-w-full overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 lg:py-16">
+            <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
+                <div class="w-64 sm:w-72 lg:w-5/12 flex justify-center flex-shrink-0 fade-up">
+                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/followus.png" alt="Follow Us on Social Media" class="w-full h-auto object-contain">
+                </div>
+                <div class="w-full lg:w-7/12 text-center lg:text-left fade-up">
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 leading-tight">
+                        ¡Pásate por nuestras Redes Sociales y síguenos!
+                    </h3>
+                    <p class="text-gray-600 mb-6 text-base sm:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                        Publicamos contenido acerca de la labor que hacemos, podrás conocer nuestros proyectos y a nosotros más a fondo.
+                    </p>
+                    <div class="flex flex-wrap gap-6 font-bold text-teal-600">
+                        <a href="https://www.instagram.com/awaqongd/" target="_blank" class="flex items-center gap-2 hover:text-pink-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                            </svg>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://www.facebook.com/somosawaq/" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                            </svg>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/awaq-ongd/?originalSubdomain=es" target="_blank" class="flex items-center gap-2 hover:text-blue-800 transition-colors">
+                            <svg class="w-6 h-6" viewBox="0 0 512 512" fill="currentColor">
+                                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.1 107 0 82.9 0 53.2A53.2 53.2 0 0153.84 0C83.6 0 107.7 24.1 107.7 53.2c0 29.7-24.1 53.8-53.86 53.8zM447.9 448h-92.4V302.4c0-34.7-.7-79.4-48.4-79.4-48.4 0-55.8 37.8-55.8 76.9V448h-92.5V148.9h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.6-48.4 93.7 0 111 61.7 111 142V448z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
   <div style="line-height:0;">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none" style="display:block; width:100%; height:120px;">
@@ -456,26 +633,6 @@
                     <span class="text-sm font-bold">Youtube</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold mb-4">Redes Sociales</h3>
-                <div class="flex gap-4">
-                    <a href="https://www.instagram.com/awaqongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 32 32">
-                            <g><path d="M22.3,8.4c-0.8,0-1.4,0.6-1.4,1.4c0,0.8,0.6,1.4,1.4,1.4c0.8,0,1.4-0.6,1.4-1.4C23.7,9,23.1,8.4,22.3,8.4z"/><path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9s5.9-2.7,5.9-5.9S19.3,10.2,16,10.2z M16,19.9c-2.1,0-3.8-1.7-3.8-3.8c0-2.1,1.7-3.8,3.8-3.8c2.1,0,3.8,1.7,3.8,3.8C19.8,18.2,18.1,19.9,16,19.9z"/><path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5C28,7.2,24.8,4,20.8,4z M25.7,20.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5V20.8z"/></g>
-                        </svg>
-                    </a>
-                    <a href="https://www.facebook.com/somosawaq/" target="_blank" class="w-10 h-10 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="200px" height="200px" viewBox="0 0 24 24">
-                            <path d="M12 2.03998C6.5 2.03998 2 6.52998 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.84998C10.44 7.33998 11.93 5.95998 14.22 5.95998C15.31 5.95998 16.45 6.14998 16.45 6.14998V8.61998H15.19C13.95 8.61998 13.56 9.38998 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C15.9164 21.5878 18.0622 20.3855 19.6099 18.57C21.1576 16.7546 22.0054 14.4456 22 12.06C22 6.52998 17.5 2.03998 12 2.03998Z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/company/awaq-ongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
-                        <svg fill="#ffffff" height="200px" width="200px" viewBox="-143 145 512 512">
-                            <path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145z M41.4,508.1H-8.5V348.4h49.9V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z"/>
-                        </svg>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
