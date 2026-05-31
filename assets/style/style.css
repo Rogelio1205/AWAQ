@@ -329,3 +329,72 @@ video:-webkit-full-screen {
       transform: translateY(-4px);
       box-shadow: 0 12px 32px rgba(0,0,0,0.12);
     }
+/* ===== VOLUNTARIADO FORM ===== */
+:root {
+    --teal:       #0a3d4d;
+    --teal-mid:   #4076b5;
+    --teal-light: #A7D8F0;
+    --pink:       #e91e8c;
+}
+
+.btn-enviar-vol {
+    background: var(--teal);
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border: 2px solid var(--teal);
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+.btn-enviar-vol:hover { background: transparent; color: var(--teal); }
+.btn-enviar-vol:disabled {
+    background: #cbd5e1;
+    border-color: #cbd5e1;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.btn-volver {
+    background: transparent;
+    color: var(--teal);
+    padding: 12px 36px;
+    border-radius: 9999px;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    border: 2px solid var(--teal);
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+.btn-volver:hover { background: var(--teal); color: #fff; }
+
+.custom-check {
+    accent-color: var(--teal);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.info-box {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    border-radius: 14px;
+    padding: 14px 18px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: .78rem;
+    color: #0369a1;
+}
+
+#success-modal.show { display: flex; }
+
+@media (min-width: 640px) {
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+}
