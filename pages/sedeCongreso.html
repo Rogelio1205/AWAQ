@@ -267,6 +267,49 @@
             </div>
         </div>
     </section>
+    <!-- 3.6 VIDEOJUEGO -->
+<section class="py-20 px-6 md:px-12 mt-10 bg-[#eef6f9]">
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-4 fade-up">
+        Explora el campus
+      </h2>
+      <p class="text-lg text-[#234] leading-relaxed fade-up">
+        Recorre la Universidad de San Buenaventura de forma interactiva
+        y descubre los espacios que serán parte del Congreso.
+      </p>
+    </div>
+
+    <div class="fade-up">
+      <div class="relative rounded-3xl shadow-sm border border-gray-100 aspect-video  overflow-hidden">
+        
+        <iframe
+          id="game-iframe"
+          src="../assets/games/RetoGame1/index.html"
+          class="w-full h-full rounded-3xl"
+          style="border: none;"
+          allowfullscreen
+          allow="autoplay; fullscreen"
+          title="Explora el campus">
+        </iframe>
+
+        <!-- Fullscreen -->
+        <button
+          onclick="entrarFullscreen()"
+          class="absolute bottom-3 right-3 bg-white/20 hover:bg-white/40 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2 transition-all backdrop-blur-sm z-10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
+          </svg>
+          Pantalla completa
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+  </section>
     <section class="relative max-w-full overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 lg:py-16">
             <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
@@ -362,5 +405,31 @@
 </footer>
 
 <script src="../assets/js/fades.js"></script>
+<script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    // Fade up observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+  <script>
+function entrarFullscreen() {
+    const iframe = document.getElementById('game-iframe');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+    }
+}
+</script>
 </body>
 </html>
