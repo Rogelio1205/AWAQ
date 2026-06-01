@@ -280,10 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
             orgid:    '00D7Q0000092UMO',           // ← mismo org que el formulario base
             retURL:   'https://congreso.somosawaq.org/',
 
-            // ── DEBUG — quitar después de probar ──
-            debug:      '1',
-            debugEmail: 'a00842541@tec.mx',
-            // ──────────────────────────────────────
+
 
             // Campos estándar
             name:        `${fd.get('nombre')} ${fd.get('apellidos')}`,
