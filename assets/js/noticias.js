@@ -10,33 +10,51 @@ const CANAL_COLORES = {
 
 function csvToArray(str) {
     const rows = [];
-    const lines = str.trim().split('\n');
-    const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
-    
-    for (let i = 1; i < lines.length; i++) {
-        const line = lines[i];
-        const values = [];
-        let current = '';
-        let inQuotes = false;
-        
-        for (let j = 0; j < line.length; j++) {
-            const char = line[j];
-            if (char === '"') {
-                inQuotes = !inQuotes;
-            } else if (char === ',' && !inQuotes) {
-                values.push(current.trim());
-                current = '';
+    const headers = [];
+    let current = '';
+    let inQuotes = false;
+    let row = [];
+    let isHeader = true;
+
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        const next = str[i + 1];
+
+        if (char === '"') {
+            if (inQuotes && next === '"') { // comilla escapada ""
+                current += '"';
+                i++;
             } else {
-                current += char;
+                inQuotes = !inQuotes;
             }
+        } else if (char === ',' && !inQuotes) {
+            row.push(current);
+            current = '';
+        } else if ((char === '\n' || char === '\r') && !inQuotes) {
+            if (char === '\r' && next === '\n') i++; // saltar \r\n
+            row.push(current);
+            current = '';
+            if (isHeader) {
+                headers.push(...row.map(h => h.trim()));
+                isHeader = false;
+            } else if (row.some(c => c.trim() !== '')) { // ignora filas vacías
+                const obj = {};
+                headers.forEach((h, idx) => obj[h] = (row[idx] || '').trim());
+                rows.push(obj);
+            }
+            row = [];
+        } else {
+            current += char;
         }
-        values.push(current.trim());
-        
-        const obj = {};
-        headers.forEach((h, idx) => {
-            obj[h] = (values[idx] || '').replace(/^"|"$/g, '');
-        });
-        rows.push(obj);
+    }
+    // última fila si no terminó en salto de línea
+    if (current !== '' || row.length > 0) {
+        row.push(current);
+        if (!isHeader && row.some(c => c.trim() !== '')) {
+            const obj = {};
+            headers.forEach((h, idx) => obj[h] = (row[idx] || '').trim());
+            rows.push(obj);
+        }
     }
     return rows;
 }
