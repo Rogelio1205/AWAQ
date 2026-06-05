@@ -395,24 +395,16 @@ video:-webkit-full-screen {
 
 #success-modal.show { display: flex; }
 
-@media (min-width: 640px) {
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-}
-.colab-track-outer {
-    overflow: hidden;
-    width: 100%;
-}
 .colab-track {
     width: max-content;
     animation: colab-scroll 40s linear infinite;
 }
-.colab-track:hover {
-    animation-play-state: paused;
-}
+
 @keyframes colab-scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
+
 .colab-card {
     flex: 0 0 auto;
     width: 600px;
@@ -423,7 +415,23 @@ video:-webkit-full-screen {
     border-radius: 1.5rem;
     padding: 2rem;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.colab-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 30px -10px rgb(0 0 0 / 0.15);
+}
+
+@media (min-width: 640px) {
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+.colab-track-outer {
+    overflow-x: hidden;   
+    overflow-y: visible;
+    width: 100%;
+    padding: 20px 0;
+}
+
 .colab-card__logo-wrap {
     flex: 0 0 160px;
     height: 200px;
