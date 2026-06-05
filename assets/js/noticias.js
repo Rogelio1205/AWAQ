@@ -21,7 +21,7 @@ function csvToArray(str) {
         const next = str[i + 1];
 
         if (char === '"') {
-            if (inQuotes && next === '"') { // comilla escapada ""
+            if (inQuotes && next === '"') {
                 current += '"';
                 i++;
             } else {
@@ -31,13 +31,13 @@ function csvToArray(str) {
             row.push(current);
             current = '';
         } else if ((char === '\n' || char === '\r') && !inQuotes) {
-            if (char === '\r' && next === '\n') i++; // saltar \r\n
+            if (char === '\r' && next === '\n') i++;
             row.push(current);
             current = '';
             if (isHeader) {
                 headers.push(...row.map(h => h.trim()));
                 isHeader = false;
-            } else if (row.some(c => c.trim() !== '')) { // ignora filas vacías
+            } else if (row.some(c => c.trim() !== '')) {
                 const obj = {};
                 headers.forEach((h, idx) => obj[h] = (row[idx] || '').trim());
                 rows.push(obj);
@@ -47,7 +47,6 @@ function csvToArray(str) {
             current += char;
         }
     }
-    // última fila si no terminó en salto de línea
     if (current !== '' || row.length > 0) {
         row.push(current);
         if (!isHeader && row.some(c => c.trim() !== '')) {
@@ -57,6 +56,24 @@ function csvToArray(str) {
         }
     }
     return rows;
+}
+
+async function obtenerNoticias() {
+    const CACHE_KEY = 'awaq_noticias';
+    const TTL_MS = 5 * 60 * 1000; // 5 minutos
+
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (cached) {
+        const { timestamp, csv } = JSON.parse(cached);
+        if (Date.now() - timestamp < TTL_MS) {
+            return csvToArray(csv);
+        }
+    }
+
+    const res = await fetch(SHEET_CSV_URL);
+    const csv = await res.text();
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), csv }));
+    return csvToArray(csv);
 }
 
 function crearTarjeta(noticia) {
@@ -83,11 +100,9 @@ function crearTarjeta(noticia) {
 async function cargarNoticias() {
     const grid = document.getElementById('noticias-grid');
     try {
-        const res = await fetch(SHEET_CSV_URL);
-        const csv = await res.text();
-        const noticias = csvToArray(csv);
+        const noticias = await obtenerNoticias();
         noticias.sort((a, b) => Number(b.id) - Number(a.id));
-        
+
         if (noticias.length === 0) {
             grid.innerHTML = '<div class="col-span-3 text-center py-12 text-gray-400">No hay noticias disponibles.</div>';
             return;
