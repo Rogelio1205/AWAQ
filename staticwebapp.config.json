@@ -1,0 +1,19 @@
+{
+  "routes": [
+    { "route": "/pages/aliados", "rewrite": "/pages/aliados.html" },
+    { "route": "/pages/Colabora", "rewrite": "/pages/Colabora.html" },
+    { "route": "/pages/congreso", "rewrite": "/pages/congreso.html" },
+    { "route": "/pages/donaciones", "rewrite": "/pages/donaciones.html" },
+    { "route": "/pages/formsPrensa", "rewrite": "/pages/formsPrensa.html" },
+    { "route": "/pages/formsVoluntariado", "rewrite": "/pages/formsVoluntariado.html" },
+    { "route": "/pages/formulario", "rewrite": "/pages/formulario.html" },
+    { "route": "/pages/formularioCompletado", "rewrite": "/pages/formularioCompletado.html" },
+    { "route": "/pages/lineastematicas", "rewrite": "/pages/lineastematicas.html" },
+    { "route": "/pages/marketplace", "rewrite": "/pages/marketplace.html" },
+    { "route": "/pages/memoria2iceo", "rewrite": "/pages/memoria2iceo.html" },
+    { "route": "/pages/prensa", "rewrite": "/pages/prensa.html" },
+    { "route": "/pages/programa", "rewrite": "/pages/programa.html" },
+    { "route": "/pages/sedeCongreso", "rewrite": "/pages/sedeCongreso.html" },
+    { "route": "/pages/prensa/noticias", "rewrite": "/pages/prensa/noticias/index.html" }
+  ]
+}
