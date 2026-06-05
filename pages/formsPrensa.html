@@ -13,14 +13,11 @@
     <!-- NAV — reemplaza por tu include -->
     <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
     <div class="flex items-center justify-between">
-        <!-- Logo -->
         <div class="flex items-center gap-2">
             <a href="../">
                 <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
             </a>
         </div>
-
-        <!-- Links desktop -->
         <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
             <a href="./congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
             <a href="./memoria2iceo" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
@@ -30,8 +27,6 @@
             <a href="./Colabora" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
             
         </div>
-
-        <!-- Derecha -->
         <div class="flex items-center gap-3">
             <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
                 <span>ES</span>
@@ -40,8 +35,6 @@
             <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
                 Quiero asistir
             </button>
-
-            <!-- Hamburguesa -->
             <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
                 <span class="block w-6 h-0.5 bg-gray-700"></span>
                 <span class="block w-6 h-0.5 bg-gray-700"></span>
@@ -49,8 +42,6 @@
             </button>
         </div>
     </div>
-
-    <!-- Menú mobile -->
     <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
         <a href="./congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
         <a href="./memoria2iceo" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
