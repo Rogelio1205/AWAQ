@@ -76,23 +76,29 @@ congressForm.addEventListener('submit', (e) => {
     const formData = new FormData(congressForm);
 
     const payload = new URLSearchParams({
-        orgid: '00D7Q0000092UMO',
-        retURL: 'https://congreso.somosawaq.org/',
-        // ──────────────────────────────────────
+    orgid:       '00D7Q0000092UMO',
+    retURL:      'https://congreso.somosawaq.org/',
+    debug:       '1',
+    debugEmail:  'a00842541@tec.mx',
 
-        // Campos estándar
-        name:        formData.get('fullname'),
+        name:        `${formData.get('firstname')} ${formData.get('lastname')}`,
         email:       formData.get('email'),
         phone:       formData.get('phone'),
         subject:     '3º ICEO LATAM - Solicitud de asistencia',
         description: formData.get('message') || '',
 
-        // Campos custom
-        '00NP500000QQ1eD': formData.get('fullname').split(' ')[0],
-        '00NP500000QQ1kf': formData.get('fullname').split(' ').slice(1).join(' '),
+        '00NP500000QQ1eD': formData.get('firstname'),
+        '00NP500000QQ1kf': formData.get('lastname'),
         '00NP500000QQ0gX': formData.get('request_type'),
+        '00NP500000QwP5V': formData.get('org_type'),
         '00NP500000QPumQ': formData.get('org_name'),
+        '00NP500000QwPAL': formData.get('job_title'),
+        '00NP500000Qwd6r': formData.get('phone'),
+        '00NP500000Qwap0': document.getElementById('phone-code').textContent,
+        '00NP500000QwcxB': formData.get('city'),
+        '00NP500000QwPK1': formData.get('country'),
         '00NP500000QQ1sj': document.getElementById('terms').checked ? '1' : '',
+        '00NP500000QwPNF': document.getElementById('newsletter').checked ? '1' : '',
     });
 
     fetch('https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D7Q0000092UMO', {

@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="icon" type="image/png" href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png">
 </head>
 <body class="bg-white">
 
-    <!-- Header / Navbar -->
+    <!-- Navbar -->
     <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
     <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
@@ -21,20 +22,19 @@
             </a>
         </div>
         <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
-            <a href="./congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
-            <a href="./memoria2iceo" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
-            <a href="./aliados" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
-            <a href="./prensa" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
-            <a href="./marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
-            <a href="./Colabora" class="hover:text-cyan-700 whitespace-nowrap text-cyan-700 text-sm">Colabora</a>
-            
+            <a href="./congreso" id="nav-congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
+            <a href="./memoria2iceo" id="nav-memoria" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
+            <a href="./aliados" id="nav-aliados" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+            <a href="./prensa" id="nav-prensa" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+            <a href="./marketplace" id="nav-marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
+            <a href="./Colabora" id="nav-colabora" class="hover:text-cyan-700 whitespace-nowrap text-cyan-700 text-sm">Colabora</a>
         </div>
         <div class="flex items-center gap-3">
-            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
-                <span>ES</span>
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50" onclick="toggleLang()">
+                <span id="lang-label">ES</span>
                 <i data-lucide="chevron-down" class="w-3 h-3"></i>
             </div>
-            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
+            <button id="nav-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
                 Quiero asistir
             </button>
             <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
@@ -45,15 +45,14 @@
         </div>
     </div>
     <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
-        <a href="./congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
-        <a href="./memoria2iceo" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
-        <a href="./aliados" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
-        <a href="./prensa" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
-        <a href="./Marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
-        <a href="./Colabora" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700  text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
-
+        <a href="./congreso" id="nav-mob-congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+        <a href="./memoria2iceo" id="nav-mob-memoria" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
+        <a href="./aliados" id="nav-mob-aliados" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+        <a href="./prensa" id="nav-mob-prensa" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+        <a href="./Marketplace" id="nav-mob-marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
+        <a href="./Colabora" id="nav-mob-colabora" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
         <div class="pt-3 border-t mt-2">
-            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
+            <button id="nav-mob-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
                 Quiero asistir
             </button>
         </div>
@@ -68,17 +67,17 @@
     }
 </script>
 
-    <!-- Hero Colabora -->
-    <section class="bg-[#7eb7b6]">
+<!-- Hero -->
+<section class="bg-[#7eb7b6]">
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 fade-up font-gloock">Tu acción crea impacto</h1>
-            <p class="text-gray-600 text-lg leading-relaxed mb-4 max-w-lg fade-up">
+            <h1 id="hero-title" class="text-5xl md:text-6xl font-extrabold mb-6 fade-up font-gloock">Tu acción crea impacto</h1>
+            <p id="hero-desc" class="text-gray-900 text-lg leading-relaxed mb-4 max-w-lg fade-up">
                 Existen muchas formas de ser parte del 2º ICEO. Ya sea como voluntario, ponente o donante, tu presencia fortalece la red de protección ambiental más grande de la región.
             </p>
             <div class="flex flex-wrap gap-4 fade-up">
-                <a href="#voluntariado" class="btn-teal text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider" onclick="window.location.href='./formulario'">Ser Voluntario</a>
-                <a href="#donar" class="btn-pink text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider transition-all" onclick="window.location.href='./donaciones'">Donar</a>
+                <a id="hero-btn-voluntario" href="#voluntariado" class="btn-teal text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider" onclick="window.location.href='./formulario'">Ser Voluntario</a>
+                <a id="hero-btn-donar" href="#donar" class="btn-pink text-white px-8 py-3 rounded-full font-bold uppercase text-sm tracking-wider transition-all" onclick="window.location.href='./donaciones'">Donar</a>
             </div>
         </div>
         <div class="relative w-[488px] h-[234px] fade-up">
@@ -98,138 +97,135 @@
     </div>
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 fade-up">¿Cómo quieres colaborar?</h2>
+            <h2 id="colab-title" class="text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 fade-up">¿Cómo quieres colaborar?</h2>
             <div class="w-20 h-1 bg-pink-500 mx-auto rounded-full fade-up"></div>
         </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Voluntariado -->
-                <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group fade-up">
-                    <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-500 transition-colors">
-                        <i data-lucide="users" class="text-teal-600 group-hover:text-white w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4 text-[#1A365D]">Voluntariado Virtual</h3>
-                    <p class="text-gray-500 mb-6 leading-relaxed">
-                        Apoya la logística digital, la comunicación y la atención a participantes antes y durante el congreso.
-                    </p>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> Certificado de participación</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> Acceso a todas las charlas</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> Kit oficial del voluntario</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-full border-2 border-teal-600 text-teal-600 font-bold hover:bg-teal-600 hover:text-white transition-all" onclick="window.location.href='./formsVoluntariado'">Postularme como voluntario/a</button>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Voluntariado -->
+            <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group fade-up">
+                <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-teal-500 transition-colors">
+                    <i data-lucide="users" class="text-teal-600 group-hover:text-white w-8 h-8"></i>
                 </div>
+                <h3 id="vol-title" class="font-bold text-2xl mb-4 text-[#1A365D]">Voluntariado Virtual</h3>
+                <p id="vol-desc" class="text-gray-500 mb-6 leading-relaxed">
+                    Apoya la logística digital, la comunicación y la atención a participantes antes y durante el congreso.
+                </p>
+                <ul class="space-y-3 mb-8 text-sm text-gray-900">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> <span id="vol-item1">Certificado de participación</span></li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> <span id="vol-item2">Acceso a todas las charlas</span></li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-teal-500"></i> <span id="vol-item3">Kit oficial del voluntario</span></li>
+                </ul>
+                <button id="vol-btn" class="w-full py-3 rounded-full border-2 border-teal-600 text-teal-600 font-bold hover:bg-teal-600 hover:text-white transition-all" onclick="window.location.href='./formsVoluntariado'">Postularme como voluntario/a</button>
+            </div>
 
-                <!-- Aliados -->
-                <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group fade-up">
-                    <div class="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors">
-                        <i data-lucide="handshake" class="text-pink-600 group-hover:text-white w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4 text-[#1A365D]">Colabora como Aliado</h3>
-                    <p class="text-gray-500 mb-6 leading-relaxed">
-                        Suma capacidades, recursos, patrocinio o apoyo institucional para hacer posible el 3ICEO LATAM 2027.
-                    </p>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> Visibilidad institucional</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> Networking con inversores</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> Espacio en el Marketplace</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-full border-2 border-pink-600 text-pink-600 font-bold hover:bg-pink-600 hover:text-white transition-all" onclick="window.location.href='./formulario'">Quiero ser aliado</button>
+            <!-- Aliados -->
+            <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group fade-up">
+                <div class="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-pink-500 transition-colors">
+                    <i data-lucide="handshake" class="text-pink-600 group-hover:text-white w-8 h-8"></i>
                 </div>
+                <h3 id="aliado-title" class="font-bold text-2xl mb-4 text-[#1A365D]">Colabora como Aliado</h3>
+                <p id="aliado-desc" class="text-gray-500 mb-6 leading-relaxed">
+                    Suma capacidades, recursos, patrocinio o apoyo institucional para hacer posible el 3ICEO LATAM 2027.
+                </p>
+                <ul class="space-y-3 mb-8 text-sm text-gray-900">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> <span id="aliado-item1">Visibilidad institucional</span></li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> <span id="aliado-item2">Networking con inversores</span></li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-500"></i> <span id="aliado-item3">Espacio en el Marketplace</span></li>
+                </ul>
+                <button id="aliado-btn" class="w-full py-3 rounded-full border-2 border-pink-600 text-pink-600 font-bold hover:bg-pink-600 hover:text-white transition-all" onclick="window.location.href='./formulario'">Quiero ser aliado</button>
+            </div>
 
-                <!-- Prensa -->
-                <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group fade-up">
-                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                        <i data-lucide="mic" class="text-blue-600 group-hover:text-white w-8 h-8"></i>
-                    </div>
-                    <h3 class="font-bold text-2xl mb-4 text-[#1A365D]">Prensa y Medios</h3>
-                    <p class="text-gray-500 mb-6 leading-relaxed">
-                        Solicita tu acreditación para cubrir el congreso, entrevistar vocerías y acceder a materiales de prensa.
-                    </p>
-                    <ul class="space-y-3 mb-8 text-sm text-gray-600">
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Kit de prensa</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Material gráfico y audiovisual</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Sala de prensa exclusiva</li>
-                    </ul>
-                    <button class="w-full py-3 rounded-full border-2 border-blue-600 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition-all"onclick="window.location.href='./formsPrensa'">Acreditarme como medio</button>
+            <!-- Prensa -->
+            <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 hover:transform hover:-translate-y-2 transition-all group fade-up">
+                <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                    <i data-lucide="mic" class="text-blue-600 group-hover:text-white w-8 h-8"></i>
+                </div>
+                <h3 id="prensa-title" class="font-bold text-2xl mb-4 text-[#1A365D]">Prensa y Medios</h3>
+                <p id="prensa-desc" class="text-gray-500 mb-6 leading-relaxed">
+                    Solicita tu acreditación para cubrir el congreso, entrevistar vocerías y acceder a materiales de prensa.
+                </p>
+                <ul class="space-y-3 mb-8 text-sm text-gray-900">
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> <span id="prensa-item1">Kit de prensa</span></li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> <span id="prensa-item2">Material gráfico y audiovisual</span></li>
+                    <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> <span id="prensa-item3">Sala de prensa exclusiva</span></li>
+                </ul>
+                <button id="prensa-btn" class="w-full py-3 rounded-full border-2 border-blue-600 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition-all" onclick="window.location.href='./formsPrensa'">Acreditarme como medio</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social -->
+<section class="relative max-w-full overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 lg:py-16">
+        <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
+            <div class="w-64 sm:w-72 lg:w-5/12 flex justify-center flex-shrink-0 fade-up">
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/followus.png" alt="Follow Us on Social Media" class="w-full h-auto object-contain">
+            </div>
+            <div class="w-full lg:w-7/12 text-center lg:text-left fade-up">
+                <h3 id="social-title" class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 leading-tight">
+                    ¡Pásate por nuestras Redes Sociales y síguenos!
+                </h3>
+                <p id="social-desc" class="text-gray-900 mb-6 text-base sm:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                    Publicamos contenido acerca de la labor que hacemos, podrás conocer nuestros proyectos y a nosotros más a fondo.
+                </p>
+                <div class="flex flex-wrap gap-6 font-bold text-teal-600">
+                    <a href="https://www.instagram.com/awaqongd/" target="_blank" class="flex items-center gap-2 hover:text-pink-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/somosawaq/" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/awaq-ongd/?originalSubdomain=es" target="_blank" class="flex items-center gap-2 hover:text-blue-800 transition-colors">
+                        <svg class="w-6 h-6" viewBox="0 0 512 512" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.1 107 0 82.9 0 53.2A53.2 53.2 0 0153.84 0C83.6 0 107.7 24.1 107.7 53.2c0 29.7-24.1 53.8-53.86 53.8zM447.9 448h-92.4V302.4c0-34.7-.7-79.4-48.4-79.4-48.4 0-55.8 37.8-55.8 76.9V448h-92.5V148.9h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.6-48.4 93.7 0 111 61.7 111 142V448z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-    <section class="relative max-w-full overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 lg:py-16">
-            <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
-                <div class="w-64 sm:w-72 lg:w-5/12 flex justify-center flex-shrink-0 fade-up">
-                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/followus.png" alt="Follow Us on Social Media" class="w-full h-auto object-contain">
-                </div>
-                <div class="w-full lg:w-7/12 text-center lg:text-left fade-up">
-                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 leading-tight">
-                        ¡Pásate por nuestras Redes Sociales y síguenos!
-                    </h3>
-                    <p class="text-gray-600 mb-6 text-base sm:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-                        Publicamos contenido acerca de la labor que hacemos, podrás conocer nuestros proyectos y a nosotros más a fondo.
-                    </p>
-                    <div class="flex flex-wrap gap-6 font-bold text-teal-600">
-                        <a href="https://www.instagram.com/awaqongd/" target="_blank" class="flex items-center gap-2 hover:text-pink-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                            </svg>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/somosawaq/" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                            </svg>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://www.linkedin.com/company/awaq-ongd/?originalSubdomain=es" target="_blank" class="flex items-center gap-2 hover:text-blue-800 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 512 512" fill="currentColor">
-                                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.1 107 0 82.9 0 53.2A53.2 53.2 0 0153.84 0C83.6 0 107.7 24.1 107.7 53.2c0 29.7-24.1 53.8-53.86 53.8zM447.9 448h-92.4V302.4c0-34.7-.7-79.4-48.4-79.4-48.4 0-55.8 37.8-55.8 76.9V448h-92.5V148.9h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.6-48.4 93.7 0 111 61.7 111 142V448z"/>
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Waves Decoration -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" class="-mt-80 block" >
-        <path fill="#A7D8F0" fill-opacity="1" d="M 0 500 L 0 368.38683022177975 C 42.35294117647059 368.38683022177975 42.35294117647059 391.0122426421185 84.70588235294117 391.0122426421185 C 127.05882352941177 391.0122426421185 127.05882352941177 373.63906704709734 169.41176470588235 373.63906704709734 C 211.76470588235293 373.63906704709734 211.76470588235293 356.856277265324 254.11764705882354 356.856277265324 C 296.47058823529414 356.856277265324 296.47058823529414 430.0962213834589 338.8235294117647 430.0962213834589 C 381.17647058823525 430.0962213834589 381.17647058823525 358.44978054230523 423.52941176470586 358.44978054230523 C 465.88235294117646 358.44978054230523 465.88235294117646 387.77497836663315 508.2352941176471 387.77497836663315 C 550.5882352941176 387.77497836663315 550.5882352941176 385.68093964808213 592.9411764705882 385.68093964808213 C 635.2941176470588 385.68093964808213 635.2941176470588 409.2788834956991 677.6470588235294 409.2788834956991 C 720 409.2788834956991 720 352.20592746904003 762.3529411764706 352.20592746904003 C 804.7058823529412 352.20592746904003 804.7058823529412 416.669746269325 847.0588235294117 416.669746269325 C 889.4117647058823 416.669746269325 889.4117647058823 445.4575643981934 931.7647058823529 445.4575643981934 C 974.1176470588235 445.4575643981934 974.1176470588235 387.2670653698333 1016.4705882352941 387.2670653698333 C 1058.8235294117649 387.2670653698333 1058.8235294117649 374.9026260030041 1101.1764705882354 374.9026260030041 C 1143.5294117647059 374.9026260030041 1143.5294117647059 432.4825615644477 1185.8823529411764 432.4825615644477 C 1228.2352941176468 432.4825615644477 1228.2352941176468 425.4675525645871 1270.5882352941176 425.4675525645871 C 1312.9411764705883 425.4675525645871 1312.9411764705883 372.77695203890744 1355.2941176470588 372.77695203890744 C 1397.6470588235293 372.77695203890744 1397.6470588235293 396.3531364413302 1440 396.3531364413302 L 1440 500 Z"></path>
-        <path fill="#4076b5" fill-opacity="1" d="M 0 500 L 0 405.06010314524246 C 60 405.06010314524246 60 382.8700307820691 120 382.8700307820691 C 180 382.8700307820691 180 429.9718148959437 240 429.9718148959437 C 300 429.9718148959437 300 427.60237817486995 360 427.60237817486995 C 420 427.60237817486995 420 380.78224251600204 480 380.78224251600204 C 540 380.78224251600204 540 421.27531861737225 600 421.27531861737225 C 660 421.27531861737225 660 369.84832524571175 720 369.84832524571175 C 780 369.84832524571175 780 407.3549444411037 840 407.3549444411037 C 900 407.3549444411037 900 413.33418116977555 960 413.33418116977555 C 1020 413.33418116977555 1020 425.26447789072336 1080 425.26447789072336 C 1140 425.26447789072336 1140 419.54943591952315 1200 419.54943591952315 C 1260 419.54943591952315 1260 436.8618440411774 1320 436.8618440411774 C 1380 436.8618440411774 1380 394.14096436416 1440 394.14096436416 L 1440 500 Z"></path>
-        <path fill="#0a3d4d" fill-opacity="1" d="M 0 500 L 0 440.4785493351301 C 42.35294117647059 440.4785493351301 42.35294117647059 437.9195103308848 84.70588235294117 437.9195103308848 C 127.05882352941177 437.9195103308848 127.05882352941177 402.00673628503864 169.41176470588235 402.00673628503864 C 211.76470588235293 402.00673628503864 211.76470588235293 413.6142476538953 254.11764705882354 413.6142476538953 C 296.47058823529414 413.6142476538953 296.47058823529414 447.78900751705805 338.8235294117647 447.78900751705805 C 381.17647058823525 447.78900751705805 381.17647058823525 387.87328057740524 423.52941176470586 387.87328057740524 C 465.88235294117646 387.87328057740524 465.88235294117646 428.642523023409 508.2352941176471 428.642523023409 C 550.5882352941176 428.642523023409 550.5882352941176 470.49322779419526 592.9411764705882 470.49322779419526 C 635.2941176470588 470.49322779419526 635.2941176470588 419.32586912842453 677.6470588235294 419.32586912842453 C 720 419.32586912842453 720 474.76604352948925 762.3529411764706 474.76604352948925 C 804.7058823529412 474.76604352948925 804.7058823529412 450.5494943724261 847.0588235294117 450.5494943724261 C 889.4117647058823 450.5494943724261 889.4117647058823 448.9961674530423 931.7647058823529 448.9961674530423 C 974.1176470588235 448.9961674530423 974.1176470588235 399.5019724410031 1016.4705882352941 399.5019724410031 C 1058.8235294117649 399.5019724410031 1058.8235294117649 443.20265085505525 1101.1764705882354 443.20265085505525 C 1143.5294117647059 443.20265085505525 1143.5294117647059 468.03143000068303 1185.8823529411764 468.03143000068303 C 1228.2352941176468 468.03143000068303 1228.2352941176468 449.7320733977904 1270.5882352941176 449.7320733977904 C 1312.9411764705883 449.7320733977904 1312.9411764705883 446.9516475883938 1355.2941176470588 446.9516475883938 C 1397.6470588235293 446.9516475883938 1397.6470588235293 476.3998288487346 1440 476.3998288487346 L 1440 500 Z"></path>
-    </svg>
-    
-    <!-- Footer -->
-    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+    </div>
+</section>
+
+<!-- Waves -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 500" class="-mt-80 block">
+    <path fill="#A7D8F0" fill-opacity="1" d="M 0 500 L 0 368.38683022177975 C 42.35294117647059 368.38683022177975 42.35294117647059 391.0122426421185 84.70588235294117 391.0122426421185 C 127.05882352941177 391.0122426421185 127.05882352941177 373.63906704709734 169.41176470588235 373.63906704709734 C 211.76470588235293 373.63906704709734 211.76470588235293 356.856277265324 254.11764705882354 356.856277265324 C 296.47058823529414 356.856277265324 296.47058823529414 430.0962213834589 338.8235294117647 430.0962213834589 C 381.17647058823525 430.0962213834589 381.17647058823525 358.44978054230523 423.52941176470586 358.44978054230523 C 465.88235294117646 358.44978054230523 465.88235294117646 387.77497836663315 508.2352941176471 387.77497836663315 C 550.5882352941176 387.77497836663315 550.5882352941176 385.68093964808213 592.9411764705882 385.68093964808213 C 635.2941176470588 385.68093964808213 635.2941176470588 409.2788834956991 677.6470588235294 409.2788834956991 C 720 409.2788834956991 720 352.20592746904003 762.3529411764706 352.20592746904003 C 804.7058823529412 352.20592746904003 804.7058823529412 416.669746269325 847.0588235294117 416.669746269325 C 889.4117647058823 416.669746269325 889.4117647058823 445.4575643981934 931.7647058823529 445.4575643981934 C 974.1176470588235 445.4575643981934 974.1176470588235 387.2670653698333 1016.4705882352941 387.2670653698333 C 1058.8235294117649 387.2670653698333 1058.8235294117649 374.9026260030041 1101.1764705882354 374.9026260030041 C 1143.5294117647059 374.9026260030041 1143.5294117647059 432.4825615644477 1185.8823529411764 432.4825615644477 C 1228.2352941176468 432.4825615644477 1228.2352941176468 425.4675525645871 1270.5882352941176 425.4675525645871 C 1312.9411764705883 425.4675525645871 1312.9411764705883 372.77695203890744 1355.2941176470588 372.77695203890744 C 1397.6470588235293 372.77695203890744 1397.6470588235293 396.3531364413302 1440 396.3531364413302 L 1440 500 Z"></path>
+    <path fill="#4076b5" fill-opacity="1" d="M 0 500 L 0 405.06010314524246 C 60 405.06010314524246 60 382.8700307820691 120 382.8700307820691 C 180 382.8700307820691 180 429.9718148959437 240 429.9718148959437 C 300 429.9718148959437 300 427.60237817486995 360 427.60237817486995 C 420 427.60237817486995 420 380.78224251600204 480 380.78224251600204 C 540 380.78224251600204 540 421.27531861737225 600 421.27531861737225 C 660 421.27531861737225 660 369.84832524571175 720 369.84832524571175 C 780 369.84832524571175 780 407.3549444411037 840 407.3549444411037 C 900 407.3549444411037 900 413.33418116977555 960 413.33418116977555 C 1020 413.33418116977555 1020 425.26447789072336 1080 425.26447789072336 C 1140 425.26447789072336 1140 419.54943591952315 1200 419.54943591952315 C 1260 419.54943591952315 1260 436.8618440411774 1320 436.8618440411774 C 1380 436.8618440411774 1380 394.14096436416 1440 394.14096436416 L 1440 500 Z"></path>
+    <path fill="#0a3d4d" fill-opacity="1" d="M 0 500 L 0 440.4785493351301 C 42.35294117647059 440.4785493351301 42.35294117647059 437.9195103308848 84.70588235294117 437.9195103308848 C 127.05882352941177 437.9195103308848 127.05882352941177 402.00673628503864 169.41176470588235 402.00673628503864 C 211.76470588235293 402.00673628503864 211.76470588235293 413.6142476538953 254.11764705882354 413.6142476538953 C 296.47058823529414 413.6142476538953 296.47058823529414 447.78900751705805 338.8235294117647 447.78900751705805 C 381.17647058823525 447.78900751705805 381.17647058823525 387.87328057740524 423.52941176470586 387.87328057740524 C 465.88235294117646 387.87328057740524 465.88235294117646 428.642523023409 508.2352941176471 428.642523023409 C 550.5882352941176 428.642523023409 550.5882352941176 470.49322779419526 592.9411764705882 470.49322779419526 C 635.2941176470588 470.49322779419526 635.2941176470588 419.32586912842453 677.6470588235294 419.32586912842453 C 720 419.32586912842453 720 474.76604352948925 762.3529411764706 474.76604352948925 C 804.7058823529412 474.76604352948925 804.7058823529412 450.5494943724261 847.0588235294117 450.5494943724261 C 889.4117647058823 450.5494943724261 889.4117647058823 448.9961674530423 931.7647058823529 448.9961674530423 C 974.1176470588235 448.9961674530423 974.1176470588235 399.5019724410031 1016.4705882352941 399.5019724410031 C 1058.8235294117649 399.5019724410031 1058.8235294117649 443.20265085505525 1101.1764705882354 443.20265085505525 C 1143.5294117647059 443.20265085505525 1143.5294117647059 468.03143000068303 1185.8823529411764 468.03143000068303 C 1228.2352941176468 468.03143000068303 1228.2352941176468 449.7320733977904 1270.5882352941176 449.7320733977904 C 1312.9411764705883 449.7320733977904 1312.9411764705883 446.9516475883938 1355.2941176470588 446.9516475883938 C 1397.6470588235293 446.9516475883938 1397.6470588235293 476.3998288487346 1440 476.3998288487346 L 1440 500 Z"></path>
+</svg>
+
+<!-- Footer -->
+<footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
             <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
         </div>
         <div>
-            <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
-            <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+            <h3 id="footer-escribenos" class="text-2xl font-bold mb-4">Escríbenos!</h3>
+            <p id="footer-escribenos-desc" class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
             <form class="space-y-4">
                 <div>
-                    <label class="block text-xs mb-1">Tu e-mail *</label>
-                    <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
-                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    <label id="footer-email-label" class="block text-xs mb-1">Tu e-mail *</label>
+                    <input type="email" id="footer-email-placeholder" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                    <p id="footer-requerido1" class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
                 </div>
                 <div>
-                    <label class="block text-xs mb-1">Mensaje*</label>
-                    <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
-                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    <label id="footer-msg-label" class="block text-xs mb-1">Mensaje*</label>
+                    <textarea id="footer-msg-placeholder" placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                    <p id="footer-requerido2" class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
                 </div>
-                <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
+                <button id="footer-send" type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
             </form>
         </div>
-        <div class="space-y-8 ml-20">
+        <div class="space-y-8">
             <div>
-                <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                <h3 id="footer-contact" class="text-lg font-bold mb-4">Contacto</h3>
                 <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
             </div>
             <div>
-                <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                <h3 id="footer-streaming" class="text-lg font-bold mb-4">Streaming</h3>
                 <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
                     <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
                     <span class="text-sm font-bold">Youtube</span>
@@ -241,18 +237,16 @@
     <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
         <p>© 2026 Awaq ONG</p>
         <div class="flex flex-wrap justify-center gap-6">
-            <a href="#" class="hover:text-white">Políticas de privacidad</a>
-            <a href="#" class="hover:text-white">Políticas de Cookies</a>
-            <a href="#" class="hover:text-white">Aviso Legal</a>
-            <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+            <a href="#" id="footer-privacy" class="hover:text-white">Políticas de privacidad</a>
+            <a href="#" id="footer-cookies" class="hover:text-white">Políticas de Cookies</a>
+            <a href="#" id="footer-legal" class="hover:text-white">Aviso Legal</a>
+            <a href="#" id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
         </div>
     </div>
 </footer>
 
-    <script>
-        // Inicializar iconos de Lucide
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
     <script src="../assets/js/fades.js"></script>
+    <script src="../assets/js/Traducciones/colabora.js" defer></script>
 </body>
 </html>

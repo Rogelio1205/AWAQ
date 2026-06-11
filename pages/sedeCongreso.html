@@ -8,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Poppins:wght@400;500;600&family=Fira+Sans:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="icon" type="image/png" href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png">
 </head>
-
 <body class="bg-white text-[#09354e]">
 
-  <!-- HEADER / NAVBAR -->
-<nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
+  <!-- Navbar -->
+  <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
     <div class="flex items-center justify-between">
         <div class="flex items-center gap-2">
             <a href="../">
@@ -21,20 +21,19 @@
             </a>
         </div>
         <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
-            <a href="./congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
-            <a href="./memoria2iceo" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
-            <a href="./aliados" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
-            <a href="./prensa" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
-            <a href="./marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
-            <a href="./Colabora" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
-            
+            <a href="./congreso" id="nav-congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
+            <a href="./memoria2iceo" id="nav-memoria" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
+            <a href="./aliados" id="nav-aliados" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+            <a href="./prensa" id="nav-prensa" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+            <a href="./marketplace" id="nav-marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
+            <a href="./Colabora" id="nav-colabora" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
         </div>
         <div class="flex items-center gap-3">
-            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
-                <span>ES</span>
+            <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50" onclick="toggleLang()">
+                <span id="lang-label">ES</span>
                 <i data-lucide="chevron-down" class="w-3 h-3"></i>
             </div>
-            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
+            <button id="nav-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
                 Quiero asistir
             </button>
             <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
@@ -45,15 +44,14 @@
         </div>
     </div>
     <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
-        <a href="./congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
-        <a href="./memoria2iceo" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
-        <a href="./aliados" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
-        <a href="./prensa" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
-        <a href="./Marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
-        <a href="./Colabora" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
-
+        <a href="./congreso" id="nav-mob-congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+        <a href="./memoria2iceo" id="nav-mob-memoria" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
+        <a href="./aliados" id="nav-mob-aliados" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+        <a href="./prensa" id="nav-mob-prensa" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+        <a href="./Marketplace" id="nav-mob-marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
+        <a href="./Colabora" id="nav-mob-colabora" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
         <div class="pt-3 border-t mt-2">
-            <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
+            <button id="nav-mob-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
                 Quiero asistir
             </button>
         </div>
@@ -68,21 +66,21 @@
     }
 </script>
 
-    <!-- HERO -->
+<!-- HERO -->
 <section class="bg-[#7eb7b6]">
     <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-            <h1 class="font-gloock text-[#09354E] text-5xl md:text-6xl leading-tight mb-5 font-semibold fade-up">
+            <h1 id="hero-title" class="font-gloock text-[#09354E] text-5xl md:text-6xl leading-tight mb-5 font-semibold fade-up">
                 Sede del Congreso
             </h1>
-            <p class="text-gray-600 text-lg leading-relaxed mb-8 max-w-lg fade-up">
+            <p id="hero-desc" class="text-gray-900 text-lg leading-relaxed mb-8 max-w-lg fade-up">
                 Cali abre sus puertas a un encuentro global <br>por el agua, la biodiversidad y la vida
             </p>
             <div class="inline-flex bg-[#DAE8F2] text-[#09354E] px-8 py-2 rounded-full font-bold text-sm tracking-wider fade-up">
                 <div class="pr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" width="45" height="30"><path fill="#ffcd00" d="M0 0h45v30H0z"/><path fill="#003087" d="M0 15h45v15H0z"/><path fill="#c8102e" d="M0 22h60v7H0z"/></svg>
                 </div>
-                <div class="pt-1">Cali, Colombia</div>
+                <div id="hero-location" class="pt-1">Cali, Colombia</div>
             </div>
         </div>
         <div class="relative w-[488px] h-[234px] fade-up">
@@ -93,7 +91,7 @@
     </section>
 </section>
 
-<!-- 3.1 CALI -->
+<!-- CALI -->
 <section class="relative bg-[#e7f4ee] py-20 px-6 md:px-12 overflow-hidden">
     <div style="line-height:0; position:absolute; top:0; left:0; width:100%;">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block; transform:rotate(180deg);">
@@ -101,291 +99,253 @@
         </svg>
     </div>
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center pt-8">
-            <div>
-                <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 leading-tight fade-up">
-                    Cali: ciudad del agua y biodiversidad
-                </h2>
-                <p class="text-[#234] text-lg leading-relaxed mb-6 fade-up">
-                    Cali es reconocida por su riqueza ambiental, su conexión con los ríos,
-                    los Farallones y la biodiversidad del Pacífico colombiano.
-                    La ciudad combina naturaleza, cultura y sostenibilidad,
-                    convirtiéndose en un escenario ideal para un encuentro internacional
-                    centrado en acción climática y cooperación ambiental.
-                </p>
-                <p class="text-[#234] text-lg leading-relaxed fade-up">
-                    Durante el Congreso podrás disfrutar de una ciudad vibrante,
-                    con espacios verdes, gastronomía local y una comunidad universitaria
-                    comprometida con la transformación sostenible.
-                </p>
-            </div>
-            <div class="fade-up">
-                <img
-                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/GettyImages-1143889946-1024x683.jpg"
-                    alt="Imagen de ciudad de cali"
-                    class="rounded-[30px] w-full shadow-xl"
-                >
-            </div>
+        <div>
+            <h2 id="cali-title" class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 leading-tight fade-up">
+                Cali: ciudad del agua y biodiversidad
+            </h2>
+            <p id="cali-p1" class="text-[#234] text-lg leading-relaxed mb-6 fade-up">
+                Cali es reconocida por su riqueza ambiental, su conexión con los ríos,
+                los Farallones y la biodiversidad del Pacífico colombiano.
+                La ciudad combina naturaleza, cultura y sostenibilidad,
+                convirtiéndose en un escenario ideal para un encuentro internacional
+                centrado en acción climática y cooperación ambiental.
+            </p>
+            <p id="cali-p2" class="text-[#234] text-lg leading-relaxed fade-up">
+                Durante el Congreso podrás disfrutar de una ciudad vibrante,
+                con espacios verdes, gastronomía local y una comunidad universitaria
+                comprometida con la transformación sostenible.
+            </p>
         </div>
-        <div style="line-height:0; position:absolute; bottom:0; left:0; width:100%;">
-            <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
-                <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#eef6f9"></path>
-            </svg>
+        <div class="fade-up">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/GettyImages-1143889946-1024x683.jpg" alt="Imagen de ciudad de cali" class="rounded-[30px] w-full shadow-xl">
         </div>
-    </section>
-
-    <!-- 3.2 UNIVERSIDAD -->
-    <section class="py-20 px-6 md:px-12 bg-[#eef6f9]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center max-w-4xl mx-auto mb-14">
-                <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
-                    Universidad de San Buenaventura: campus y sostenibilidad
-                </h2>
-                <p class="text-lg text-[#234] leading-relaxed fade-up">
-                    La Universidad de San Buenaventura Cali será la sede oficial del evento.
-                    El campus cuenta con auditorios modernos, zonas verdes,
-                    conectividad y espacios diseñados para fomentar el diálogo,
-                    la innovación y el trabajo colaborativo.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="rounded-3xl h-72 object-cover w-full fade-up">
-                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/universidad.webp" class="rounded-3xl h-72 object-cover w-full fade-up">
-                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/universidadDron.jpg" class="rounded-3xl h-72 object-cover w-full fade-up">
-                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/sedes-bogota.webp" class="rounded-3xl h-72 object-cover w-full fade-up">
-            </div>
-        </div>
-    </section>
-
-    <!-- 3.3 GUIA DE VIAJE -->
-    <section class="py-20 px-6 md:px-12 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div class="fade-up">
-                <img
-                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/mapaCali.png"
-                    alt="Guía de viaje"
-                    class="w-full rounded-3xl bg-[#dceff4] p-10"
-                >
-            </div>
-            <div>
-                <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
-                    Cómo llegar
-                </h2>
-                <p class="text-lg text-[#234] leading-relaxed mb-6 fade-up">
-                    El campus se encuentra ubicado en el sur de Cali,
-                    con acceso desde las principales avenidas de la ciudad
-                    y cercanía a hoteles, restaurantes y transporte público.
-                </p>
-                <div class="space-y-5">
-                    <div class="bg-[#eef6f9] rounded-2xl p-6 fade-up">
-                        <h3 class="font-semibold text-[#09354e] text-xl mb-2">✈️ Aeropuerto</h3>
-                        <p class="text-[#234]">Desde el Aeropuerto Alfonso Bonilla Aragón</p>
-                    </div>
-                    <div class="bg-[#eef6f9] rounded-2xl p-6 fade-up">
-                        <h3 class="font-semibold text-[#09354e] text-xl mb-2">🚗 Transporte</h3>
-                        <p class="text-[#234]">Puedes llegar mediante taxi o aplicaciones de movilidad</p>
-                    </div>
-                    <div class="bg-[#eef6f9] rounded-2xl p-6 fade-up">
-                        <h3 class="font-semibold text-[#09354e] text-xl mb-2">📍 Ubicación</h3>
-                        <p class="text-[#234]">Cra. 122 #6-65, Barrio Pance, Cali, Valle del Cauca, Colombia</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3.4 HOTELES -->
-    <section class="py-20 px-6 md:px-12 bg-[#e7f4ee]">
-        <div class="max-w-7xl mx-auto">
-            <div class="max-w-3xl mb-14">
-                <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
-                    Alojamiento: hoteles y aliados
-                </h2>
-                <p class="text-lg text-[#234] leading-relaxed fade-up">
-                    Hemos preparado alianzas con hoteles cercanos y espacios de alojamiento
-                    para facilitar tu experiencia durante el Congreso.
-                </p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg fade-up">
-                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold text-[#09354e] mb-4">Hotel Aliado</h3>
-                        <p class="text-[#234] leading-relaxed mb-6">Hospedaje cercano al campus con tarifas especiales para asistentes del evento.</p>
-                        <button class="bg-[#097589] hover:bg-[#065d6b] text-white px-6 py-3 rounded-full font-semibold transition-all">VER MÁS</button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg fade-up">
-                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold text-[#09354e] mb-4">Eco Hostel</h3>
-                        <p class="text-[#234] leading-relaxed mb-6">Espacio alternativo enfocado en sostenibilidad y convivencia colaborativa.</p>
-                        <button class="bg-[#097589] hover:bg-[#065d6b] text-white px-6 py-3 rounded-full font-semibold transition-all">VER MÁS</button>
-                    </div>
-                </div>
-                <div class="bg-white rounded-3xl overflow-hidden shadow-lg fade-up">
-                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="h-56 w-full object-cover">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-semibold text-[#09354e] mb-4">Convenios locales</h3>
-                        <p class="text-[#234] leading-relaxed mb-6">Próximamente compartiremos más opciones y beneficios para participantes internacionales.</p>
-                        <button class="bg-[#097589] hover:bg-[#065d6b] text-white px-6 py-3 rounded-full font-semibold transition-all">CONSULTAR</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3.5 MAPA -->
-    <section class="pt-8 px-6 md:px-12 bg-white">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
-                    Mapa del campus y ubicaciones clave
-                </h2>
-                <p class="text-lg text-[#234] leading-relaxed mb-8 fade-up">
-                    Consulta el plano del campus para ubicar auditorios,
-                    zonas de networking, áreas de descanso,
-                    puntos de registro y espacios del marketplace.
-                </p>
-                <div class="flex flex-wrap gap-4 fade-up">
-    <a href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/sedecongreso/db45c510094d84cf0e64c37fc5e5b244.pdf"
-       download
-       class="border-2 border-[#097589] text-[#097589] hover:bg-[#097589] hover:text-white transition-all px-8 py-4 rounded-full font-semibold">
-        DESCARGAR PDF
-    </a>
-    <a href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/sedecongreso/db45c510094d84cf0e64c37fc5e5b244.pdf"
-       target="_blank"
-       class="bg-[#097589] hover:bg-[#065d6b] text-white px-8 py-4 rounded-full font-semibold transition-all">
-        VER MAPA
-    </a>
-</div>
-            </div>
-            <div class="fade-up">
-                <img
-                    src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/mapaUniversidad.png"
-                    alt="Plano campus"
-                    class="w-full rounded-3xl shadow-xl bg-[#eef6f9] p-8"
-                >
-            </div>
-        </div>
-    </section>
-    <!-- 3.6 VIDEOJUEGO -->
-<section class="py-20 px-6 md:px-12 mt-10 bg-[#eef6f9]">
-  <div class="max-w-7xl mx-auto">
-    
-    <div class="text-center max-w-3xl mx-auto mb-10">
-      <h2 class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-4 fade-up">
-        Explora el campus
-      </h2>
-      <p class="text-lg text-[#234] leading-relaxed fade-up">
-        Recorre la Universidad de San Buenaventura de forma interactiva
-        y descubre los espacios que serán parte del Congreso.
-      </p>
     </div>
-
-    <div class="fade-up">
-      <div class="relative rounded-3xl shadow-sm border border-gray-100 aspect-video  overflow-hidden">
-        
-        <iframe
-          id="game-iframe"
-          src="../assets/games/RetoGame1/"
-          class="w-full h-full rounded-3xl"
-          style="border: none;"
-          allowfullscreen
-          allow="autoplay; fullscreen"
-          title="Explora el campus">
-        </iframe>
-
-        <!-- Fullscreen -->
-        <button
-          onclick="entrarFullscreen()"
-          class="absolute bottom-3 right-3 bg-white/20 hover:bg-white/40 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2 transition-all backdrop-blur-sm z-10">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/>
-          </svg>
-          Pantalla completa
-        </button>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-  </section>
-    <section class="relative max-w-full overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 lg:py-16">
-            <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
-                <div class="w-64 sm:w-72 lg:w-5/12 flex justify-center flex-shrink-0 fade-up">
-                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/followus.png" alt="Follow Us on Social Media" class="w-full h-auto object-contain">
-                </div>
-                <div class="w-full lg:w-7/12 text-center lg:text-left fade-up">
-                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 leading-tight">
-                        ¡Pásate por nuestras Redes Sociales y síguenos!
-                    </h3>
-                    <p class="text-gray-600 mb-6 text-base sm:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
-                        Publicamos contenido acerca de la labor que hacemos, podrás conocer nuestros proyectos y a nosotros más a fondo.
-                    </p>
-                    <div class="flex flex-wrap gap-6 font-bold text-teal-600">
-                        <a href="https://www.instagram.com/awaqongd/" target="_blank" class="flex items-center gap-2 hover:text-pink-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                            </svg>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="https://www.facebook.com/somosawaq/" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-                            </svg>
-                            <span>Facebook</span>
-                        </a>
-                        <a href="https://www.linkedin.com/company/awaq-ongd/?originalSubdomain=es" target="_blank" class="flex items-center gap-2 hover:text-blue-800 transition-colors">
-                            <svg class="w-6 h-6" viewBox="0 0 512 512" fill="currentColor">
-                                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.1 107 0 82.9 0 53.2A53.2 53.2 0 0153.84 0C83.6 0 107.7 24.1 107.7 53.2c0 29.7-24.1 53.8-53.86 53.8zM447.9 448h-92.4V302.4c0-34.7-.7-79.4-48.4-79.4-48.4 0-55.8 37.8-55.8 76.9V448h-92.5V148.9h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.6-48.4 93.7 0 111 61.7 111 142V448z"/>
-                            </svg>
-                            <span>LinkedIn</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div style="line-height:0;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none" style="display:block; width:100%; height:120px;">
-            <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
-            <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
-            <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+    <div style="line-height:0; position:absolute; bottom:0; left:0; width:100%;">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="width:100%; height:60px; display:block;">
+            <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,20 1440,30 L1440,60 L0,60 Z" fill="#eef6f9"></path>
         </svg>
     </div>
+</section>
 
-    <!-- FOOTER -->
-    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+<!-- UNIVERSIDAD -->
+<section class="py-20 px-6 md:px-12 bg-[#eef6f9]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-4xl mx-auto mb-14">
+            <h2 id="uni-title" class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
+                Universidad de San Buenaventura: campus y sostenibilidad
+            </h2>
+            <p id="uni-desc" class="text-lg text-[#234] leading-relaxed fade-up">
+                La Universidad de San Buenaventura Cali será la sede oficial del evento.
+                El campus cuenta con auditorios modernos, zonas verdes,
+                conectividad y espacios diseñados para fomentar el diálogo,
+                la innovación y el trabajo colaborativo.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="rounded-3xl h-72 object-cover w-full fade-up">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/universidad.webp" class="rounded-3xl h-72 object-cover w-full fade-up">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/universidadDron.jpg" class="rounded-3xl h-72 object-cover w-full fade-up">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/sedes-bogota.webp" class="rounded-3xl h-72 object-cover w-full fade-up">
+        </div>
+    </div>
+</section>
+
+<!-- CÓMO LLEGAR -->
+<section class="py-20 px-6 md:px-12 bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="fade-up">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/mapaCali.png" alt="Guía de viaje" class="w-full rounded-3xl bg-[#dceff4] p-10">
+        </div>
+        <div>
+            <h2 id="llegar-title" class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
+                Cómo llegar
+            </h2>
+            <p id="llegar-desc" class="text-lg text-[#234] leading-relaxed mb-6 fade-up">
+                El campus se encuentra ubicado en el sur de Cali,
+                con acceso desde las principales avenidas de la ciudad
+                y cercanía a hoteles, restaurantes y transporte público.
+            </p>
+            <div class="space-y-5">
+                <div class="bg-[#eef6f9] rounded-2xl p-6 fade-up">
+                    <h3 id="llegar-aero-title" class="font-semibold text-[#09354e] text-xl mb-2">✈️ Aeropuerto</h3>
+                    <p id="llegar-aero-desc" class="text-[#234]">Desde el Aeropuerto Alfonso Bonilla Aragón</p>
+                </div>
+                <div class="bg-[#eef6f9] rounded-2xl p-6 fade-up">
+                    <h3 id="llegar-trans-title" class="font-semibold text-[#09354e] text-xl mb-2">🚗 Transporte</h3>
+                    <p id="llegar-trans-desc" class="text-[#234]">Puedes llegar mediante taxi o aplicaciones de movilidad</p>
+                </div>
+                <div class="bg-[#eef6f9] rounded-2xl p-6 fade-up">
+                    <h3 id="llegar-ubi-title" class="font-semibold text-[#09354e] text-xl mb-2">📍 Ubicación</h3>
+                    <p id="llegar-ubi-desc" class="text-[#234]">Cra. 122 #6-65, Barrio Pance, Cali, Valle del Cauca, Colombia</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOTELES -->
+<section class="py-20 px-6 md:px-12 bg-[#e7f4ee]">
+    <div class="max-w-7xl mx-auto">
+        <div class="max-w-3xl mb-14">
+            <h2 id="hotel-title" class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
+                Alojamiento: hoteles y aliados
+            </h2>
+            <p id="hotel-desc" class="text-lg text-[#234] leading-relaxed fade-up">
+                Hemos preparado alianzas con hoteles cercanos y espacios de alojamiento
+                para facilitar tu experiencia durante el Congreso.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg fade-up">
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="h-56 w-full object-cover">
+                <div class="p-8">
+                    <h3 id="h1-title" class="text-2xl font-semibold text-[#09354e] mb-4">Hotel Aliado</h3>
+                    <p id="h1-desc" class="text-[#234] leading-relaxed mb-6">Hospedaje cercano al campus con tarifas especiales para asistentes del evento.</p>
+                    <button id="h1-btn" class="bg-[#097589] hover:bg-[#065d6b] text-white px-6 py-3 rounded-full font-semibold transition-all">VER MÁS</button>
+                </div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg fade-up">
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="h-56 w-full object-cover">
+                <div class="p-8">
+                    <h3 id="h2-title" class="text-2xl font-semibold text-[#09354e] mb-4">Eco Hostel</h3>
+                    <p id="h2-desc" class="text-[#234] leading-relaxed mb-6">Espacio alternativo enfocado en sostenibilidad y convivencia colaborativa.</p>
+                    <button id="h2-btn" class="bg-[#097589] hover:bg-[#065d6b] text-white px-6 py-3 rounded-full font-semibold transition-all">VER MÁS</button>
+                </div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden shadow-lg fade-up">
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/imagen-universidad.webp" class="h-56 w-full object-cover">
+                <div class="p-8">
+                    <h3 id="h3-title" class="text-2xl font-semibold text-[#09354e] mb-4">Convenios locales</h3>
+                    <p id="h3-desc" class="text-[#234] leading-relaxed mb-6">Próximamente compartiremos más opciones y beneficios para participantes internacionales.</p>
+                    <button id="h3-btn" class="bg-[#097589] hover:bg-[#065d6b] text-white px-6 py-3 rounded-full font-semibold transition-all">CONSULTAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MAPA -->
+<section class="pt-8 px-6 md:px-12 bg-white">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div>
+            <h2 id="mapa-title" class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-6 fade-up">
+                Mapa del campus y ubicaciones clave
+            </h2>
+            <p id="mapa-desc" class="text-lg text-[#234] leading-relaxed mb-8 fade-up">
+                Consulta el plano del campus para ubicar auditorios,
+                zonas de networking, áreas de descanso,
+                puntos de registro y espacios del marketplace.
+            </p>
+            <div class="flex flex-wrap gap-4 fade-up">
+                <a href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/sedecongreso/db45c510094d84cf0e64c37fc5e5b244.pdf" download id="mapa-btn-download" class="border-2 border-[#097589] text-[#097589] hover:bg-[#097589] hover:text-white transition-all px-8 py-4 rounded-full font-semibold">
+                    DESCARGAR PDF
+                </a>
+                <a href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/sedecongreso/db45c510094d84cf0e64c37fc5e5b244.pdf" target="_blank" id="mapa-btn-ver" class="bg-[#097589] hover:bg-[#065d6b] text-white px-8 py-4 rounded-full font-semibold transition-all">
+                    VER MAPA
+                </a>
+            </div>
+        </div>
+        <div class="fade-up">
+            <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/Congreso/mapaUniversidad.png" alt="Plano campus" class="w-full rounded-3xl shadow-xl bg-[#eef6f9] p-8">
+        </div>
+    </div>
+</section>
+
+<!-- VIDEOJUEGO -->
+<section class="py-20 px-6 md:px-12 mt-10 bg-[#eef6f9]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-10">
+            <h2 id="game-title" class="text-4xl md:text-5xl font-semibold text-[#09354e] mb-4 fade-up">
+                Explora el campus
+            </h2>
+            <p id="game-desc" class="text-lg text-[#234] leading-relaxed fade-up">
+                Recorre la Universidad de San Buenaventura de forma interactiva
+                y descubre los espacios que serán parte del Congreso.
+            </p>
+        </div>
+        <div class="fade-up">
+            <div class="relative rounded-3xl shadow-sm border border-gray-100 aspect-video overflow-hidden">
+                <iframe id="game-iframe" src="../assets/games/RetoGame1/" class="w-full h-full rounded-3xl" style="border: none;" allowfullscreen allow="autoplay; fullscreen" title="Explora el campus"></iframe>
+                <button onclick="entrarFullscreen()" class="absolute bottom-3 right-3 bg-white/20 hover:bg-white/40 text-white rounded-lg px-3 py-2 text-xs font-bold flex items-center gap-2 transition-all backdrop-blur-sm z-10">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                    <span id="fullscreen-btn">Pantalla completa</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social -->
+<section class="relative max-w-full overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 pt-10 pb-0 lg:py-16">
+        <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-8 lg:gap-16">
+            <div class="w-64 sm:w-72 lg:w-5/12 flex justify-center flex-shrink-0 fade-up">
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/followus.png" alt="Follow Us on Social Media" class="w-full h-auto object-contain">
+            </div>
+            <div class="w-full lg:w-7/12 text-center lg:text-left fade-up">
+                <h3 id="social-title" class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A365D] mb-4 leading-tight">
+                    ¡Pásate por nuestras Redes Sociales y síguenos!
+                </h3>
+                <p id="social-desc" class="text-gray-900 mb-6 text-base sm:text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                    Publicamos contenido acerca de la labor que hacemos, podrás conocer nuestros proyectos y a nosotros más a fondo.
+                </p>
+                <div class="flex flex-wrap gap-6 font-bold text-teal-600">
+                    <a href="https://www.instagram.com/awaqongd/" target="_blank" class="flex items-center gap-2 hover:text-pink-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.facebook.com/somosawaq/" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/awaq-ongd/?originalSubdomain=es" target="_blank" class="flex items-center gap-2 hover:text-blue-800 transition-colors">
+                        <svg class="w-6 h-6" viewBox="0 0 512 512" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.1 107 0 82.9 0 53.2A53.2 53.2 0 0153.84 0C83.6 0 107.7 24.1 107.7 53.2c0 29.7-24.1 53.8-53.86 53.8zM447.9 448h-92.4V302.4c0-34.7-.7-79.4-48.4-79.4-48.4 0-55.8 37.8-55.8 76.9V448h-92.5V148.9h88.8v40.8h1.3c12.4-23.5 42.6-48.4 87.6-48.4 93.7 0 111 61.7 111 142V448z"/></svg>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="line-height:0;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none" style="display:block; width:100%; height:120px;">
+        <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
+        <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
+        <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+    </svg>
+</div>
+
+<!-- Footer -->
+<footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         <div>
             <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
         </div>
         <div>
-            <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
-            <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+            <h3 id="footer-escribenos" class="text-2xl font-bold mb-4">Escríbenos!</h3>
+            <p id="footer-escribenos-desc" class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
             <form class="space-y-4">
                 <div>
-                    <label class="block text-xs mb-1">Tu e-mail *</label>
-                    <input type="email" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
-                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    <label id="footer-email-label" class="block text-xs mb-1">Tu e-mail *</label>
+                    <input type="email" id="footer-email-placeholder" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                    <p id="footer-requerido1" class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
                 </div>
                 <div>
-                    <label class="block text-xs mb-1">Mensaje*</label>
-                    <textarea placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
-                    <p class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                    <label id="footer-msg-label" class="block text-xs mb-1">Mensaje*</label>
+                    <textarea id="footer-msg-placeholder" placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                    <p id="footer-requerido2" class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
                 </div>
-                <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
+                <button id="footer-send" type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
             </form>
         </div>
-        <div class="space-y-8 ml-20">
+        <div class="space-y-8">
             <div>
-                <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                <h3 id="footer-contact" class="text-lg font-bold mb-4">Contacto</h3>
                 <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
             </div>
             <div>
-                <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                <h3 id="footer-streaming" class="text-lg font-bold mb-4">Streaming</h3>
                 <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
                     <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
                     <span class="text-sm font-bold">Youtube</span>
@@ -397,10 +357,10 @@
     <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
         <p>© 2026 Awaq ONG</p>
         <div class="flex flex-wrap justify-center gap-6">
-            <a href="#" class="hover:text-white">Políticas de privacidad</a>
-            <a href="#" class="hover:text-white">Políticas de Cookies</a>
-            <a href="#" class="hover:text-white">Aviso Legal</a>
-            <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+            <a href="#" id="footer-privacy" class="hover:text-white">Políticas de privacidad</a>
+            <a href="#" id="footer-cookies" class="hover:text-white">Políticas de Cookies</a>
+            <a href="#" id="footer-legal" class="hover:text-white">Aviso Legal</a>
+            <a href="#" id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
         </div>
     </div>
 </footer>
@@ -408,29 +368,19 @@
 <script src="../assets/js/fades.js"></script>
 <script>
     if (typeof lucide !== 'undefined') lucide.createIcons();
-
-    // Fade up observer
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-  </script>
-  <script>
+</script>
+<script>
 function entrarFullscreen() {
     const iframe = document.getElementById('game-iframe');
-    if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-        iframe.mozRequestFullScreen();
-    }
+    if (iframe.requestFullscreen) iframe.requestFullscreen();
+    else if (iframe.webkitRequestFullscreen) iframe.webkitRequestFullscreen();
+    else if (iframe.mozRequestFullScreen) iframe.mozRequestFullScreen();
 }
 </script>
+<script src="../assets/js/Traducciones/sedeCongreso.js" defer></script>
 </body>
 </html>
