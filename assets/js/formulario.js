@@ -78,8 +78,6 @@ congressForm.addEventListener('submit', (e) => {
     const payload = new URLSearchParams({
     orgid:       '00D7Q0000092UMO',
     retURL:      'https://congreso.somosawaq.org/',
-    debug:       '1',
-    debugEmail:  'a00842541@tec.mx',
 
         name:        `${formData.get('firstname')} ${formData.get('lastname')}`,
         email:       formData.get('email'),

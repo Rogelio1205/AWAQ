@@ -244,35 +244,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ══════════════════════════════════════════════════════════════
-    // ENVÍO → SALESFORCE
+    // ENVÍO → SALESFORCE (form nativo + iframe, igual que Vue)
     // ══════════════════════════════════════════════════════════════
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (btnEnviar.disabled) return;
 
         const formData = new FormData(form);
+        const phoneCode = formData.get('phone_country_code');
 
-        const payload = new URLSearchParams({
-            orgid:   '00D7Q0000092UMO',
-            retURL:  'https://congreso.somosawaq.org/',
-            debug:    '1',
-            debugEmail: 'a00842541@tec.mx',
+        // Crear iframe oculto
+        const iframe = document.createElement('iframe');
+        iframe.name = 'sf-iframe-prensa';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
 
-            // Campos estándar requeridos por Salesforce
-            name:    `${formData.get('nombre')} ${formData.get('apellidos')}`,
-            email:   formData.get('email'),
-            subject: 'Acreditación Prensa · 3ICEO LATAM 2027',
-            
+        // Crear form nativo apuntando al iframe
+        const sfForm = document.createElement('form');
+        sfForm.method = 'POST';
+        sfForm.action = 'https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D7Q0000092UMO';
+        sfForm.target  = 'sf-iframe-prensa';
+        sfForm.style.display = 'none';
 
-            // Tipo de formulario (leído del hidden input del HTML)
+        const sfFields = {
+            orgid:      '00D7Q0000092UMO',
+            retURL:     'https://congreso.somosawaq.org/',
+            recordType: '0127Q000000AkEQQA0',
+
+            name:       `${formData.get('nombre')} ${formData.get('apellidos')}`,
+            email:      formData.get('email'),
+            phone:      `${phoneCode} ${formData.get('telefono')}`,
+            subject:    'Acreditación Prensa · 3ICEO LATAM 2027',
+            status:     'New',
+            origin:     'Web',
+
             '00NP500000Sx2AX': formData.get('00NP500000Sx2AX'),
-            'recordType': '0127Q000000AkEQQA0',
-
-            // Campos custom
             '00NP500000QQ1eD': formData.get('nombre'),
             '00NP500000QQ1kf': formData.get('apellidos'),
             '00NP500000Swze5': formData.get('email'),
-            '00NP500000Qwd6r': `${formData.get('phone_country_code')} ${formData.get('telefono')}`,
+            '00NP500000Qwap0': phoneCode,
+            '00NP500000Qwd6r': `${phoneCode} ${formData.get('telefono')}`,
             '00NP500000QwPK1': formData.get('country'),
             '00NP500000QwcxB': formData.get('city'),
             '00NP500000SwzhJ': formData.get('medio'),
@@ -285,22 +296,24 @@ document.addEventListener("DOMContentLoaded", () => {
             '00NP500000Sx00f': formData.get('comentarios') || '',
             '00NP500000QQ1sj': document.getElementById('terms').checked ? '1' : '',
             '00NP500000QwPNF': document.getElementById('newsletter').checked ? '1' : '',
-        });
+        };
 
-        try {
-            await fetch(
-                'https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D7Q0000092UMO',
-                {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: payload,
-                    mode: 'no-cors'
-                }
-            );
-            window.location.href = 'formularioCompletado';
-        } catch {
-            alert('Error al enviar. Intenta de nuevo.');
+        for (const [name, value] of Object.entries(sfFields)) {
+            const input = document.createElement('input');
+            input.type  = 'hidden';
+            input.name  = name;
+            input.value = value ?? '';
+            sfForm.appendChild(input);
         }
+
+        document.body.appendChild(sfForm);
+        sfForm.submit();
+
+        setTimeout(() => {
+            iframe.remove();
+            sfForm.remove();
+            window.location.href = 'formularioCompletado';
+        }, 2000);
     });
 
     // ══════════════════════════════════════════════════════════════

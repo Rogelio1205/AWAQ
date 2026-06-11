@@ -5,9 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnEnviar = document.getElementById('btn-enviar');
     const validMsg  = document.getElementById('validation-msg');
 
-    // ══════════════════════════════════════════════════════════════
-    // UTILIDADES
-    // ══════════════════════════════════════════════════════════════
     const BASE = 'https://countriesnow.space/api/v0.1';
 
     function toggleDropdown(dropdown) {
@@ -26,48 +23,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Cerrar dropdowns al hacer click fuera
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.relative')) {
             document.querySelectorAll('.loc-dropdown').forEach(d => d.classList.add('hidden'));
         }
     });
 
-    // Marcar todos los dropdowns de ubicación con la clase compartida
     ['phone-dropdown', 'country-dropdown', 'state-dropdown', 'city-dropdown']
         .forEach(id => document.getElementById(id)?.classList.add('loc-dropdown'));
 
-
     // ══════════════════════════════════════════════════════════════
-    // VALIDACIÓN GENERAL
+    // VALIDACIÓN
     // ══════════════════════════════════════════════════════════════
     function checkValidity() {
         const phoneCode  = document.getElementById('phone-code').textContent.trim();
         const countryVal = document.getElementById('country-value').value.trim();
         const termsOk    = document.getElementById('terms').checked;
 
-        // Todos los inputs/textareas/selects con [required]
-        const requiredFields = form.querySelectorAll('[required]');
+        const requiredFields = form.querySelectorAll('input[required], select[required], textarea[required]');
         const fieldsFilled   = Array.from(requiredFields).every(el => {
             if (el.type === 'checkbox') return el.checked;
             return el.value.trim() !== '';
         });
 
-        const phoneCountryOk = phoneCode !== '+--' && phoneCode !== '';
+        const phoneCountryOk = phoneCode !== '' && phoneCode !== '+--';
         const locationOk     = countryVal !== '';
+        const allOk          = fieldsFilled && phoneCountryOk && locationOk && termsOk;
 
-        const allOk = fieldsFilled && phoneCountryOk && locationOk && termsOk;
-
-        btnEnviar.disabled = !allOk;
+        if (allOk) {
+            btnEnviar.classList.add('ready');
+            btnEnviar.removeAttribute('disabled');
+        } else {
+            btnEnviar.classList.remove('ready');
+            btnEnviar.setAttribute('disabled', true);
+        }
         validMsg.style.opacity = allOk ? '0' : '1';
     }
 
     form.addEventListener('input',  checkValidity);
     form.addEventListener('change', checkValidity);
 
-
     // ══════════════════════════════════════════════════════════════
-    // PAÍSES — código de teléfono + selector de ubicación
+    // PAÍSES
     // ══════════════════════════════════════════════════════════════
     let allCountries = [];
 
@@ -78,12 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
             allCountries = data.data.sort((a, b) => a.name.localeCompare(b.name, 'es'));
             renderPhoneCountries(allCountries);
             renderLocationCountries(allCountries);
+            lucide.createIcons();
         } catch (err) {
             console.warn('Error cargando países:', err);
         }
     }
 
-    // ── Teléfono: dropdown con bandera + código ──
     function renderPhoneCountries(list) {
         const ul = document.getElementById('phone-country-list');
         ul.innerHTML = list.map(c => `
@@ -103,16 +100,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById('phone-country-code-value').value = li.dataset.dial;
                 document.getElementById('phone-dropdown').classList.add('hidden');
                 document.getElementById('phone-search').value = '';
-                filterList(document.getElementById('phone-search'),
-                           document.getElementById('phone-country-list'));
                 checkValidity();
             });
         });
-
         filterList(document.getElementById('phone-search'), ul);
     }
 
-    // ── Ubicación: dropdown de país ──
     function renderLocationCountries(list) {
         const ul = document.getElementById('country-list');
         ul.innerHTML = list.map(c => `
@@ -129,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
         filterList(document.getElementById('country-search'), ul);
     }
 
-    // ── Seleccionar país → cargar estados ──
     async function selectCountry(name, iso) {
         const countryLabel = document.getElementById('country-label');
         countryLabel.innerHTML = `
@@ -139,11 +131,8 @@ document.addEventListener("DOMContentLoaded", () => {
         countryLabel.classList.remove('text-gray-400');
         document.getElementById('country-value').value = name;
         document.getElementById('country-dropdown').classList.add('hidden');
-
-        // Mostrar fila estado/ciudad
         document.getElementById('location-row').classList.remove('hidden');
 
-        // Reset estado y ciudad
         document.getElementById('state-label').textContent = 'Selecciona región/estado';
         document.getElementById('state-label').classList.add('text-gray-400');
         document.getElementById('state-value').value = '';
@@ -165,12 +154,10 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('state-list').innerHTML =
                 '<li class="px-4 py-2 text-red-400 italic">Error al cargar</li>';
         }
-
         lucide.createIcons();
         checkValidity();
     }
 
-    // ── Render estados ──
     function renderStates(states, countryName) {
         const ul = document.getElementById('state-list');
         if (!states.length) {
@@ -178,25 +165,20 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         ul.innerHTML = states.map(s => `
-            <li data-name="${s.name}"
-                class="px-4 py-2 hover:bg-gray-50 cursor-pointer text-xs">
+            <li data-name="${s.name}" class="px-4 py-2 hover:bg-gray-50 cursor-pointer text-xs">
                 ${s.name}
             </li>`).join('');
-
         ul.querySelectorAll('li').forEach(li => {
             li.addEventListener('click', () => selectState(li.dataset.name, countryName));
         });
         filterList(document.getElementById('state-search'), ul);
     }
 
-    // ── Seleccionar estado → cargar ciudades ──
     async function selectState(stateName, countryName) {
         document.getElementById('state-label').textContent = stateName;
         document.getElementById('state-label').classList.remove('text-gray-400');
         document.getElementById('state-value').value = stateName;
         document.getElementById('state-dropdown').classList.add('hidden');
-
-        // Reset ciudad
         document.getElementById('city-label').textContent = 'Selecciona localidad';
         document.getElementById('city-label').classList.add('text-gray-400');
         document.getElementById('city-value').value = '';
@@ -215,12 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('city-list').innerHTML =
                 '<li class="px-4 py-2 text-red-400 italic">Error al cargar</li>';
         }
-
         lucide.createIcons();
         checkValidity();
     }
 
-    // ── Render ciudades ──
     function renderCities(cities) {
         const ul = document.getElementById('city-list');
         if (!cities.length) {
@@ -228,11 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         ul.innerHTML = cities.map(c => `
-            <li data-name="${c}"
-                class="px-4 py-2 hover:bg-gray-50 cursor-pointer text-xs">
+            <li data-name="${c}" class="px-4 py-2 hover:bg-gray-50 cursor-pointer text-xs">
                 ${c}
             </li>`).join('');
-
         ul.querySelectorAll('li').forEach(li => {
             li.addEventListener('click', () => {
                 document.getElementById('city-label').textContent = li.dataset.name;
@@ -245,9 +223,8 @@ document.addEventListener("DOMContentLoaded", () => {
         filterList(document.getElementById('city-search'), ul);
     }
 
-
     // ══════════════════════════════════════════════════════════════
-    // TOGGLE BOTONES DE DROPDOWN
+    // TOGGLE DROPDOWNS
     // ══════════════════════════════════════════════════════════════
     document.getElementById('phone-country-btn').addEventListener('click', (e) => {
         e.stopPropagation();
@@ -266,58 +243,76 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleDropdown(document.getElementById('city-dropdown'));
     });
 
-
     // ══════════════════════════════════════════════════════════════
-    // ENVÍO DEL FORMULARIO → SALESFORCE
+    // ENVÍO → SALESFORCE (form nativo + iframe)
     // ══════════════════════════════════════════════════════════════
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (btnEnviar.disabled) return;
 
-        const fd = new FormData(form);
+        const formData  = new FormData(form);
+        const phoneCode = formData.get('phone_country_code');
 
-        const payload = new URLSearchParams({
-            orgid:    '00D7Q0000092UMO',           // ← mismo org que el formulario base
-            retURL:   'https://congreso.somosawaq.org/',
+        const iframe = document.createElement('iframe');
+        iframe.name = 'sf-iframe-voluntariado';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
 
+        const sfForm = document.createElement('form');
+        sfForm.method = 'POST';
+        sfForm.action = 'https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D7Q0000092UMO';
+        sfForm.target  = 'sf-iframe-voluntariado';
+        sfForm.style.display = 'none';
 
+        const sfFields = {
+            orgid:      '00D7Q0000092UMO',
+            retURL:     'https://congreso.somosawaq.org/',
+            recordType: '0127Q000000AkEQQA0',
 
-            // Campos estándar
-            name:        `${fd.get('nombre')} ${fd.get('apellidos')}`,
-            email:       fd.get('email'),
-            phone:       `${document.getElementById('phone-country-code-value').value} ${fd.get('telefono')}`,
-            subject:     '3ICEO LATAM 2027 - Postulación Voluntariado Virtual',
-            description: `Experiencia: ${fd.get('experiencia')}\n\nMotivación: ${fd.get('motivacion')}`,
+            name:       `${formData.get('nombre')} ${formData.get('apellidos')}`,
+            email:      formData.get('email'),
+            phone:      `${phoneCode} ${formData.get('telefono')}`,
+            subject:    'Voluntariado Virtual - 3ICEO 2027',
+            status:     'New',
+            origin:     'Web',
 
-            // ── Campos custom — ajusta los IDs con tu equipo de backend ──
-            // '00NP500000XXXXXX': fd.get('nombre'),
-            // '00NP500000XXXXXX': fd.get('apellidos'),
-            // '00NP500000XXXXXX': fd.get('area_colaboracion'),
-            // '00NP500000XXXXXX': fd.get('disponibilidad'),
-            // '00NP500000XXXXXX': fd.get('zona_horaria'),
-            // '00NP500000XXXXXX': fd.get('organizacion'),
-            // '00NP500000XXXXXX': fd.get('cargo'),
-            // '00NP500000XXXXXX': fd.get('linkedin'),
-            // '00NP500000XXXXXX': document.getElementById('country-value').value,
-            // '00NP500000XXXXXX': document.getElementById('state-value').value,
-            // '00NP500000XXXXXX': document.getElementById('city-value').value,
+            '00NP500000Sx2AX': 'Voluntariado Virtual - 3ICEO 2027',
+            '00NP500000QQ1eD': formData.get('nombre'),
+            '00NP500000QQ1kf': formData.get('apellidos'),
+            '00NP500000Swze5': formData.get('email'),
+            '00NP500000Qwap0': phoneCode,
+            '00NP500000Qwd6r': `${phoneCode} ${formData.get('telefono')}`,
+            '00NP500000QwPK1': formData.get('country'),
+            '00NP500000QwcxB': formData.get('city'),
+            '00NP500000QPumQ': formData.get('organizacion') || '',
+            '00NP500000QwPAL': formData.get('cargo') || '',
+            '00NP500000Sx05V': formData.get('linkedin') || '',
+            '00NP500000Sx08j': formData.get('area_colaboracion'),
+            '00NP500000Sx0AL': formData.get('disponibilidad'),
+            '00NP500000Sx0Gn': formData.get('zona_horaria'),
+            '00NP500000Sx0IP': formData.get('experiencia') || '',
+            '00NP500000Swuku': formData.get('motivacion') || '',
             '00NP500000QQ1sj': document.getElementById('terms').checked ? '1' : '',
-        });
+            '00NP500000QwPNF': document.getElementById('newsletter').checked ? '1' : '',
+        };
 
-        fetch('https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00D7Q0000092UMO', {
-            method:  'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body:    payload,
-            mode:    'no-cors'
-        })
-        .then(() => {
-            window.location.href = 'formularioCompletado.html';
-        })
-        .catch(() => {
-            alert('Error al enviar. Intenta de nuevo.');
-        });
+        for (const [name, value] of Object.entries(sfFields)) {
+            const input = document.createElement('input');
+            input.type  = 'hidden';
+            input.name  = name;
+            input.value = value ?? '';
+            sfForm.appendChild(input);
+        }
+
+        document.body.appendChild(sfForm);
+        sfForm.submit();
+
+        setTimeout(() => {
+            iframe.remove();
+            sfForm.remove();
+            window.location.href = 'formularioCompletado';
+        }, 2000);
     });
-
 
     // ══════════════════════════════════════════════════════════════
     // INIT
