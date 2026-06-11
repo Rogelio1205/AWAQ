@@ -20,19 +20,19 @@
                 </a>
             </div>
             <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
-                <a href="./congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
-                <a href="./memoria2iceo" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
-                <a href="./aliados" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
-                <a href="./prensa" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
-                <a href="./marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
-                <a href="./Colabora" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
+                <a href="./congreso" id="nav-congreso" class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
+                <a href="./memoria2iceo" id="nav-memoria" class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
+                <a href="./aliados" id="nav-aliados" class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+                <a href="./prensa" id="nav-prensa" class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+                <a href="./marketplace" id="nav-marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
+                <a href="./Colabora" id="nav-colabora" class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
             </div>
             <div class="flex items-center gap-3">
-                <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50">
-                    <span>ES</span>
+                <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50" onclick="toggleLang()">
+                    <span id="lang-label">ES</span>
                     <i data-lucide="chevron-down" class="w-3 h-3"></i>
                 </div>
-                <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
+                <button id="nav-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
                     Quiero asistir
                 </button>
                 <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
@@ -43,14 +43,14 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
-            <a href="./congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
-            <a href="./memoria2iceo" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
-            <a href="./aliados" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
-            <a href="./prensa" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
-            <a href="./Marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
-            <a href="./Colabora" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
+            <a href="./congreso" id="nav-mob-congreso" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+            <a href="./memoria2iceo" id="nav-mob-memoria" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
+            <a href="./aliados" id="nav-mob-aliados" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+            <a href="./prensa" id="nav-mob-prensa" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+            <a href="./Marketplace" id="nav-mob-marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
+            <a href="./Colabora" id="nav-mob-colabora" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
             <div class="pt-3 border-t mt-2">
-                <button class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
+                <button id="nav-mob-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
                     Quiero asistir
                 </button>
             </div>
@@ -68,15 +68,15 @@
     <!-- MAIN -->
     <main class="flex-grow pt-12 pb-20 px-6 relative overflow-hidden">
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h1 class="serif-font text-4xl md:text-5xl text-custom-teal mb-4">Voluntariado Virtual</h1>
-            <p class="text-gray-900 mb-2">Rellena los siguientes datos para postularte como voluntario/a virtual.</p>
-            <p class="text-xs text-cyan-700 font-medium px-4 mb-12 italic">
+            <h1 id="page-title" class="serif-font text-4xl md:text-5xl text-custom-teal mb-4">Voluntariado Virtual</h1>
+            <p id="page-subtitle" class="text-gray-900 mb-2">Rellena los siguientes datos para postularte como voluntario/a virtual.</p>
+            <p id="page-disclaimer" class="text-xs text-cyan-700 font-medium px-4 mb-12 italic">
                 * Las plazas de voluntariado son limitadas. Recibirás confirmación en un plazo de 48 h vía e-mail.
             </p>
 
             <div class="bg-white rounded-[40px] p-8 md:p-12 max-w-5xl mx-auto card-shadow text-left">
-                <h2 class="text-2xl font-bold text-custom-teal mb-2">Postulación a Voluntariado Virtual</h2>
-                <p class="text-sm text-gray-500 mb-10">
+                <h2 id="form-title" class="text-2xl font-bold text-custom-teal mb-2">Postulación a Voluntariado Virtual</h2>
+                <p id="form-subtitle" class="text-sm text-gray-500 mb-10">
                     Completa tus datos para colaborar de forma virtual con el 3ICEO LATAM 2027 en áreas de apoyo operativo y técnico.
                 </p>
 
@@ -85,24 +85,24 @@
                     <!-- 1 & 2. Nombre / Apellidos -->
                     <div class="grid-2 mb-5">
                         <div>
-                            <label class="field-label">1. Nombre *</label>
-                            <input type="text" name="nombre" placeholder="Ingresa tu nombre" class="form-input" required>
+                            <label class="field-label"><span id="label-nombre">1. Nombre</span> *</label>
+                            <input type="text" name="nombre" id="input-nombre" placeholder="Ingresa tu nombre" class="form-input" required maxlength="20">
                         </div>
                         <div class="mt-5 sm:mt-0">
-                            <label class="field-label">2. Apellidos *</label>
-                            <input type="text" name="apellidos" placeholder="Ingresa tus apellidos" class="form-input" required>
+                            <label class="field-label"><span id="label-apellidos">2. Apellidos</span> *</label>
+                            <input type="text" name="apellidos" id="input-apellidos" placeholder="Ingresa tus apellidos" class="form-input" required maxlength="25">
                         </div>
                     </div>
 
                     <!-- 3. Email -->
                     <div class="mb-5">
-                        <label class="field-label">3. Correo electrónico *</label>
-                        <input type="email" name="email" placeholder="ejemplo@correo.com" class="form-input" required>
+                        <label class="field-label"><span id="label-email">3. Correo electrónico</span> *</label>
+                        <input type="email" name="email" id="input-email" placeholder="ejemplo@correo.com" class="form-input" required>
                     </div>
 
                     <!-- 4 & 5. Código país / Teléfono -->
                     <div class="mb-5">
-                        <label class="field-label">4 & 5. Código país / Teléfono *</label>
+                        <label class="field-label"><span id="label-telefono">4 & 5. Código país / Teléfono</span> *</label>
                         <div class="flex gap-2">
                             <div class="relative">
                                 <button type="button" id="phone-country-btn"
@@ -128,7 +128,7 @@
 
                     <!-- 6. País -->
                     <div class="mb-3">
-                        <label class="field-label">6. País *</label>
+                        <label class="field-label"><span id="label-pais">6. País</span> *</label>
                         <div class="relative">
                             <button type="button" id="country-btn"
                                     class="flex items-center gap-3 form-input cursor-pointer bg-white w-full text-left">
@@ -195,32 +195,32 @@
                     <input type="hidden" name="state"   id="state-value">
                     <input type="hidden" name="city"    id="city-value">
 
-                    <!-- 8 & 9. Organización / Cargo (opcionales) -->
+                    <!-- 8 & 9. Organización / Cargo -->
                     <div class="grid-2 mb-5">
                         <div>
-                            <label class="field-label">8. Organización <span class="font-normal text-gray-400">(opcional)</span></label>
-                            <input type="text" name="organizacion" placeholder="Nombre de tu organización" class="form-input">
+                            <label class="field-label"><span id="label-org">8. Organización</span> <span class="font-normal text-gray-400">(<span id="label-opcional1">opcional</span>)</span></label>
+                            <input type="text" name="organizacion" id="input-org" placeholder="Nombre de tu organización" class="form-input">
                         </div>
                         <div class="mt-5 sm:mt-0">
-                            <label class="field-label">9. Cargo / perfil <span class="font-normal text-gray-400">(opcional)</span></label>
-                            <input type="text" name="cargo" placeholder="Tu cargo o perfil actual" class="form-input">
+                            <label class="field-label"><span id="label-cargo">9. Cargo / perfil</span> <span class="font-normal text-gray-400">(<span id="label-opcional2">opcional</span>)</span></label>
+                            <input type="text" name="cargo" id="input-cargo" placeholder="Tu cargo o perfil actual" class="form-input">
                         </div>
                     </div>
 
                     <!-- 10 & 11. LinkedIn / Área de colaboración -->
                     <div class="grid-2 mb-5">
                         <div>
-                            <label class="field-label">10. LinkedIn o portafolio <span class="font-normal text-gray-400">(opcional)</span></label>
-                            <input type="text" name="linkedin" placeholder="https://linkedin.com/in/usuario" class="form-input">
+                            <label class="field-label"><span id="label-linkedin">10. LinkedIn o portafolio</span> <span class="font-normal text-gray-400">(<span id="label-opcional3">opcional</span>)</span></label>
+                            <input type="text" name="linkedin" id="input-linkedin" placeholder="https://linkedin.com/in/usuario" class="form-input">
                         </div>
                         <div class="mt-5 sm:mt-0">
-                            <label class="field-label">11. Área de colaboración *</label>
+                            <label class="field-label"><span id="label-area">11. Área de colaboración</span> *</label>
                             <select name="area_colaboracion" class="form-input" required>
-                                <option value="" disabled selected>Selecciona un área</option>
-                                <option value="Comunicaciones">Comunicaciones</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Ingeniería en sistemas">Ingeniería en sistemas</option>
-                                <option value="Otros">Otros</option>
+                                <option value="" disabled selected id="area-placeholder">Selecciona un área</option>
+                                <option value="Comunicaciones" id="area-comunicaciones">Comunicaciones</option>
+                                <option value="Marketing" id="area-marketing">Marketing</option>
+                                <option value="Ingeniería en sistemas" id="area-ingenieria">Ingeniería en sistemas</option>
+                                <option value="Otros" id="area-otros">Otros</option>
                             </select>
                         </div>
                     </div>
@@ -228,20 +228,20 @@
                     <!-- 12 & 13. Disponibilidad / Zona horaria -->
                     <div class="grid-2 mb-5">
                         <div>
-                            <label class="field-label">12. Disponibilidad semanal *</label>
+                            <label class="field-label"><span id="label-disp">12. Disponibilidad semanal</span> *</label>
                             <select name="disponibilidad" class="form-input" required>
-                                <option value="" disabled selected>Selecciona tu disponibilidad</option>
-                                <option value="Menos de 5 horas">Menos de 5 horas</option>
-                                <option value="5 a 10 horas">5 a 10 horas</option>
-                                <option value="10 a 20 horas">10 a 20 horas</option>
-                                <option value="Más de 20 horas">Más de 20 horas</option>
-                                <option value="Flexible / Por definir">Flexible / Por definir</option>
+                                <option value="" disabled selected id="disp-placeholder">Selecciona tu disponibilidad</option>
+                                <option value="Menos de 5 horas" id="disp-1">Menos de 5 horas</option>
+                                <option value="5 a 10 horas" id="disp-2">5 a 10 horas</option>
+                                <option value="10 a 20 horas" id="disp-3">10 a 20 horas</option>
+                                <option value="Más de 20 horas" id="disp-4">Más de 20 horas</option>
+                                <option value="Flexible / Por definir" id="disp-5">Flexible / Por definir</option>
                             </select>
                         </div>
                         <div class="mt-5 sm:mt-0">
-                            <label class="field-label">13. Zona horaria *</label>
+                            <label class="field-label"><span id="label-zona">13. Zona horaria</span> *</label>
                             <select name="zona_horaria" class="form-input" required>
-                                <option value="" disabled selected>Selecciona tu zona horaria</option>
+                                <option value="" disabled selected id="zona-placeholder">Selecciona tu zona horaria</option>
                                 <option value="UTC-8 — Baja California (México)">UTC-8 — Baja California (México)</option>
                                 <option value="UTC-7 — Sonora / Montaña (México)">UTC-7 — Sonora / Montaña (México)</option>
                                 <option value="UTC-6 — Ciudad de México / Centro (México)">UTC-6 — Ciudad de México / Centro (México)</option>
@@ -257,7 +257,7 @@
                                 <option value="UTC-5 — Nueva York / Miami (EST)">UTC-5 — Nueva York / Miami (EST)</option>
                                 <option value="UTC+1 — España / Madrid (CET)">UTC+1 — España / Madrid (CET)</option>
                                 <option value="UTC+2 — España / Madrid (CEST — horario de verano)">UTC+2 — España / Madrid (CEST)</option>
-                                <option value="Otra zona horaria">Otra zona horaria</option>
+                                <option value="Otra zona horaria" id="zona-otra">Otra zona horaria</option>
                             </select>
                         </div>
                     </div>
@@ -265,14 +265,14 @@
                     <!-- 14 & 15. Experiencia / Motivación -->
                     <div class="grid-2 mb-8">
                         <div>
-                            <label class="field-label">14. Experiencia previa <span class="font-normal text-gray-400">(opcional)</span></label>
-                            <textarea name="experiencia" rows="4"
+                            <label class="field-label"><span id="label-exp">14. Experiencia previa</span> <span class="font-normal text-gray-400">(<span id="label-opcional4">opcional</span>)</span></label>
+                            <textarea name="experiencia" rows="4" id="input-exp"
                                       placeholder="Describe brevemente tu experiencia relevante para el voluntariado virtual."
                                       class="form-input"></textarea>
                         </div>
                         <div class="mt-5 sm:mt-0">
-                            <label class="field-label">15. Motivación para colaborar <span class="font-normal text-gray-400">(opcional)</span></label>
-                            <textarea name="motivacion" rows="4"
+                            <label class="field-label"><span id="label-motiv">15. Motivación para colaborar</span> <span class="font-normal text-gray-400">(<span id="label-opcional5">opcional</span>)</span></label>
+                            <textarea name="motivacion" rows="4" id="input-motiv"
                                       placeholder="Cuéntanos por qué quieres ser parte del voluntariado virtual del 3ICEO LATAM 2027."
                                       class="form-input"></textarea>
                         </div>
@@ -282,21 +282,21 @@
                     <div class="space-y-3 mb-8">
                         <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-700">
                             <input type="checkbox" id="terms" name="terms" class="custom-check mt-0.5" required>
-                            <span>
+                            <span id="terms-label">
                                 Acepto la <a href="#" class="text-cyan-700 underline font-medium">política de privacidad</a>.
                                 <span class="text-cyan-700 text-xs">Requerido.</span>
                             </span>
                         </label>
                         <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-700">
                             <input type="checkbox" id="newsletter" name="newsletter" class="custom-check mt-0.5">
-                            <span>Acepto recibir comunicaciones sobre mi solicitud.</span>
+                            <span id="newsletter-label">Acepto recibir comunicaciones sobre mi solicitud.</span>
                         </label>
                     </div>
 
                     <!-- Botones -->
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button type="submit" id="btn-enviar" class="btn-enviar" disabled>Enviar postulación</button>
-                        <button type="button" class="btn-volver" onclick="history.back()">Volver</button>
+                        <button type="submit" id="btn-enviar" class="btn-enviar" disabled><span id="btn-enviar-text">Enviar postulación</span></button>
+                        <button type="button" id="btn-volver" class="btn-volver" onclick="history.back()">Volver</button>
                     </div>
                     <p id="validation-msg" class="text-center text-[11px] text-gray-400 mt-4">
                         Completa todos los campos requeridos para habilitar el envío
@@ -323,29 +323,29 @@
                 <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
             </div>
             <div>
-                <h3 class="text-2xl font-bold mb-4">Escríbenos!</h3>
-                <p class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <h3 id="footer-escribenos" class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p id="footer-escribenos-desc" class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
                 <form class="space-y-4">
                     <div>
-                        <label class="block text-xs mb-1">Tu e-mail *</label>
-                        <input type="email" placeholder="correo@electrónico.com"
+                        <label id="footer-email-label" class="block text-xs mb-1">Tu e-mail *</label>
+                        <input type="email" id="footer-email-placeholder" placeholder="correo@electrónico.com"
                                class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
                     </div>
                     <div>
-                        <label class="block text-xs mb-1">Mensaje *</label>
-                        <textarea rows="4" placeholder="Click para empezar a escribir"
+                        <label id="footer-msg-label" class="block text-xs mb-1">Mensaje *</label>
+                        <textarea id="footer-msg-placeholder" rows="4" placeholder="Click para empezar a escribir"
                                   class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
                     </div>
-                    <button type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
+                    <button id="footer-send" type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
                 </form>
             </div>
             <div class="space-y-8">
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Contacto</h3>
+                    <h3 id="footer-contact" class="text-lg font-bold mb-4">Contacto</h3>
                     <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold mb-4">Streaming</h3>
+                    <h3 id="footer-streaming" class="text-lg font-bold mb-4">Streaming</h3>
                     <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
                         <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
                         <span class="text-sm font-bold">Youtube</span>
@@ -357,10 +357,10 @@
         <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
             <p>© 2026 Awaq ONG</p>
             <div class="flex flex-wrap justify-center gap-6">
-                <a href="#" class="hover:text-white">Políticas de privacidad</a>
-                <a href="#" class="hover:text-white">Políticas de Cookies</a>
-                <a href="#" class="hover:text-white">Aviso Legal</a>
-                <a href="#" class="hover:text-white">Acuerdo de convivencia</a>
+                <a href="#" id="footer-privacy" class="hover:text-white">Políticas de privacidad</a>
+                <a href="#" id="footer-cookies" class="hover:text-white">Políticas de Cookies</a>
+                <a href="#" id="footer-legal" class="hover:text-white">Aviso Legal</a>
+                <a href="#" id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
             </div>
         </div>
     </footer>
@@ -371,13 +371,14 @@
             <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <i data-lucide="check" class="w-10 h-10"></i>
             </div>
-            <h2 class="text-2xl font-bold text-custom-teal mb-2">¡Postulación recibida!</h2>
-            <p class="text-gray-900 text-sm mb-8">Hemos registrado tus datos correctamente. En breve nos pondremos en contacto contigo.</p>
-            <button onclick="location.reload()" class="btn-pink text-white px-8 py-3 rounded-full text-sm font-bold uppercase w-full">Cerrar</button>
+            <h2 id="modal-title" class="text-2xl font-bold text-custom-teal mb-2">¡Postulación recibida!</h2>
+            <p id="modal-desc" class="text-gray-900 text-sm mb-8">Hemos registrado tus datos correctamente. En breve nos pondremos en contacto contigo.</p>
+            <button onclick="location.reload()" id="modal-btn" class="btn-pink text-white px-8 py-3 rounded-full text-sm font-bold uppercase w-full">Cerrar</button>
         </div>
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../assets/js/formsVoluntariado.js" defer></script>
+    <script src="../assets/js/Traducciones/formsVoluntariado.js" defer></script>
 </body>
 </html>

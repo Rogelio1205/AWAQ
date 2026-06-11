@@ -124,7 +124,7 @@ const translations = {
     // Hero
     "hero-title":    "3rd ICEO LATAM",
     "hero-subtitle": "An international platform to transform knowledge into action for water sources",
-    "hero-dates":    "February 16, 17 and 18",
+    "hero-dates":    "February 16, 17, and 18",
     "hero-location": "Cali, Colombia",
 
     // Universidad

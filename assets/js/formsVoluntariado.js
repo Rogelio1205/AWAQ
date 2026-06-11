@@ -252,6 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const formData  = new FormData(form);
         const phoneCode = formData.get('phone_country_code');
+        const idioma    = document.getElementById('lang-label')?.textContent.trim() === 'EN' ? 'ENG' : 'ES';
 
         const iframe = document.createElement('iframe');
         iframe.name = 'sf-iframe-voluntariado';
@@ -268,7 +269,6 @@ document.addEventListener("DOMContentLoaded", () => {
             orgid:      '00D7Q0000092UMO',
             retURL:     'https://congreso.somosawaq.org/',
             recordType: '0127Q000000AkEQQA0',
-
             name:       `${formData.get('nombre')} ${formData.get('apellidos')}`,
             email:      formData.get('email'),
             phone:      `${phoneCode} ${formData.get('telefono')}`,
@@ -292,6 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
             '00NP500000Sx0Gn': formData.get('zona_horaria'),
             '00NP500000Sx0IP': formData.get('experiencia') || '',
             '00NP500000Swuku': formData.get('motivacion') || '',
+            '00NP500000Su2jl': idioma,
             '00NP500000QQ1sj': document.getElementById('terms').checked ? '1' : '',
             '00NP500000QwPNF': document.getElementById('newsletter').checked ? '1' : '',
         };
