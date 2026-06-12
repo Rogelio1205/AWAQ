@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Cookies - Awaq</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="icon" type="image/png" href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="../">
+                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
+                <a href="./congreso"     id="nav-congreso"    class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
+                <a href="./memoria2iceo" id="nav-memoria"     class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
+                <a href="./aliados"      id="nav-aliados"     class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+                <a href="./prensa"       id="nav-prensa"      class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+                <a href="./marketplace"  id="nav-marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
+                <a href="./Colabora"     id="nav-colabora"    class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50" onclick="toggleLang()">
+                    <span id="lang-label">ES</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <button id="nav-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
+                    Quiero asistir
+                </button>
+                <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
+            <a href="./congreso"     id="nav-mob-congreso"    class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+            <a href="./memoria2iceo" id="nav-mob-memoria"     class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
+            <a href="./aliados"      id="nav-mob-aliados"     class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+            <a href="./prensa"       id="nav-mob-prensa"      class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+            <a href="./Marketplace"  id="nav-mob-marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
+            <a href="./Colabora"     id="nav-mob-colabora"    class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
+            <div class="pt-3 border-t mt-2">
+                <button id="nav-mob-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
+                    Quiero asistir
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    </script>
+
+    <!-- MAIN -->
+    <main class="flex-grow py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h1 id="page-title" class="text-4xl font-extrabold text-center uppercase text-custom-teal mb-12">Políticas de Cookies</h1>
+
+            <div class="prose prose-sm max-w-none text-gray-700 space-y-6 leading-relaxed">
+
+                <p><strong id="section-politica-cookies">POLÍTICA DE COOKIES</strong></p>
+                <p id="intro-p1">En cumplimiento con el artículo 22 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI), en relación con el Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos y garantía de los derechos digitales (LOPDGDD), Awaq pone a disposición de los usuarios la Política de recogida y tratamiento de cookies del sitio Web.</p>
+
+                <p><strong id="section-que-son">Qué son las Cookies</strong></p>
+                <p id="que-son-p1">Una Cookie es un fichero que se descarga en su ordenador al entrar a determinadas páginas web. Las cookies permiten a una página web, entre otras cosas, almacenar y recuperar información sobre sus hábitos de navegación y —dependiendo de la información que contengan y de la forma en que utilice su equipo— pueden utilizarse para identificarle.</p>
+
+                <p><strong id="section-cookies-usadas">Cookies utilizadas en el sitio Web</strong></p>
+                <p id="cookies-usadas-p1">A continuación se clasifican las cookies utilizadas por el sitio Web www.somosawaq.org:</p>
+
+                <p><strong id="section-segun-entidad">Según la entidad que las gestiona</strong></p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="entidad-item-1"><strong id="entidad-item-1-title">Cookies propias:</strong> <span id="entidad-item-1-desc">Son aquellas enviadas y gestionadas directamente por Awaq.</span></li>
+                    <li id="entidad-item-2"><strong id="entidad-item-2-title">Cookies de terceros:</strong> <span id="entidad-item-2-desc">una cookie de terceros suele ser instalada por un dominio/servidor de terceros. Las cookies de terceros tienen múltiples finalidades, como hacer un seguimiento de las actividades de navegación de los usuarios para mostrarles anuncios personalizados de bienes y servicios.</span></li>
+                </ul>
+
+                <p><strong id="section-segun-finalidad">Según su finalidad</strong></p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="finalidad-item-1"><strong id="finalidad-item-1-title">Cookies técnicas:</strong> <span id="finalidad-item-1-desc">Son aquellas que permiten a los usuarios registrados navegar a través del sitio Web, del área restringida y a utilizar sus diferentes funciones, como por ejemplo, el sistema de comentarios o el buscador.</span></li>
+                    <li id="finalidad-item-2"><strong id="finalidad-item-2-title">Cookies de personalización:</strong> <span id="finalidad-item-2-desc">Son aquellas que permiten a los usuarios acceder al Servicio con algunas características de carácter general predefinidas en función de una serie de criterios establecidos por el usuario como, por ejemplo, el idioma o el tipo de navegador a través del cual se conecta a este sitio Web.</span></li>
+                </ul>
+
+                <p><strong id="section-segun-duracion">Según su duración</strong></p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="duracion-item-1"><strong id="duracion-item-1-title">Cookies de sesión:</strong> <span id="duracion-item-1-desc">Son aquellas diseñadas para recabar y almacenar datos mientras el usuario accede al sitio Web.</span></li>
+                    <li id="duracion-item-2"><strong id="duracion-item-2-title">Cookies persistentes:</strong> <span id="duracion-item-2-desc">Son aquellas en las que los datos siguen almacenados en el terminal del usuario y pueden ser accedidos y tratados durante un período definido por el responsable de la cookie.</span></li>
+                </ul>
+
+                <p><strong id="section-listado">Listado de cookies utilizadas</strong></p>
+                <p id="listado-p1">Este sitio Web puede instalar las siguientes cookies:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="listado-item-1"><strong>cf_clearance:</strong> <span id="listado-item-1-desc">Cookie propio, tiene una duración de 1 año.</span></li>
+                    <li id="listado-item-2"><strong>hasConsent:</strong> <span id="listado-item-2-desc">Cookie técnica que almacena el consentimiento del usuario. Es persistente y tiene una duración de 1 año.</span></li>
+                </ul>
+
+                <p><strong id="section-eliminacion">Eliminación de cookies</strong></p>
+                <p id="eliminacion-p1">Usted puede aceptar, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones del navegador, pero parte del sitio no funcionará correctamente o su calidad puede verse afectada.</p>
+                <p id="eliminacion-p2">En los siguientes enlaces encontrará instrucciones para habilitar o deshabilitar las cookies en los navegadores más comunes:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Firefox:</strong> <a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" class="text-cyan-700 underline break-all" target="_blank">http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we</a></li>
+                    <li><strong>Google Chrome:</strong> <a href="https://support.google.com/chrome/answer/95647?hl=es" class="text-cyan-700 underline break-all" target="_blank">https://support.google.com/chrome/answer/95647?hl=es</a></li>
+                    <li><strong>Internet Explorer:</strong> <a href="https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies" class="text-cyan-700 underline break-all" target="_blank">https://support.microsoft.com/es-es/help/17442/windows-internet-explorer-delete-manage-cookies</a></li>
+                    <li><strong>Microsoft Edge:</strong> <a href="https://support.microsoft.com/es-es/help/4468242/microsoft-edge-browsing-data-and-privacy" class="text-cyan-700 underline break-all" target="_blank">https://support.microsoft.com/es-es/help/4468242/microsoft-edge-browsing-data-and-privacy</a></li>
+                    <li><strong>Safari:</strong> <a href="http://support.apple.com/kb/HT1677?viewlocale=es_ES" class="text-cyan-700 underline break-all" target="_blank">http://support.apple.com/kb/HT1677?viewlocale=es_ES</a></li>
+                </ul>
+                <p id="eliminacion-p3">Si usted desea borrar la información que nos ha dado a través del formulario de información solicitada, puede revisar el correo enviado por <a href="mailto:info@somosawaq.org" class="text-cyan-700 underline">info@somosawaq.org</a>, <span id="eliminacion-p3-text">en el que hay un link para darse de baja.</span></p>
+
+                <p><strong id="section-tratamiento">Tratamiento de Datos Personales</strong></p>
+                <p id="tratamiento-p1">Awaq es el responsable del tratamiento de los datos personales del usuario. Usted puede consultar toda la información relativa al tratamiento de datos personales que recoge Awaq en la página de <a href="./politica-de-privacidad" id="link-privacidad" class="text-cyan-700 underline">Política de Privacidad</a>.</p>
+
+                <p id="closing-p1">Awaq ONGD, domicilio en c/Doctor Torres Feced 20, casa 19 – 28770 Colmenar Viejo (España), inscrita en el Registro Nacional de Asociaciones con el nº 58891 del Ministerio del Interior, Gobierno de España. Incluida entre las reguladas en el Artículo 16 del Capítulo I del Título III de la ley 49/2002. Inscrita en el registro de Organizaciones No Gubernamentales de Desarrollo (ONGD) de la Agencia Española de Cooperación Internacional para el Desarrollo (AECID) con el nº 3288.</p>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ONDAS -->
+    <div style="line-height:0; margin-top: 4rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none" style="display:block;width:100%;height:120px;">
+            <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
+            <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
+            <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+        </svg>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+            </div>
+            <div>
+                <h3 id="footer-escribenos" class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p id="footer-escribenos-desc" class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <form id="footer-contact-form">
+                    <div class="space-y-4">
+                        <div>
+                            <label id="footer-email-label" class="block text-xs mb-1">Tu e-mail *</label>
+                            <input id="footer-email-input" type="email"
+                                   placeholder="correo@electrónico.com"
+                                   class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                            <label id="footer-msg-label" class="block text-xs mb-1">Mensaje *</label>
+                            <textarea id="footer-msg-input" rows="4"
+                                      placeholder="Click para empezar a escribir"
+                                      class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        </div>
+                        <button id="footer-send" type="submit"
+                                class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <h3 id="footer-contact" class="text-lg font-bold mb-4">Contacto</h3>
+                    <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+                </div>
+                <div>
+                    <h3 id="footer-streaming" class="text-lg font-bold mb-4">Streaming</h3>
+                    <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
+                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                        <span class="text-sm font-bold">Youtube</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div>
+                    <h3 id="footer-redes" class="text-lg font-bold mb-4">Redes Sociales</h3>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/awaqongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="0 0 32 32"><path d="M22.3,8.4c-.8,0-1.4.6-1.4,1.4s.6,1.4,1.4,1.4,1.4-.6,1.4-1.4-.6-1.4-1.4-1.4Z"/><path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9,5.9-2.7,5.9-5.9-2.7-5.9-5.9-5.9Zm0,9.7c-2.1,0-3.8-1.7-3.8-3.8s1.7-3.8,3.8-3.8,3.8,1.7,3.8,3.8-1.7,3.8-3.8,3.8Z"/><path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5c0-4-3.2-7.2-7.2-7.2Zm4.9,16.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5v9.5Z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/somosawaq/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7h-2.54v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/awaq-ongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="-143 145 512 512"><path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145zM41.4,508.1H-8.5V348.4h49.9V508.1zM15.1,328.4h-.4c-18.1,0-29.8-12.2-29.8-27.7,0-15.8,12.1-27.7,30.5-27.7,18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4zM241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4-14.9,0-23.2,10-27,19.6-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6,35.5,0,63.3,23,63.3,72.4V508.1z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+            <p>© 2026 Awaq ONG</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="./politicasprivacidad" id="footer-privacy"     class="hover:text-white">Políticas de privacidad</a>
+                <a href="./politicascookies"     id="footer-cookies"     class="hover:text-white">Políticas de Cookies</a>
+                <a href="./avisolegal"           id="footer-legal"       class="hover:text-white">Aviso Legal</a>
+                <a href="./acuerdoconvivencia"   id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/Traducciones/politicascookies.js" defer></script>
+    <script src="../assets/js/formsFooter.js"></script>
+</body>
+</html>

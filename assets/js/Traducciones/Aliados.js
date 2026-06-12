@@ -63,6 +63,8 @@ const translations = {
     'footer-cookies':         'Políticas de Cookies',
     'footer-legal':           'Aviso Legal',
     'footer-convivencia':     'Acuerdo de convivencia',
+    "text-sent": "¡Mensaje enviado!",
+    "soon-contact": "Nos pondremos en contacto contigo pronto."
   },
 
   en: {
@@ -124,6 +126,8 @@ const translations = {
     'footer-cookies':         'Cookie Policy',
     'footer-legal':           'Legal Notice',
     'footer-convivencia':     'Community Agreement',
+    "text-sent": "Message sent!",
+    "soon-contact": "We will contact you soon."
   }
 };
 
@@ -151,7 +155,7 @@ function applyTranslations(lang) {
     'footer-escribenos','footer-escribenos-desc','footer-email-label','footer-requerido1',
     'footer-msg-label','footer-requerido2','footer-send',
     'footer-contact','footer-streaming','footer-redes',
-    'footer-privacy','footer-cookies','footer-legal','footer-convivencia',
+    'footer-privacy','footer-cookies','footer-legal','footer-convivencia', 'text-sent', 'soon-contact' 
   ];
 
   htmlIds.forEach(id => {

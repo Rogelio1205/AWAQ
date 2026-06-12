@@ -362,19 +362,26 @@
             <div>
                 <h3 id="footer-escribenos" class="text-2xl font-bold mb-4">Escríbenos!</h3>
                 <p id="footer-escribenos-desc" class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
-                <form class="space-y-4">
-                    <div>
-                        <label id="footer-email-label" class="block text-xs mb-1">Tu e-mail *</label>
-                        <input type="email" id="footer-email-placeholder" placeholder="correo@electrónico.com" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
-                        <p id="footer-requerido1" class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
+                <form id="footer-contact-form">
+                    <div class="space-y-4">
+                        <div>
+                        <label class="block text-xs mb-1">Tu e-mail *</label>
+                        <input id="footer-email-input" type="email"
+                                placeholder="correo@electrónico.com"
+                                class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                        <label class="block text-xs mb-1">Mensaje *</label>
+                        <textarea id="footer-msg-input" rows="4"
+                                    placeholder="Click para empezar a escribir"
+                                    class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        </div>
+                        <button id="footer-send" type="submit"
+                                class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                        Enviar
+                        </button>
                     </div>
-                    <div>
-                        <label id="footer-msg-label" class="block text-xs mb-1">Mensaje*</label>
-                        <textarea id="footer-msg-placeholder" placeholder="Click para empezar a escribir" rows="4" class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
-                        <p id="footer-requerido2" class="text-[10px] text-cyan-400 mt-1 italic">Requerido</p>
-                    </div>
-                    <button id="footer-send" type="button" class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">Enviar</button>
-                </form>
+                    </form>
             </div>
             <div class="space-y-8">
                 <div>
@@ -394,10 +401,10 @@
         <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
             <p>© 2026 Awaq ONG</p>
             <div class="flex flex-wrap justify-center gap-6">
-                <a href="#" id="footer-privacy" class="hover:text-white">Políticas de privacidad</a>
-                <a href="#" id="footer-cookies" class="hover:text-white">Políticas de Cookies</a>
-                <a href="#" id="footer-legal" class="hover:text-white">Aviso Legal</a>
-                <a href="#" id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
+                <a href="./pages/politicasprivacidad" id="footer-privacy" class="hover:text-white">Políticas de privacidad</a>
+                <a href="./pages/politicascookies" id="footer-cookies" class="hover:text-white">Políticas de Cookies</a>
+                <a href="./pages/avisolegal" id="footer-legal" class="hover:text-white">Aviso Legal</a>
+                <a href="./pages/acuerdoconvivencia" id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
             </div>
         </div>
     </footer>
@@ -405,6 +412,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="./assets/js/fades.js" defer></script>
     <script src="./assets/js/Traducciones/index.js" defer></script>
+    <script src="./assets/js/formsFooter.js"></script>
     <script>
         lucide.createIcons();
     </script>

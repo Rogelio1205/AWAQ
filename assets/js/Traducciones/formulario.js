@@ -105,6 +105,8 @@ const translations = {
     "state-search-placeholder":   "Buscar región...",
     "city-search-placeholder":    "Buscar ciudad...",
     "phone-search-placeholder":   "Buscar país...",
+    "text-sent": "¡Mensaje enviado!",
+    "soon-contact": "Nos pondremos en contacto contigo pronto."
   },
 
   en: {
@@ -211,6 +213,8 @@ const translations = {
     "lastname-label":       "Last name(s) *",
     "firstname-placeholder": "First name",
     "lastname-placeholder":  "Last name(s)",
+    "text-sent": "Message sent!",
+    "soon-contact": "We will contact you soon."
   }
 };
 
@@ -243,7 +247,7 @@ function applyTranslations(lang) {
     'footer-escribenos','footer-escribenos-desc','footer-email-label','footer-requerido1',
     'footer-msg-label','footer-requerido2','footer-send',
     'footer-contact','footer-streaming',
-    'footer-privacy','footer-cookies','footer-legal','footer-convivencia', 'firstname-label', 'lastname-label', 'firstname-placeholder', 'lastname-placeholder'
+    'footer-privacy','footer-cookies','footer-legal','footer-convivencia', 'firstname-label', 'lastname-label', 'firstname-placeholder', 'lastname-placeholder', 'text-sent', 'soon-contact' 
   ];
 
   ids.forEach(id => {

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Privacidad - Awaq</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="icon" type="image/png" href="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png">
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white py-4 px-6 md:px-10 top-0 z-50 shadow-sm sticky">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <a href="../">
+                    <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/2%20ICEO/Logo%20ICEO.png" alt="Awaq Logo" class="h-10">
+                </a>
+            </div>
+            <div class="hidden min-[1000px]:flex items-center gap-16 text-xs font-bold">
+                <a href="./congreso"     id="nav-congreso"    class="hover:text-cyan-700 whitespace-nowrap text-sm">El congreso</a>
+                <a href="./memoria2iceo" id="nav-memoria"     class="hover:text-cyan-700 whitespace-nowrap text-sm">Memoria 2ICEO</a>
+                <a href="./aliados"      id="nav-aliados"     class="hover:text-cyan-700 whitespace-nowrap text-sm">Aliados</a>
+                <a href="./prensa"       id="nav-prensa"      class="hover:text-cyan-700 whitespace-nowrap text-sm">Prensa</a>
+                <a href="./marketplace"  id="nav-marketplace" class="hover:text-cyan-700 whitespace-nowrap text-sm">Marketplace</a>
+                <a href="./Colabora"     id="nav-colabora"    class="hover:text-cyan-700 whitespace-nowrap text-sm">Colabora</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <div class="border rounded-full px-3 py-1 flex items-center gap-1 text-xs cursor-pointer hover:bg-gray-50" onclick="toggleLang()">
+                    <span id="lang-label">ES</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <button id="nav-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap hidden min-[1000px]:block" onclick="window.location.href='./formulario'">
+                    Quiero asistir
+                </button>
+                <button class="min-[1000px]:hidden flex flex-col gap-1.5 p-2" onclick="toggleMenu()">
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                    <span class="block w-6 h-0.5 bg-gray-700"></span>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden min-[1000px]:hidden flex-col pt-4 pb-2 border-t mt-3">
+            <a href="./congreso"     id="nav-mob-congreso"    class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">El congreso</a>
+            <a href="./memoria2iceo" id="nav-mob-memoria"     class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Memoria 2ICEO</a>
+            <a href="./aliados"      id="nav-mob-aliados"     class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Aliados</a>
+            <a href="./prensa"       id="nav-mob-prensa"      class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Prensa</a>
+            <a href="./Marketplace"  id="nav-mob-marketplace" class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Marketplace</a>
+            <a href="./Colabora"     id="nav-mob-colabora"    class="block py-2.5 px-2 text-sm font-bold hover:text-cyan-700 hover:bg-gray-50 rounded-lg">Colabora</a>
+            <div class="pt-3 border-t mt-2">
+                <button id="nav-mob-asistir" class="btn-pink text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide w-full" onclick="window.location.href='./formulario'">
+                    Quiero asistir
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    </script>
+
+    <!-- MAIN -->
+    <main class="flex-grow py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h1 id="page-title" class="text-4xl font-extrabold text-center uppercase text-custom-teal mb-12">Políticas de Privacidad</h1>
+
+            <div class="prose prose-sm max-w-none text-gray-700 space-y-6 leading-relaxed">
+
+                <p><strong id="section-politica-privacidad">POLÍTICA DE PRIVACIDAD</strong></p>
+                <p id="intro-p1">Awaq ("nosotros", "nuestro" o "nos") se compromete a proteger su privacidad. Esta Política de privacidad explica cómo Awaq recopila, usa y divulga su información personal.</p>
+                <p id="intro-p2">Esta Política de privacidad se aplica a nuestro sitio web, <a href="http://www.somosawaq.org" class="text-cyan-700 underline">www.somosawaq.org</a> <span id="intro-p2-text">y sus subdominios asociados (colectivamente, nuestro "Servicio"). Al acceder o utilizar nuestro Servicio, usted indica que ha leído, comprendido y aceptado nuestra recopilación, almacenamiento, uso y divulgación de su información personal como se describe en esta Política de privacidad y en nuestros Términos de servicio.</span></p>
+
+                <p><strong id="section-definiciones">Definiciones y Términos clave</strong></p>
+                <p id="definiciones-intro">Para ayudar a explicar las cosas de la manera más clara posible en esta Política de privacidad, cada vez que se hace referencia a cualquiera de estos términos, se definen estrictamente como:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="def-cookie"><strong id="def-cookie-title">Cookie:</strong> <span id="def-cookie-desc">pequeña cantidad de datos generados por un sitio web y guardados por su navegador web. Se utiliza para identificar su navegador, proporcionar análisis, recordar información sobre usted, como su preferencia de idioma o información de inicio de sesión.</span></li>
+                    <li id="def-compania"><strong id="def-compania-title">Compañía:</strong> <span id="def-compania-desc">cuando esta política menciona "Compañía", "nosotros", "nos" o "nuestro", se refiere a Awaq Estaciones Biológicas, C/Doctor Torres Feced 20, Casa19 - 28770 que es responsable de su información en virtud de esta Política de privacidad.</span></li>
+                    <li id="def-plataforma"><strong id="def-plataforma-title">Plataforma:</strong> <span id="def-plataforma-desc">el sitio web de Awaq en Internet (www.somosawaq.org), aplicación web o aplicación digital de cara al público.</span></li>
+                    <li id="def-pais"><strong id="def-pais-title">País:</strong> <span id="def-pais-desc">donde se encuentra Awaq o sus propietarios / fundadores, en este caso es España.</span></li>
+                    <li id="def-cliente"><strong id="def-cliente-title">Cliente:</strong> <span id="def-cliente-desc">se refiere a la empresa, organización o persona que se registra para utilizar el Servicio de Awaq para gestionar las relaciones con sus consumidores o usuarios del servicio.</span></li>
+                    <li id="def-dispositivo"><strong id="def-dispositivo-title">Dispositivo:</strong> <span id="def-dispositivo-desc">cualquier dispositivo conectado a Internet, como un teléfono, tablet, computadora o cualquier otro dispositivo que se pueda usar para visitar www.somosawaq.org y usar los servicios.</span></li>
+                    <li id="def-ip"><strong id="def-ip-title">Dirección IP:</strong> <span id="def-ip-desc">a cada dispositivo conectado a Internet se le asigna un número conocido como dirección de protocolo de Internet (IP). Estos números generalmente se asignan en bloques geográficos. A menudo, se puede utilizar una dirección IP para identificar la ubicación desde la que un dispositivo se conecta a Internet.</span></li>
+                    <li id="def-personal"><strong id="def-personal-title">Personal:</strong> <span id="def-personal-desc">se refiere a aquellas personas que son empleadas por Awaq o están bajo contrato para realizar un servicio en nombre de una de las partes.</span></li>
+                    <li id="def-datos"><strong id="def-datos-title">Datos personales:</strong> <span id="def-datos-desc">cualquier información que directa, indirectamente o en conexión con otra información, incluido un número de identificación personal, permita la identificación de una persona física.</span></li>
+                    <li id="def-servicio"><strong id="def-servicio-title">Servicio:</strong> <span id="def-servicio-desc">se refiere al servicio brindado por Awaq como se describe en los términos relativos (si están disponibles) y en esta plataforma.</span></li>
+                    <li id="def-terceros"><strong id="def-terceros-title">Terceros:</strong> <span id="def-terceros-desc">se refiere a anunciantes, patrocinadores de concursos, socios promocionales y de marketing, y otros que brindan nuestro contenido o cuyos productos o servicios que creemos que pueden interesarle.</span></li>
+                    <li id="def-sitio"><strong id="def-sitio-title">Sitio web:</strong> <span id="def-sitio-desc">el sitio de www.somosawaq.org, al que se puede acceder a través de esta URL: https://www.somosawaq.org/</span></li>
+                    <li id="def-usted"><strong id="def-usted-title">Usted:</strong> <span id="def-usted-desc">una persona o entidad que está registrada con www.somosawaq.org para utilizar los Servicios.</span></li>
+                </ul>
+
+                <p><strong id="section-que-recopilamos">¿Qué información recopilamos?</strong></p>
+                <p id="que-recopilamos-p1">Recopilamos información suya, siempre con su autorización, cuando visita nuestra plataforma, se registra en nuestro sitio, solicita información, se suscribe a nuestro boletín, responde a una encuesta o completa un formulario. Según lo expuesto anteriormente, podremos tratar los siguientes datos:</p>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li id="dato-nombre">Nombre</li>
+                    <li id="dato-telefono">Números de teléfono</li>
+                    <li id="dato-email">Correo electrónico</li>
+                </ul>
+
+                <p><strong id="section-donde-cuando">¿Dónde y cuándo se recopila la información de los clientes y usuarios finales?</strong></p>
+                <p id="donde-cuando-p1">Awaq recopilará la información personal que nos envíe. También podemos recibir información personal sobre usted de terceros como se describe anteriormente.</p>
+
+                <p><strong id="section-como-usamos">¿Cómo usamos la información que recopilamos?</strong></p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="uso-item-1">Para personalizar su experiencia (su información nos ayuda a responder mejor a sus necesidades individuales)</li>
+                    <li id="uso-item-2">Para mejorar nuestra plataforma (nos esforzamos continuamente por mejorar lo que ofrece nuestra plataforma en función de la información y los comentarios que recibimos de usted)</li>
+                    <li id="uso-item-3">Para mejorar el servicio al cliente (su información nos ayuda a responder de manera más efectiva a sus solicitudes de servicio al cliente y necesidades de soporte)</li>
+                    <li id="uso-item-4">Para enviar correos electrónicos periódicos siempre que así lo marque en su elección</li>
+                </ul>
+
+                <p><strong id="section-email">¿Cómo utilizamos su dirección de correo electrónico?</strong></p>
+                <p id="email-p1">Al enviar su dirección de correo electrónico en esta plataforma, acepta recibir nuestros correos electrónicos. Puede cancelar su participación en cualquiera de estas listas de correo electrónico en cualquier momento haciendo clic en el enlace de exclusión voluntaria u otra opción para cancelar la suscripción que se incluye en el correo electrónico respectivo. Solo enviamos correos electrónicos a personas que nos han autorizado a contactarlos directamente.</p>
+                <p id="email-p2"><strong id="email-nota-title">Nota:</strong> <span id="email-nota-desc">Si en algún momento desea cancelar la suscripción para no recibir correos electrónicos futuros, incluimos instrucciones detalladas para cancelar la suscripción en la parte inferior de cada correo electrónico.</span></p>
+
+                <p><strong id="section-cuanto-tiempo">¿Cuánto tiempo conservamos su información?</strong></p>
+                <p id="cuanto-tiempo-p1">Conservaremos tu información personal el tiempo necesario o permitido en atención a los fines para los cuales se haya obtenido. Cuando ya no necesitemos usar su información y no sea necesario que la conservemos para cumplir con nuestras obligaciones legales o reglamentarias, la eliminaremos de nuestros sistemas o la despersonalizaremos para que no podamos identificarlo.</p>
+
+                <p><strong id="section-como-protegemos">¿Cómo protegemos su información?</strong></p>
+                <p id="como-protegemos-p1">Implementamos una variedad de medidas de seguridad para mantener la seguridad de su información personal cuando ingresa, envía o accede a su información personal. Sin embargo, no podemos garantizar la seguridad absoluta de la información que transmita a Awaq.</p>
+
+                <p><strong id="section-derechos">¿Cuáles son tus derechos?</strong></p>
+                <p id="derechos-p1">Puedes ejercitar tus derechos de acceso, rectificación, supresión y portabilidad, limitación y/u oposición al tratamiento, a través de las direcciones postal y electrónicas indicadas. Esto significa que tienes derecho a:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="derecho-item-1">A saber si estamos tratando tus datos o no.</li>
+                    <li id="derecho-item-2">A acceder a tus datos personales.</li>
+                    <li id="derecho-item-3">A solicitar la rectificación de tus datos si son inexactos.</li>
+                    <li id="derecho-item-4">A solicitar la supresión de tus datos si nos retiras el consentimiento otorgado.</li>
+                    <li id="derecho-item-5">A remitirte los datos que guardamos sobre ti en Awaq en un formato estructurado, de uso común o lectura mecánica.</li>
+                    <li id="derecho-item-6">A revocar el consentimiento para cualquier tratamiento para el que hayas consentido, en cualquier momento.</li>
+                </ul>
+                <p id="derechos-p2">Asimismo, si consideras que el tratamiento de tus datos personales vulnera la normativa o tus derechos de privacidad, puedes presentar una reclamación:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="reclamacion-item-1">Para más información sobre las garantías a tu privacidad, puedes dirigirte a Awaq a través de <a href="mailto:info@somosawaq.org" class="text-cyan-700 underline">info@somosawaq.org</a></li>
+                    <li id="reclamacion-item-2">Ante la Agencia Española de Protección de Datos, a través de su sede electrónica, o de su dirección postal.</li>
+                </ul>
+
+                <p><strong id="section-cede-terceros">¿Cuándo cede Awaq la información del cliente a terceros?</strong></p>
+                <p id="cede-terceros-p1">Nunca venderemos, alquilaremos o cederemos tus datos personales, pero estos podrán ser facilitados a los destinatarios que se indican a continuación, por los motivos que a continuación se explican:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="cede-item-1"><strong id="cede-item-1-title">Administraciones Públicas:</strong> <span id="cede-item-1-desc">para el cumplimiento de las obligaciones legales a las que Awaq está sujeta por su actividad.</span></li>
+                    <li id="cede-item-2"><strong id="cede-item-2-title">Proveedores y otras Organizaciones no Gubernamentales</strong> <span id="cede-item-2-desc">que precisen acceder a tus datos para la prestación de servicios que Awaq haya contratado a dichos proveedores, y con los cuales Awaq tiene suscritos los contratos de confidencialidad y de tratamiento de datos personales necesarios y exigidos por la normativa para proteger su privacidad.</span></li>
+                </ul>
+
+                <p><strong id="section-transferencia">¿Podría transferirse mi información a otros países?</strong></p>
+                <p id="transferencia-p1">Awaq está incorporada en España. La información recopilada a través de nuestro sitio web puede transferirse de vez en cuando a nuestras oficinas o personal, o a terceros, ubicados en todo el mundo. En la mayor medida permitida por la ley aplicable, al utilizar cualquiera de los anteriores, usted acepta voluntariamente la transferencia transfronteriza y el alojamiento de dicha información.</p>
+
+                <p><strong id="section-segura">¿La información recopilada a través del Servicio de Awaq es segura?</strong></p>
+                <p id="segura-p1">Tomamos precauciones para proteger la seguridad de su información. Contamos con procedimientos físicos, electrónicos y administrativos para ayudar a salvaguardar, prevenir el acceso no autorizado, mantener la seguridad de los datos y usar correctamente su información. Sin embargo, ni las personas ni los sistemas de seguridad son infalibles.</p>
+
+                <p><strong id="section-actualizar">¿Puedo actualizar o corregir mi información?</strong></p>
+                <p id="actualizar-p1">Los derechos que tienes para solicitar actualizaciones o correcciones de la información que recopila Awaq dependen de tu relación con Awaq. Puede comunicarse con nosotros para:</p>
+                <ol class="list-decimal pl-6 space-y-2">
+                    <li id="actualizar-item-1">Actualizar o corregir su información de identificación personal.</li>
+                    <li id="actualizar-item-2">Cambiar sus preferencias con respecto a las comunicaciones y otra información que recibe de nosotros.</li>
+                    <li id="actualizar-item-3">Eliminar la información de identificación personal que se mantiene sobre usted en nuestro sistema, cancelando su cuenta.</li>
+                </ol>
+
+                <p><strong id="section-personal">Personal</strong></p>
+                <p id="personal-p1">Si es un trabajador o solicitante de Awaq, recopilamos la información que nos proporciona voluntariamente. Usamos la información recopilada con fines de recursos humanos para administrar los beneficios a los trabajadores y seleccionar a los solicitantes.</p>
+
+                <p><strong id="section-ley-rige">Ley que Rige</strong></p>
+                <p id="ley-rige-p1">Esta Política de privacidad se rige por las leyes de España sin tener en cuenta su disposición sobre conflicto de leyes. Usted acepta la jurisdicción exclusiva de los tribunales en relación con cualquier acción o disputa que surja entre las partes en virtud de esta Política de privacidad.</p>
+
+                <p><strong id="section-consentimiento">Tu consentimiento</strong></p>
+                <p id="consentimiento-p1">Hemos actualizado nuestra Política de privacidad para brindarle total transparencia sobre lo que se establece cuando visita nuestro sitio y cómo se utiliza. Al utilizar nuestra plataforma, registrar una cuenta, por la presente acepta nuestra Política de privacidad y acepta sus términos.</p>
+
+                <p><strong id="section-enlaces">Enlaces a otros Sitios Web</strong></p>
+                <p id="enlaces-p1">Esta Política de privacidad se aplica solo a los Servicios. Los Servicios pueden contener enlaces a otros sitios web que Awaq no opera ni controla. No somos responsables por el contenido, la precisión o las opiniones expresadas en dichos sitios web.</p>
+
+                <p><strong id="section-ninos">Privacidad de los Niños</strong></p>
+                <p id="ninos-p1">No nos dirigimos a ninguna persona menor de 13 años. No recopilamos información de identificación personal de ninguna persona menor de 13 años. Si usted es padre o tutor y sabe que su hijo nos ha proporcionado Datos Personales, comuníquese con nosotros.</p>
+
+                <p><strong id="section-cambios">Cambios en nuestra Política de Privacidad</strong></p>
+                <p id="cambios-p1">Podemos cambiar nuestro Servicio y nuestras políticas, y es posible que debamos realizar cambios en esta Política de privacidad para que reflejen con precisión nuestro Servicio y nuestras políticas. A menos que la ley exija lo contrario, le notificaremos antes de realizar cambios en esta Política de privacidad.</p>
+
+                <p><strong id="section-servicios-terceros">Servicios de terceros</strong></p>
+                <p id="servicios-terceros-p1">Podemos mostrar, incluir o poner a disposición contenido de terceros o proporcionar enlaces a sitios web o servicios de terceros. Awaq no asume ni tendrá ninguna obligación o responsabilidad ante usted o cualquier otra persona o entidad por los Servicios de terceros.</p>
+
+                <p><strong id="section-seguimiento">Tecnologías de Seguimiento</strong></p>
+                <p id="seguimiento-p1">El almacenamiento local, a veces conocido como almacenamiento DOM, proporciona a las aplicaciones web métodos y protocolos para almacenar datos del lado del cliente, similar a las cookies pero con mayor capacidad.</p>
+
+                <p><strong id="section-rgpd">Información sobre el Reglamento general de protección de datos (RGPD)</strong></p>
+                <p id="rgpd-p1">Es posible que recopilemos y utilicemos información suya si pertenece al Espacio Económico Europeo (EEE). RGPD es una ley de privacidad y protección de datos en toda la UE que regula cómo las empresas protegen los datos de los residentes de la UE.</p>
+                <p id="rgpd-p2">Los principios de protección de datos incluyen requisitos tales como:</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li id="rgpd-item-1">Los datos personales recopilados deben procesarse de manera justa, legal y transparente.</li>
+                    <li id="rgpd-item-2">Los datos personales solo deben recopilarse para cumplir con un propósito específico y solo deben usarse para ese propósito.</li>
+                    <li id="rgpd-item-3">Los datos personales no deben conservarse más tiempo del necesario para cumplir con su propósito.</li>
+                    <li id="rgpd-item-4">Las personas cubiertas por el RGPD tienen derecho a acceder a sus propios datos personales.</li>
+                </ul>
+
+                <p><strong id="section-derechos-individuales">Derechos individuales del interesado: acceso, portabilidad y eliminación de datos</strong></p>
+                <p id="derechos-individuales-p1">Nos comprometemos a ayudar a nuestros clientes a cumplir los requisitos del GDPR en materia de derechos de los interesados. Almacenamos sus datos personales (nombre, número de teléfono, dirección de correo electrónico) y le permitimos acceder a ellos, actualizarlos, recuperarlos y eliminarlos.</p>
+
+                <p><strong id="section-cambios-politica">Cambios en la Política de Privacidad</strong></p>
+                <p id="cambios-politica-p1">Awaq se reserva el derecho a modificar la presente Política de Privacidad para adaptarla a novedades legislativas o jurisprudenciales, así como a prácticas de la industria. Estas políticas estarán vigentes hasta que sean modificadas por otras debidamente publicadas.</p>
+
+                <p><strong id="section-contactenos">Contáctenos</strong></p>
+                <p id="contactenos-p1">No dude en contactarnos si tiene alguna pregunta.</p>
+                <ul class="list-disc pl-6">
+                    <li id="contactenos-item-1">A través de correo electrónico: <a href="mailto:info@somosawaq.org" class="text-cyan-700 underline font-bold">info@somosawaq.org</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ONDAS -->
+    <div style="line-height:0; margin-top: 4rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160" preserveAspectRatio="none" style="display:block;width:100%;height:120px;">
+            <path fill="#A7D8F0" d="M 0 160 L 0 118 C 42 118 42 121 84 121 C 127 121 127 103 169 103 C 211 103 211 86 254 86 C 296 86 296 130 338 130 C 381 130 381 88 423 88 C 465 88 465 107 508 107 C 550 107 550 105 592 105 C 635 105 635 119 677 119 C 720 119 720 82 762 82 C 804 82 804 116 847 116 C 889 116 889 135 931 135 C 974 135 974 107 1016 107 C 1058 107 1058 104 1101 104 C 1143 104 1143 122 1185 122 C 1228 122 1228 115 1270 115 C 1312 115 1312 102 1355 102 C 1397 102 1397 106 1440 106 L 1440 160 Z"/>
+            <path fill="#4076b5" d="M 0 160 L 0 125 C 60 125 60 112 120 112 C 180 112 180 139 240 139 C 300 139 300 137 360 137 C 420 137 420 110 480 110 C 540 110 540 131 600 131 C 660 131 660 109 720 109 C 780 109 780 127 840 127 C 900 127 900 123 960 123 C 1020 123 1020 135 1080 135 C 1140 135 1140 129 1200 129 C 1260 129 1260 137 1320 137 C 1380 137 1380 124 1440 124 L 1440 160 Z"/>
+            <path fill="#0a3d4d" d="M 0 160 L 0 140 C 42 140 42 137 84 137 C 127 137 127 122 169 122 C 211 122 211 133 254 133 C 296 133 296 147 338 147 C 381 147 381 127 423 127 C 465 127 465 138 508 138 C 550 138 550 150 592 150 C 635 150 635 139 677 139 C 720 139 720 154 762 154 C 804 154 804 140 847 140 C 889 140 889 148 931 148 C 974 148 974 129 1016 129 C 1058 129 1058 143 1101 143 C 1143 143 1143 148 1185 148 C 1228 148 1228 149 1270 149 C 1312 149 1312 146 1355 146 C 1397 146 1397 156 1440 156 L 1440 160 Z"/>
+        </svg>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-custom-teal text-white py-16 px-6 md:px-12 -mt-1">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <img src="https://pub-94aa83314f8a41088bff3c1130d43ebd.r2.dev/3ICEO/index/marca.png" alt="Awaq Logo Blanco" class="h-[120px] mb-6 block">
+            </div>
+            <div>
+                <h3 id="footer-escribenos" class="text-2xl font-bold mb-4">Escríbenos!</h3>
+                <p id="footer-escribenos-desc" class="text-sm text-cyan-200 mb-6">Pregúntanos tus dudas o haznos llegar tu feedback.</p>
+                <form id="footer-contact-form">
+                    <div class="space-y-4">
+                        <div>
+                            <label id="footer-email-label" class="block text-xs mb-1">Tu e-mail *</label>
+                            <input id="footer-email-input" type="email"
+                                   placeholder="correo@electrónico.com"
+                                   class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500">
+                        </div>
+                        <div>
+                            <label id="footer-msg-label" class="block text-xs mb-1">Mensaje *</label>
+                            <textarea id="footer-msg-input" rows="4"
+                                      placeholder="Click para empezar a escribir"
+                                      class="w-full bg-cyan-900 bg-opacity-40 border border-cyan-800 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        </div>
+                        <button id="footer-send" type="submit"
+                                class="w-full border border-white rounded-full py-2 text-sm font-bold tracking-widest hover:bg-white hover:text-black transition-all uppercase">
+                            Enviar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <h3 id="footer-contact" class="text-lg font-bold mb-4">Contacto</h3>
+                    <a href="mailto:info@somosawaq.org" class="text-sm underline decoration-cyan-500">info@somosawaq.org</a>
+                </div>
+                <div>
+                    <h3 id="footer-streaming" class="text-lg font-bold mb-4">Streaming</h3>
+                    <a href="https://www.youtube.com/@somosawaq" target="_blank" class="flex items-center gap-2 group">
+                        <span class="w-6 h-6 flex items-center justify-center rounded-full bg-pink-600 text-[10px]">●</span>
+                        <span class="text-sm font-bold">Youtube</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                <div>
+                    <h3 id="footer-redes" class="text-lg font-bold mb-4">Redes Sociales</h3>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/awaqongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="0 0 32 32"><path d="M22.3,8.4c-.8,0-1.4.6-1.4,1.4s.6,1.4,1.4,1.4,1.4-.6,1.4-1.4-.6-1.4-1.4-1.4Z"/><path d="M16,10.2c-3.3,0-5.9,2.7-5.9,5.9s2.7,5.9,5.9,5.9,5.9-2.7,5.9-5.9-2.7-5.9-5.9-5.9Zm0,9.7c-2.1,0-3.8-1.7-3.8-3.8s1.7-3.8,3.8-3.8,3.8,1.7,3.8,3.8-1.7,3.8-3.8,3.8Z"/><path d="M20.8,4h-9.5C7.2,4,4,7.2,4,11.2v9.5c0,4,3.2,7.2,7.2,7.2h9.5c4,0,7.2-3.2,7.2-7.2v-9.5c0-4-3.2-7.2-7.2-7.2Zm4.9,16.8c0,2.7-2.2,5-5,5h-9.5c-2.7,0-5-2.2-5-5v-9.5c0-2.7,2.2-5,5-5h9.5c2.7,0,5,2.2,5,5v9.5Z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/somosawaq/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7h-2.54v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7c4.78-.75 8.44-4.9 8.44-9.9 0-5.53-4.5-10.02-10-10.02Z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/awaq-ongd/" target="_blank" class="w-10 h-10 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="28" height="28" viewBox="-143 145 512 512"><path d="M329,145h-432c-22.1,0-40,17.9-40,40v432c0,22.1,17.9,40,40,40h432c22.1,0,40-17.9,40-40V185C369,162.9,351.1,145,329,145zM41.4,508.1H-8.5V348.4h49.9V508.1zM15.1,328.4h-.4c-18.1,0-29.8-12.2-29.8-27.7,0-15.8,12.1-27.7,30.5-27.7,18.4,0,29.7,11.9,30.1,27.7C45.6,316.1,33.9,328.4,15.1,328.4zM241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4-14.9,0-23.2,10-27,19.6-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6,35.5,0,63.3,23,63.3,72.4V508.1z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-20 pt-8 border-t border-cyan-900 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-cyan-300 uppercase tracking-widest">
+            <p>© 2026 Awaq ONG</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="./politicasprivacidad" id="footer-privacy"     class="hover:text-white">Políticas de privacidad</a>
+                <a href="./politicascookies"     id="footer-cookies"     class="hover:text-white">Políticas de Cookies</a>
+                <a href="./avisolegal"           id="footer-legal"       class="hover:text-white">Aviso Legal</a>
+                <a href="./acuerdoconvivencia"   id="footer-convivencia" class="hover:text-white">Acuerdo de convivencia</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/Traducciones/politicasprivacidad.js" defer></script>
+    <script src="../assets/js/formsFooter.js"></script>
+</body>
+</html>

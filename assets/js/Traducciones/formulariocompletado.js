@@ -52,6 +52,8 @@ const translations = {
     "footer-convivencia":     "Acuerdo de convivencia",
     "footer-email-placeholder": "correo@electrónico.com",
     "footer-msg-placeholder":   "Click para empezar a escribir",
+    "text-sent": "¡Mensaje enviado!",
+    "soon-contact": "Nos pondremos en contacto contigo pronto."
   },
 
   en: {
@@ -103,6 +105,8 @@ const translations = {
     "footer-convivencia":     "Community Agreement",
     "footer-email-placeholder": "email@example.com",
     "footer-msg-placeholder":   "Click to start writing",
+    "text-sent": "Message sent!",
+    "soon-contact": "We will contact you soon."
   }
 };
 
@@ -126,7 +130,7 @@ function applyTranslations(lang) {
     'footer-escribenos','footer-escribenos-desc','footer-email-label','footer-requerido1',
     'footer-msg-label','footer-requerido2','footer-send',
     'footer-contact','footer-streaming',
-    'footer-privacy','footer-cookies','footer-legal','footer-convivencia',
+    'footer-privacy','footer-cookies','footer-legal','footer-convivencia', 'text-sent', 'soon-contact' 
   ];
 
   ids.forEach(id => {

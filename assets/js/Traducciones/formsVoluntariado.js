@@ -96,6 +96,8 @@ const translations = {
     'footer-cookies':         'Políticas de Cookies',
     'footer-legal':           'Aviso Legal',
     'footer-convivencia':     'Acuerdo de convivencia',
+    "text-sent": "¡Mensaje enviado!",
+    "soon-contact": "Nos pondremos en contacto contigo pronto."
   },
 
   en: {
@@ -190,6 +192,8 @@ const translations = {
     'footer-cookies':         'Cookie Policy',
     'footer-legal':           'Legal Notice',
     'footer-convivencia':     'Community Agreement',
+    "text-sent": "Message sent!",
+    "soon-contact": "We will contact you soon."
   }
 };
 
@@ -232,7 +236,7 @@ function applyTranslations(lang) {
   const optionIds = [
     'area-placeholder','area-comunicaciones','area-marketing','area-ingenieria','area-otros',
     'disp-placeholder','disp-1','disp-2','disp-3','disp-4','disp-5',
-    'zona-placeholder','zona-otra',
+    'zona-placeholder','zona-otra', 'text-sent', 'soon-contact' 
   ];
   optionIds.forEach(id => {
     const el = document.getElementById(id);

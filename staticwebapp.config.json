@@ -14,6 +14,22 @@
     { "route": "/pages/prensa", "rewrite": "/pages/prensa.html" },
     { "route": "/pages/programa", "rewrite": "/pages/programa.html" },
     { "route": "/pages/sedeCongreso", "rewrite": "/pages/sedeCongreso.html" },
-    { "route": "/pages/prensa/noticias", "rewrite": "/pages/prensa/noticias/index.html" }
-  ]
+    { "route": "/pages/prensa/noticias", "rewrite": "/pages/prensa/noticias/index.html" },
+    { "route": "/pages/politicasprivacidad", "rewrite": "/pages/politicasprivacidad.html"},
+    { "route": "/pages/politicascookies", "rewrite": "/pages/politicascookies.html"},
+    { "route": "/pages/avisolegal", "rewrite": "/pages/avisolegal.html"},
+    { "route": "/pages/acuerdoconvivencia", "rewrite": "/pages/acuerdoconvivencia.html"},
+    {
+      "route": "/assets/games/RetoGame2/Build/*.br",
+      "headers": {
+        "Content-Encoding": "br"
+      }
+    }
+  ],
+  "mimeTypes": {
+    ".br": "application/octet-stream"
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
+  }
 }

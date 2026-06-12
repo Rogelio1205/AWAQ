@@ -270,8 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
             orgid:      '00D7Q0000092UMO',
             retURL:     'https://congreso.somosawaq.org/',
             recordType: '0127Q000000AkEQQA0',
-            debug:       '1',
-            debugEmail:  'a00842541@tec.mx',
+            
             '00NP500000Su2jl': document.getElementById('lang-label')?.textContent.trim() === 'EN' ? 'ENG' : 'ES',
             name:       `${formData.get('nombre')} ${formData.get('apellidos')}`,
             email:      formData.get('email'),
