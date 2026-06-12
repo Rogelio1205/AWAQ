@@ -94,45 +94,18 @@
     </div>
     <div class="max-w-7xl mx-auto px-6 pt-16">
         <h2 id="noticias-title" class="text-center text-xl font-bold text-gray-700 mb-8 fade-up">Entérate de las últimas noticias</h2>
-        <div class="flex flex-wrap items-center justify-center gap-4 fade-up">
-            <span id="filter-label" class="text-sm font-medium text-gray-500">Filtrar por:</span>
-            <select id="filter-canal" class="filter-select min-w-[180px] px-4 py-2 rounded-full border border-gray-200 bg-white text-sm focus:outline-none focus:border-teal-500">
-                <option id="fopt-canales">Canales</option>
-                <option id="fopt-radio">Radio</option>
-                <option id="fopt-streaming">Streaming</option>
-                <option id="fopt-prensa">Prensa</option>
-            </select>
-            <select id="filter-mes" class="filter-select min-w-[180px] px-4 py-2 rounded-full border border-gray-200 bg-white text-sm focus:outline-none focus:border-teal-500">
-                <option id="fopt-mes">Mes</option>
-                <option id="fopt-enero">Enero</option>
-                <option id="fopt-febrero">Febrero</option>
-                <option id="fopt-marzo">Marzo</option>
-                <option id="fopt-abril">Abril</option>
-                <option id="fopt-mayo">Mayo</option>
-                <option id="fopt-junio">Junio</option>
-                <option id="fopt-julio">Julio</option>
-                <option id="fopt-agosto">Agosto</option>
-                <option id="fopt-septiembre">Septiembre</option>
-                <option id="fopt-octubre">Octubre</option>
-                <option id="fopt-noviembre">Noviembre</option>
-                <option id="fopt-diciembre">Diciembre</option>
-            </select>
-            <button id="filter-clear-btn" class="p-2 text-teal-600 hover:bg-teal-50 rounded-full transition-colors" title="Limpiar filtros">
-                <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
-            </button>
-        </div>
     </div>
 </section>
 
 <!-- Noticias -->
-<section class="max-w-7xl mx-auto px-6 py-4">
+<section class="max-w-7xl mx-auto px-6">
     <div id="noticias-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <div id="noticias-loading" class="col-span-3 text-center py-12 text-gray-400">Cargando noticias...</div>
     </div>
 </section>
 
 <!-- Sin resultados -->
-<section class="max-w-7xl mx-auto px-6 py-12 hidden">
+<section class="max-w-7xl mx-auto px-6 py-4 hidden">
     <div class="bg-white rounded-[3rem] p-16 text-center border-2 border-dashed border-gray-100">
         <div class="mb-6 inline-block">
             <div class="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
