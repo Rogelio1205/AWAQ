@@ -18,18 +18,6 @@
     { "route": "/pages/politicasprivacidad", "rewrite": "/pages/politicasprivacidad.html"},
     { "route": "/pages/politicascookies", "rewrite": "/pages/politicascookies.html"},
     { "route": "/pages/avisolegal", "rewrite": "/pages/avisolegal.html"},
-    { "route": "/pages/acuerdoconvivencia", "rewrite": "/pages/acuerdoconvivencia.html"},
-    {
-      "route": "/assets/games/RetoGame2/Build/*.br",
-      "headers": {
-        "Content-Encoding": "br"
-      }
-    }
-  ],
-  "mimeTypes": {
-    ".br": "application/octet-stream"
-  },
-  "globalHeaders": {
-    "Cache-Control": "no-cache"
-  }
+    { "route": "/pages/acuerdoconvivencia", "rewrite": "/pages/acuerdoconvivencia.html"}
+  ]
 }
